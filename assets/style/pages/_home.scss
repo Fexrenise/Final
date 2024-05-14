@@ -651,9 +651,9 @@ main {
             font-family: 'Lexend';
             font-weight: 500;
         }
-        .slideSponsor{
+        .slider{
             @include Width();
-            @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: start, $gap: 20px);
+            // @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: start, $gap: 20px);
             padding-top: 20px;
         }
         .slideSponsorTwo{

@@ -905,7 +905,7 @@ main #sponsor h5 {
   font-family: "Lexend";
   font-weight: 500;
 }
-main #sponsor .slideSponsor {
+main #sponsor .slider {
   width: 90%;
   margin: 0 auto;
   display: flex;
