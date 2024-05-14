@@ -1,0 +1,55 @@
+@mixin Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 0) {
+    display: $flex;
+    flex-direction: $direction;
+    justify-content: $justfyContent;
+    align-items: $alignItems;
+    gap: $gap;
+}
+
+@mixin Width($width: 90%) {
+    width: $width;
+    margin: 0 auto;
+}
+
+@mixin Font($size: 15px, $weight: 500, $family:'Hind',$lineHeight: 30px) {
+    font-size: $size;
+    font-weight: $weight;
+    font-family: $family;
+    line-height: $lineHeight;
+}
+
+@mixin BackGround($repeat: no-repeat, $position: center, $size: cover) {
+    background: {
+        repeat: $repeat;
+        position: $position;
+        size: $size;
+    }
+}
+
+@mixin Button {
+    border: none;
+    padding: 10px 25px;
+    color: $colorBlack;
+    background-color: $colorWhite;
+    text-align: center;
+    cursor: pointer;
+    @include Font($size: 14px, $weight: 500, $family: "Lexend Deca", $lineHeight: 30px);
+
+    &:hover {
+        background-color: $color-0;
+        color: $colorWhite;
+    }
+}
+
+
+@mixin Tablet() {
+    @media only screen and (max-width:990px) {
+        @content;
+    }
+}
+
+@mixin Mobile() {
+    @media only screen and (max-width:768px) {
+        @content;
+    }
+}

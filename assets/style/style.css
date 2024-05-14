@@ -1,0 +1,927 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Lexend+Deca:wght@100..900&family=Lexend:wght@100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+header .navBar {
+  padding: 0 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+header .navBar .logo {
+  padding: 15px 0;
+}
+header .navBar .navList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+@media only screen and (max-width: 990px) {
+  header .navBar .navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  header .navBar .navList {
+    display: none;
+  }
+}
+header .navBar .navList li a {
+  font-size: 18px;
+  font-weight: 400;
+  font-family: "Hind";
+  line-height: 30px;
+  color: rgba(0, 0, 0, 0.7);
+}
+@media only screen and (max-width: 990px) {
+  header .navBar .navList li a {
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Hind";
+    line-height: 30px;
+  }
+}
+header .navBar .navList li a:hover {
+  color: #7e8427;
+}
+header .navBar .navList li .active {
+  color: #7e8427;
+}
+header .navBar .cartBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+@media only screen and (max-width: 768px) {
+  header .navBar .cartBar {
+    display: none !important;
+  }
+}
+@media only screen and (max-width: 990px) {
+  header .navBar .cartBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+}
+header .navBar .cartBar .login i {
+  color: #c89374;
+  font-size: 18px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 990px) {
+  header .navBar .cartBar .login i {
+    font-size: 14px;
+  }
+}
+header .navBar .cartBar .shop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+header .navBar .cartBar .shop bdi {
+  color: #7e8427;
+  font-size: 15px;
+  font-weight: 700;
+  font-family: "Hind";
+  line-height: 30px;
+}
+header .navBar .cartBar .shop .cart i {
+  color: #7e8427;
+  font-size: 18px;
+  cursor: pointer;
+}
+header .navBar .burgerMenu {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  header .navBar .burgerMenu {
+    display: flex;
+    color: white;
+    background-color: #7e8427;
+  }
+  header .navBar .burgerMenu i {
+    padding: 10px;
+    font-size: 19px;
+  }
+}
+
+main {
+  background-color: #f4e9e3;
+}
+main #homeOne {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../img/bg-1.jpg");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: cover;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 0;
+}
+@media only screen and (max-width: 768px) {
+  main #homeOne {
+    height: 60vh !important;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #homeOne {
+    height: 55vh;
+  }
+}
+main #homeOne .productHead {
+  color: white;
+  text-align: end;
+  padding-right: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: end;
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main #homeOne .productHead {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-right: 0;
+  }
+}
+main #homeOne .productHead h6 {
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Lexend";
+  line-height: 30px;
+}
+main #homeOne .productHead h1 {
+  font-size: 48px;
+  font-weight: 600;
+  font-family: '"Lexend",sans-serif';
+  line-height: 60px;
+  width: 70%;
+}
+@media only screen and (max-width: 768px) {
+  main #homeOne .productHead h1 {
+    width: 90%;
+    text-align: center;
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+main #homeOne .productHead p {
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Hind";
+  line-height: 30px;
+  width: 45%;
+}
+@media only screen and (max-width: 768px) {
+  main #homeOne .productHead p {
+    width: 100%;
+    text-align: center;
+  }
+}
+main #homeOne .productHead button {
+  border: none;
+  padding: 10px 25px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Lexend Deca";
+  line-height: 30px;
+}
+main #homeOne .productHead button:hover {
+  background-color: #7e8427;
+  color: white;
+}
+main #homeTwo .productInfo {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 0;
+  padding: 50px 0 35px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+@media only screen and (max-width: 768px) {
+  main #homeTwo .productInfo {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #homeTwo .productInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+main #homeTwo .productInfo .productInfo_text {
+  font-size: 30px;
+  font-weight: 600;
+  font-family: "Lexend, sans-serif";
+  line-height: 30px;
+  width: 40%;
+}
+@media only screen and (max-width: 768px) {
+  main #homeTwo .productInfo .productInfo_text {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+main #homeTwo .productInfo .productInfo_img {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+main #homeTwo .productInfo .productInfo_img .productInfo_imgItem {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+main #homeTwo .productInfo .productInfo_img .productInfo_imgItem a {
+  color: rgba(0, 0, 0, 0.4588235294);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Lexend";
+  line-height: 20px;
+}
+main #homeTwo .productInfo .productInfo_img .productInfo_imgItem a img {
+  width: 100%;
+}
+main #bestseller {
+  padding-top: 100px;
+}
+main #bestseller h1 {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 40px;
+}
+main #bestseller .bestsellerProduct {
+  padding: 20px 0 100px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 60px;
+  }
+}
+main #bestseller .bestsellerProduct .bestsellerProduct_one {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct .bestsellerProduct_one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #bestseller .bestsellerProduct .bestsellerProduct_one {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+  }
+}
+main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+  width: 45%;
+}
+main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle img {
+  width: 88%;
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle img {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle img {
+    width: 100%;
+  }
+}
+main #bestseller .bestsellerProduct .bestsellerProduc_two {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct .bestsellerProduc_two {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct .bestsellerProduc_two img {
+    width: 100%;
+  }
+}
+main #bestseller .bestsellerProduct a {
+  font-size: 25px;
+  color: black;
+  line-height: 1.35em;
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct a {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #bestseller .bestsellerProduct a {
+    font-size: 18px;
+  }
+}
+main #bestseller .bestsellerProduct p {
+  font-size: 15px;
+  font-family: "Hind";
+  color: #7e8427;
+}
+main #bestseller .bestsellerProduct h4 {
+  height: 70px;
+}
+@media only screen and (max-width: 768px) {
+  main #bestseller .bestsellerProduct h4 {
+    height: initial;
+  }
+}
+main #homeCatagory {
+  padding: 0 10px;
+}
+main #homeCatagory .homeCatagoryBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+@media only screen and (max-width: 768px) {
+  main #homeCatagory .homeCatagoryBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item {
+  width: 33.3%;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  main #homeCatagory .homeCatagoryBox .homeCatagory_item {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #homeCatagory .homeCatagoryBox .homeCatagory_item {
+    height: 350px;
+  }
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item img {
+  width: 100%;
+  height: 100%;
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Hind";
+  line-height: 1.25em;
+  color: white;
+}
+@media only screen and (max-width: 990px) {
+  main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
+    font-size: 20px;
+  }
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
+  font-size: 28px;
+  font-weight: 600;
+  font-family: "Hind";
+  line-height: 1.3em;
+  color: white;
+}
+@media only screen and (max-width: 990px) {
+  main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
+    font-size: 40px;
+  }
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info button {
+  border: none;
+  padding: 10px 25px;
+  color: black;
+  background-color: white;
+  text-align: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Lexend Deca";
+  line-height: 30px;
+}
+main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info button:hover {
+  background-color: #7e8427;
+  color: white;
+}
+main #homeGift {
+  background-image: url("../img/bg-03.png");
+  background-position: top center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  padding: 250px 0;
+}
+@media only screen and (max-width: 768px) {
+  main #homeGift {
+    padding: 100px 0;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #homeGift {
+    padding: 10 0px 0;
+    background-size: contain;
+    background-position: center center;
+  }
+}
+main #homeGift .HomeGiftBox {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 25px;
+}
+@media only screen and (max-width: 990px) {
+  main #homeGift .HomeGiftBox {
+    padding-left: 100px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #homeGift .HomeGiftBox {
+    padding-left: 10px;
+  }
+}
+main #homeGift .HomeGiftBox h2 {
+  width: 35%;
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Hind";
+  line-height: 1.3em;
+}
+@media only screen and (max-width: 990px) {
+  main #homeGift .HomeGiftBox h2 {
+    font-size: 45px;
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #homeGift .HomeGiftBox h2 {
+    width: 100%;
+    font-size: 35px;
+  }
+}
+main #homeGift .HomeGiftBox p {
+  width: 37%;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 15px;
+  font-weight: 400;
+  font-family: "Hind";
+  line-height: 1.3em;
+}
+@media only screen and (max-width: 990px) {
+  main #homeGift .HomeGiftBox p {
+    font-size: 16px;
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #homeGift .HomeGiftBox p {
+    font-size: 20px;
+    width: 100%;
+  }
+}
+main #homeGift .HomeGiftBox button {
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+main #homeGift .HomeGiftBox button:hover {
+  background-color: #c89374;
+}
+main #blog {
+  width: 90%;
+  margin: 0 auto;
+}
+main #blog .blog__wrp {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main #blog .blog__wrp {
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+}
+main #blog .blog__wrp .yellow {
+  width: 580px;
+  height: 580px;
+  padding: 60px 70px;
+  background-color: #7e8427;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  main #blog .blog__wrp .yellow {
+    width: 100% !important;
+    height: 100% !important;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #blog .blog__wrp .yellow {
+    width: 500px;
+    height: 500px;
+    padding: 40px 50px;
+  }
+}
+main #blog .blog__wrp .yellow h2 {
+  font-size: 40px;
+  font-weight: 600;
+  font-family: "Hind";
+  line-height: 1.3em;
+}
+@media only screen and (max-width: 990px) {
+  main #blog .blog__wrp .yellow h2 {
+    font-size: 30px;
+  }
+}
+main #blog .blog__wrp .yellow h3 {
+  font-size: 30px;
+  font-weight: 500;
+  font-family: "Hind";
+  line-height: 1.3em;
+}
+main #blog .blog__wrp .yellow p {
+  font-size: 16px;
+  font-weight: 400;
+  font-family: "Hind";
+  line-height: 1.5em;
+  padding: 40px 0 120px;
+  width: 85%;
+}
+@media only screen and (max-width: 990px) {
+  main #blog .blog__wrp .yellow p {
+    width: 100%;
+    padding: 40px 0 80px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #blog .blog__wrp .yellow p {
+    padding: 20px 0 30px;
+  }
+}
+main #blog .blog__wrp .yellow button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  font-size: 14px;
+  font-family: "Lexend Deca";
+  cursor: pointer;
+  transition: opacity 0.3;
+}
+main #blog .blog__wrp .yellow button:hover {
+  opacity: 0.7;
+}
+main #blog .blog__wrp .yellow img {
+  position: absolute;
+  -o-object-fit: cover;
+     object-fit: cover;
+  bottom: 30%;
+  left: 50%;
+  width: 100px;
+  opacity: 0.3;
+}
+main #blog .blog__wrp .blog__item__img {
+  width: 580px;
+  height: 580px;
+}
+@media only screen and (max-width: 768px) {
+  main #blog .blog__wrp .blog__item__img {
+    width: 100% !important;
+    height: 100% !important;
+    text-align: center;
+  }
+}
+main #blog .blog__wrp .blog__item__img img {
+  width: 80%;
+}
+main #favorite {
+  padding-top: 100px;
+}
+@media only screen and (max-width: 990px) {
+  main #favorite {
+    padding-top: 35px;
+  }
+}
+main #favorite h5 {
+  width: 90%;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 20px;
+  line-height: 1.2em;
+  text-transform: uppercase;
+}
+main #favorite .favorite__wrp {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
+  padding-bottom: 100px;
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main #favorite .favorite__wrp {
+    flex-direction: column;
+  }
+}
+main #favorite .favorite__wrp .favorite__item {
+  width: 15%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+}
+@media only screen and (max-width: 768px) {
+  main #favorite .favorite__wrp .favorite__item {
+    width: 60%;
+  }
+}
+main #favorite .favorite__wrp .favorite__item a {
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+}
+main #favorite .favorite__wrp .favorite__item p {
+  width: 180px;
+  color: #7e8427;
+}
+@media only screen and (max-width: 990px) {
+  main #favorite .favorite__wrp .favorite__item p {
+    width: 100px;
+    height: 80px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #favorite .favorite__wrp .favorite__item p {
+    width: 100%;
+    height: inherit;
+  }
+}
+main #favorite .favorite__wrp .favorite__item img {
+  width: 100%;
+  border-radius: 50%;
+}
+main #testimonials {
+  padding: 100px 0;
+  position: relative;
+}
+main #testimonials h2 {
+  width: 90%;
+  margin: 0 auto;
+  font-size: 40px;
+  line-height: 1.2em;
+}
+main #testimonials .elementor-background-overlay {
+  position: absolute;
+  background-image: url("../img/quotation-mark.png");
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: auto;
+  opacity: 0.05;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+main #testimonials .testimonial__wrp {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main #testimonials .testimonial__wrp {
+    flex-direction: column;
+  }
+}
+main #testimonials .testimonial__wrp .testimonial__item {
+  width: 45%;
+  padding: 100px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  z-index: 99;
+}
+@media only screen and (max-width: 768px) {
+  main #testimonials .testimonial__wrp .testimonial__item {
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+  }
+}
+main #testimonials .testimonial__wrp .testimonial__item img {
+  border-radius: 50%;
+}
+main #testimonials .testimonial__wrp .testimonial__item p {
+  font-size: 15px;
+  font-weight: 500;
+  font-family: "Hind";
+  line-height: 1.2em;
+  color: rgba(0, 0, 0, 0.4588235294);
+}
+main #testimonials .testimonial__wrp .testimonial__item h5 {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: "Hind";
+  line-height: 1.2em;
+}
+main #testimonials .testimonial__wrp .testimonial__item .elementor-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+main #testimonials .testimonial__wrp .testimonial__item .elementor-background-quota {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -50px;
+  left: -1000px;
+  opacity: 0.4;
+  font-size: 300px;
+  transition: all 0.3s ease-in-out;
+  color: rgba(0, 0, 0, 0.1411764706);
+}
+main #testimonials .testimonial__wrp .testimonial__item:hover .elementor-background {
+  opacity: 0.4;
+}
+main #testimonials .testimonial__wrp .testimonial__item:hover .elementor-background-quota {
+  left: 50%;
+  overflow: hidden;
+}
+main #testimonials .testimonial__wrp .top-left {
+  border-right: 1px solid rgba(0, 0, 0, 0.1411764706);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+@media only screen and (max-width: 768px) {
+  main #testimonials .testimonial__wrp .top-left {
+    border: none;
+  }
+}
+main #testimonials .testimonial__wrp .bottom-right {
+  border-left: 1px solid rgba(0, 0, 0, 0.1411764706);
+  border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+@media only screen and (max-width: 768px) {
+  main #testimonials .testimonial__wrp .bottom-right {
+    border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+    border-left: none;
+  }
+}
+main #sponsor h5 {
+  text-align: center;
+  font-size: 20px;
+  font-family: "Lexend";
+  font-weight: 500;
+}
+main #sponsor .slideSponsor {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding-top: 20px;
+}
+main #sponsor .slideSponsorTwo {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding-top: 20px;
+}/*# sourceMappingURL=style.css.map */

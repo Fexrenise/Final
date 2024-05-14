@@ -1,0 +1,665 @@
+// @import '../abstract/color';
+
+main {
+    background-color: $color-3;
+
+    #homeOne {
+        width: 100%;
+        height: 90vh;
+        background-image: url('../img/bg-1.jpg');
+
+        @include Mobile() {
+            height: 60vh !important;
+        }
+
+        @include Tablet() {
+            height: 55vh;
+        }
+
+        @include BackGround($repeat: no-repeat, $position: bottom center, $size: cover);
+        @include Flex($flex: flex, $direction: row, $justfyContent: end, $alignItems: center, $gap: 0);
+
+        .productHead {
+            color: $colorWhite;
+            text-align: end;
+            padding-right: 70px;
+            @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: end, $gap: 20px);
+
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+                padding-right: 0;
+            }
+
+            h6 {
+                text-transform: uppercase;
+                @include Font($size: 16px, $weight: 500, $family: "Lexend", $lineHeight: 30px);
+            }
+
+            h1 {
+                @include Font($size: 48px, $weight: 600, $family: '"Lexend",sans-serif', $lineHeight: 60px);
+                width: 70%;
+
+                @include Mobile() {
+                    width: 90%;
+                    text-align: center;
+                    font-size: 40px;
+                    line-height: 40px;
+                }
+
+            }
+
+            p {
+                @include Font($size: 15px, $weight: 400, $family: "Hind", $lineHeight: 30px);
+                width: 45%;
+
+                @include Mobile() {
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            button {
+                @include Button();
+            }
+        }
+    }
+
+    #homeTwo {
+
+        .productInfo {
+            @include Width($width: 90%);
+            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 0);
+            padding: 50px 0 35px 0;
+            border-bottom: 1px solid $color-5;
+
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: column !important, $justfyContent: space-between, $alignItems: start, $gap: 30px);
+                width: 80%;
+            }
+
+            @include Tablet() {
+                @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 20px);
+            }
+
+            .productInfo_text {
+                @include Font($size: 30px, $weight: 600, $family: 'Lexend, sans-serif', $lineHeight: 30px);
+
+                @include Tablet() {
+                    // @include Font($size: 19px, $weight: 500, $family: "Lexend",sans-serif , $lineHeight: 20px);
+
+                }
+
+                width: 40%;
+
+                @include Mobile() {
+                    @include Width($width: 100%);
+                    text-align: center;
+                }
+            }
+
+            .productInfo_img {
+                @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 20px);
+
+                .productInfo_imgItem {
+                    width: 25%;
+                    @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+                    text-align: center;
+
+                    a {
+                        img {
+                            width: 100%;
+                        }
+
+                        color: $color-4;
+                        @include Font($size: 16px, $weight: 600, $family: "Lexend", $lineHeight: 20px);
+                    }
+                }
+            }
+        }
+    }
+
+    #bestseller {
+        padding-top: 100px;
+
+        h1 {
+            @include Width($width: 90%);
+            font-size: 40px;
+        }
+
+        .bestsellerProduct {
+            padding: 20px 0 100px;
+            @include Width();
+            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: column, $justfyContent: space-between, $alignItems: start, $gap: 60px);
+            }
+
+            .bestsellerProduct_one {
+                @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 30px);
+
+                @include Mobile() {
+                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 30px);
+                }
+
+                @include Tablet() {
+                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 30px);
+                }
+
+                flex-wrap: wrap;
+
+                .bestsellerProduc_oneTitle {
+                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
+                    width: 45%;
+
+                    img {
+                        width: 88%;
+
+                        @include Mobile() {
+                            width: 100%;
+                        }
+
+                        @include Tablet() {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
+            .bestsellerProduc_two {
+
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
+
+                @include Mobile() {
+                    width: 100%;
+                }
+
+                // @include Tablet(){
+                //     width: 187%;
+                // }
+                img {
+                    @include Mobile() {
+                        width: 100%;
+                    }
+
+                    // @include Tablet(){
+                    //     width: 53%;
+                    // }
+                }
+
+            }
+
+            a {
+                font-size: 25px;
+                color: $colorBlack;
+                line-height: 1.35em;
+
+                @include Mobile() {
+                    font-size: 15px;
+                }
+
+                @include Tablet() {
+                    font-size: 18px;
+                }
+            }
+
+            p {
+                font-size: 15px;
+                font-family: 'Hind';
+                color: $color-0;
+            }
+
+            h4 {
+                height: 70px;
+
+                @include Mobile() {
+                    height: initial;
+                }
+            }
+        }
+
+    }
+
+    #homeCatagory {
+        padding: 0 10px;
+
+        .homeCatagoryBox {
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+
+            }
+
+            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 10px);
+
+            .homeCatagory_item {
+                width: 33.3%;
+
+                @include Mobile() {
+                    width: 100%;
+                }
+
+
+                @include Tablet() {
+                    height: 350px;
+                }
+
+                position: relative;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .homeCatagory_info {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+
+                    h6 {
+                        @include Font($size: 16px, $weight: 600, $lineHeight: 1.25em);
+                        color: $colorWhite;
+
+                        @include Tablet() {
+                            font-size: 14px;
+                        }
+
+                        @include Mobile() {
+                            font-size: 20px;
+                        }
+                    }
+
+                    h2 {
+
+                        @include Font($size: 28px, $weight: 600, $lineHeight: 1.3em);
+                        color: $colorWhite;
+
+                        @include Tablet() {
+                            font-size: 20px;
+                        }
+
+                        @include Mobile() {
+                            font-size: 40px;
+                        }
+                    }
+
+                    button {
+                        @include Button();
+                    }
+                }
+            }
+        }
+    }
+
+    #homeGift {
+        background-image: url('../img/bg-03.png');
+        background-position: top center;
+        background-repeat: no-repeat;
+        opacity: 1;
+        padding: 250px 0;
+
+        @include Mobile() {
+            padding: 100px 0;
+        }
+
+        @include Tablet() {
+            padding: 10 0px 0;
+            background-size: contain;
+            background-position: center center;
+
+        }
+
+        .HomeGiftBox {
+            @include Width();
+            @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 25px);
+
+            @include Tablet() {
+                padding-left: 100px;
+            }
+
+            @include Mobile() {
+                padding-left: 10px;
+            }
+
+            h2 {
+                width: 35%;
+                @include Font($size: 40px, $weight: 600, $lineHeight: 1.3em);
+
+                @include Tablet() {
+                    font-size: 45px;
+                    width: 45%;
+                }
+
+                @include Mobile() {
+                    width: 100%;
+                    font-size: 35px;
+                }
+            }
+
+            p {
+                width: 37%;
+                color: $color-1;
+                @include Font($size: 15px, $weight: 400, $lineHeight: 1.3em);
+
+                @include Tablet() {
+                    font-size: 16px;
+                    width: 45%;
+                }
+
+                @include Mobile() {
+                    font-size: 20px;
+                    width: 100%;
+                }
+            }
+
+            button {
+                border: none;
+                background-color: $color-0;
+                color: $colorWhite;
+                padding: 17px 27px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+
+                &:hover {
+                    background-color: $color-2;
+                }
+            }
+        }
+    }
+
+    #blog {
+        @include Width();
+
+        .blog__wrp {
+            color: $colorWhite;
+            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 20px);
+
+            @include Mobile() {
+                flex-direction: column-reverse;
+                gap: 0;
+            }
+
+
+            .yellow {
+                width: 580px;
+                height: 580px;
+
+                @include Mobile() {
+                    width: 100% !important;
+                    height: 100% !important;
+                }
+
+                @include Tablet() {
+                    width: 500px;
+                    height: 500px;
+                    padding: 40px 50px;
+                }
+
+                padding: 60px 70px;
+                background-color: $color-0;
+                position: relative;
+
+                h2 {
+                    @include Font($size: 40px, $weight: 600, $lineHeight: 1.3em);
+
+                    @include Tablet() {
+                        font-size: 30px;
+                    }
+                }
+
+                h3 {
+                    @include Font($size: 30px, $weight: 500, $lineHeight: 1.3em);
+                }
+
+                p {
+                    @include Font($size: 16px, $weight: 400, $lineHeight: 1.5em);
+                    padding: 40px 0 120px;
+
+                    width: 85%;
+
+                    @include Tablet() {
+                        width: 100%;
+                        padding: 40px 0 80px;
+                    }
+
+                    @include Mobile() {
+                        padding: 20px 0 30px;
+                    }
+                }
+
+                button {
+                    border: none;
+                    background-color: transparent;
+                    color: $colorWhite;
+                    font-size: 14px;
+                    font-family: 'Lexend Deca';
+                    cursor: pointer;
+                    transition: opacity 0.3;
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
+                }
+
+                img {
+                    position: absolute;
+                    object-fit: cover;
+                    bottom: 30%;
+                    left: 50%;
+                    width: 100px;
+                    opacity: 0.3;
+                }
+            }
+
+            .blog__item__img {
+                width: 580px;
+                height: 580px;
+
+                @include Mobile() {
+                    width: 100% !important;
+                    height: 100% !important;
+                    text-align: center;
+                }
+
+                img {
+                    width: 80%;
+
+                }
+            }
+        }
+    }
+
+    #favorite {
+        padding-top: 100px;
+
+        @include Tablet() {
+            padding-top: 35px;
+        }
+
+        h5 {
+            @include Width();
+            text-align: center;
+            font-size: 20px;
+            line-height: 1.2em;
+            text-transform: uppercase;
+        }
+
+        .favorite__wrp {
+            border-bottom: 1px solid $color-5;
+            padding-bottom: 100px;
+            @include Width();
+            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 20px);
+            padding-top: 20px;
+
+            @include Mobile() {
+                flex-direction: column;
+            }
+
+            .favorite__item {
+                width: 15%;
+
+                @include Mobile() {
+                    width: 60%;
+                }
+
+                @include Flex($flex: flex, $direction: column, $justfyContent: space-between, $alignItems: center, $gap: 20px);
+                text-align: center;
+
+                a {
+                    color: $colorBlack;
+                    font-size: 16px;
+                    font-weight: 700;
+
+                }
+
+                p {
+                    width: 180px;
+                    color: $color-0;
+
+                    @include Tablet() {
+                        width: 100px;
+                        height: 80px;
+                    }
+
+                    @include Mobile() {
+                        width: 100%;
+                        height: inherit;
+                    }
+                }
+
+                img {
+                    width: 100%;
+                    border-radius: 50%;
+                }
+            }
+
+        }
+    }
+
+    #testimonials {
+        padding: 100px 0;
+        position: relative;
+
+        h2 {
+            @include Width();
+            font-size: 40px;
+            line-height: 1.2em;
+        }
+
+        .elementor-background-overlay {
+            position: absolute;
+            background-image: url('../img/quotation-mark.png');
+            background-position: top right;
+            background-repeat: no-repeat;
+            background-size: auto;
+            opacity: .05;
+            height: 100%;
+            width: 100%;
+            top: 0;
+            left: 0;
+            // transition: all .3s, border-radius .3s, opacity .3s;
+        }
+
+        .testimonial__wrp {
+            @include Width();
+            display: flex;
+            flex-wrap: wrap;
+            padding-top: 20px;
+            @include Mobile() {
+                flex-direction: column;
+            }
+
+            .testimonial__item {
+                width: 45%;
+                @include Mobile() {
+                    width: 100%;
+                    border-top: 1px solid $color-5;
+                }
+                padding: 100px;
+                position: relative;
+                overflow: hidden;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+                z-index: 99;
+                img {
+                    border-radius: 50%;
+                }
+
+                p {
+                    @include Font($size: 15px, $weight: 500, $lineHeight: 1.2em);
+                    color: $color-4;
+                }
+
+                h5 {
+                    @include Font($size: 20px, $weight: 600, $lineHeight: 1.2em);
+                }
+                .elementor-background{
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $colorWhite;
+                    opacity: 0;
+                    transition: opacity .3s;
+                }
+                .elementor-background-quota{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: -50px;
+                    left: -1000px;
+                    opacity: 0.4;
+                    font-size: 300px;
+                    transition: all 0.3s ease-in-out;
+                    color: $color-5;
+                }
+                &:hover .elementor-background{
+                    opacity: 0.4;
+                }
+                &:hover .elementor-background-quota{
+                    left: 50%;
+                    overflow: hidden;
+                    
+                }
+            }
+
+            .top-left {
+                border-right: 1px solid $color-5;
+                border-bottom: 1px solid $color-5;
+                @include Mobile() {
+                    
+                    border: none;
+                }
+            }
+
+            .bottom-right {
+                border-left: 1px solid $color-5;
+                border-top: 1px solid $color-5;
+                @include Mobile() {
+                    border-top: 1px solid $color-5;
+                    border-left: none;
+                }
+            }
+        }
+    }
+
+    #sponsor{
+        h5{
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Lexend';
+            font-weight: 500;
+        }
+        .slideSponsor{
+            @include Width();
+            @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: start, $gap: 20px);
+            padding-top: 20px;
+        }
+        .slideSponsorTwo{
+            @include Width();
+            @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: start, $gap: 20px);
+            padding-top: 20px;
+        }
+    }
+}
