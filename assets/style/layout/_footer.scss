@@ -1,0 +1,59 @@
+footer {
+    .quation_border {
+        border-bottom: 1px solid $color-5;
+        .questions {
+            @include Width();
+            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 20px);
+            padding: 50px 0;
+
+            .questions_item_one {
+                width: 70%;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                h2 {
+                    font-size: 40px;
+                    font-family: 'Lexend';
+                    line-height: 1.3em;
+                }
+
+                button {
+                    @include Button2();
+                    font-weight: 700;
+                }
+            }
+
+            .questions_item_two {
+                @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                .questions_info {
+                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                    h5 {
+                        font-size: 20px;
+                        font-weight: 500;
+                        font-family: 'Lexend';
+                        line-height: 1.2em;
+                    }
+
+                    p {
+                        color: $color-4;
+                        width: 100%;
+                    }
+
+                    button {
+                        border: none;
+                        background-color: transparent;
+                        color: $color-0;
+                        font-size: 14px;
+                        font-family: 'Lexend Deca';
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $color-2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

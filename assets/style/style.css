@@ -599,6 +599,7 @@ main #homeGift .HomeGiftBox button {
   padding: 17px 27px;
   cursor: pointer;
   transition: background-color 0.3s;
+  text-transform: capitalize;
 }
 main #homeGift .HomeGiftBox button:hover {
   background-color: #c89374;
@@ -908,20 +909,92 @@ main #sponsor h5 {
 main #sponsor .slider {
   width: 90%;
   margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: start;
-  gap: 20px;
-  padding-top: 20px;
 }
-main #sponsor .slideSponsorTwo {
+main #sponsor .sliderTwo {
+  width: 90%;
+  margin: 0 auto;
+}
+main #BgImg {
+  width: 100%;
+  height: 90vh;
+  background-image: url("../img/bg-002.jpg");
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+footer .quation_border {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+footer .quation_border .questions {
   width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 0;
+}
+footer .quation_border .questions .questions_item_one {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   align-items: start;
   gap: 20px;
-  padding-top: 20px;
+}
+footer .quation_border .questions .questions_item_one h2 {
+  font-size: 40px;
+  font-family: "Lexend";
+  line-height: 1.3em;
+}
+footer .quation_border .questions .questions_item_one button {
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+  font-weight: 700;
+}
+footer .quation_border .questions .questions_item_one button:hover {
+  background-color: #c89374;
+}
+footer .quation_border .questions .questions_item_two {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+footer .quation_border .questions .questions_item_two .questions_info {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+footer .quation_border .questions .questions_item_two .questions_info h5 {
+  font-size: 20px;
+  font-weight: 500;
+  font-family: "Lexend";
+  line-height: 1.2em;
+}
+footer .quation_border .questions .questions_item_two .questions_info p {
+  color: rgba(0, 0, 0, 0.4588235294);
+  width: 100%;
+}
+footer .quation_border .questions .questions_item_two .questions_info button {
+  border: none;
+  background-color: transparent;
+  color: #7e8427;
+  font-size: 14px;
+  font-family: "Lexend Deca";
+  cursor: pointer;
+}
+footer .quation_border .questions .questions_item_two .questions_info button:hover {
+  color: #c89374;
 }/*# sourceMappingURL=style.css.map */

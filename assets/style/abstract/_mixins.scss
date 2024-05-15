@@ -11,7 +11,7 @@
     margin: 0 auto;
 }
 
-@mixin Font($size: 15px, $weight: 500, $family:'Hind',$lineHeight: 30px) {
+@mixin Font($size: 15px, $weight: 500, $family: 'Hind', $lineHeight: 30px) {
     font-size: $size;
     font-weight: $weight;
     font-family: $family;
@@ -26,7 +26,7 @@
     }
 }
 
-@mixin Button {
+@mixin Button() {
     border: none;
     padding: 10px 25px;
     color: $colorBlack;
@@ -38,6 +38,20 @@
     &:hover {
         background-color: $color-0;
         color: $colorWhite;
+    }
+}
+
+@mixin Button2() {
+    border: none;
+    background-color: $color-0;
+    color: $colorWhite;
+    padding: 17px 27px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-transform: capitalize;
+
+    &:hover {
+        background-color: $color-2;
     }
 }
 
