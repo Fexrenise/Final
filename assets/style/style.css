@@ -997,4 +997,63 @@ footer .quation_border .questions .questions_item_two .questions_info button {
 }
 footer .quation_border .questions .questions_item_two .questions_info button:hover {
   color: #c89374;
+}
+footer .quation_border .listBoxes {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 10%;
+  padding: 50px 0;
+}
+footer .quation_border .listBoxes .listBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+footer .quation_border .listBoxes .listBox h5 {
+  font-size: 20px;
+  font-family: "Lexend";
+  line-height: 1.2em;
+  font-weight: 500;
+}
+footer .quation_border .listBoxes .listBox ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 8px;
+}
+footer .quation_border .listBoxes .listBox ul li a {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "Hind";
+}
+footer .quation_border .listBoxes .listBox ul li address {
+  width: 90%;
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.7);
+  font-family: "Hind";
+}
+footer .quation_border .listBoxes .listBox ul li .footer_icon {
+  margin-top: 18%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+footer .quation_border .listBoxes .listBox ul li .footer_icon a i {
+  color: #7e8427;
+  font-size: 18px;
+}
+footer .quation_border .listBoxes .listBox ul li .footer_icon a i:hover {
+  color: #c89374;
+}
+footer .quation_border .listBoxes.listBoxWidht {
+  width: 50%;
 }/*# sourceMappingURL=style.css.map */

@@ -658,6 +658,9 @@ main {
             // @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: start, $gap: 20px);
             // padding-top: 20px;
         }
+        // .slick-slide{
+        //     width: 100px;
+        // }
 
         .sliderTwo {
             @include Width();
