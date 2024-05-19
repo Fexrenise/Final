@@ -11,10 +11,9 @@
     margin: 0 auto;
 }
 
-@mixin Font($size: 15px, $weight: 500, $family: 'Hind', $lineHeight: 30px) {
+@mixin Font($size: 15px, $weight: 500, $lineHeight: 30px) {
     font-size: $size;
     font-weight: $weight;
-    font-family: $family;
     line-height: $lineHeight;
 }
 

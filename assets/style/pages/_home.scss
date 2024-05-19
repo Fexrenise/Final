@@ -10,6 +10,7 @@ main {
 
         @include Mobile() {
             height: 60vh !important;
+            @include Flex($justfyContent: center);
         }
 
         @include Tablet() {
@@ -32,11 +33,11 @@ main {
 
             h6 {
                 text-transform: uppercase;
-                @include Font($size: 16px, $weight: 500, $family: "Lexend", $lineHeight: 30px);
+                @include Font($size: 16px, $weight: 500, $lineHeight: 30px);
             }
 
             h1 {
-                @include Font($size: 48px, $weight: 600, $family: '"Lexend",sans-serif', $lineHeight: 60px);
+                @include Font($size: 48px, $weight: 600, $lineHeight: 60px);
                 width: 70%;
 
                 @include Mobile() {
@@ -49,7 +50,7 @@ main {
             }
 
             p {
-                @include Font($size: 15px, $weight: 400, $family: "Hind", $lineHeight: 30px);
+                @include Font($size: 15px, $weight: 400, $lineHeight: 30px);
                 width: 45%;
 
                 @include Mobile() {
@@ -82,10 +83,10 @@ main {
             }
 
             .productInfo_text {
-                @include Font($size: 30px, $weight: 600, $family: 'Lexend, sans-serif', $lineHeight: 30px);
+                @include Font($size: 30px, $weight: 600, $lineHeight: 30px);
 
                 @include Tablet() {
-                    // @include Font($size: 19px, $weight: 500, $family: "Lexend",sans-serif , $lineHeight: 20px);
+                    @include Font($size: 19px, $weight: 500, $lineHeight: 20px);
 
                 }
 
@@ -111,111 +112,95 @@ main {
                         }
 
                         color: $color-4;
-                        @include Font($size: 16px, $weight: 600, $family: "Lexend", $lineHeight: 20px);
+                        @include Font($size: 16px, $weight: 600, $lineHeight: 20px);
                     }
                 }
             }
         }
+
+
     }
 
     #bestseller {
-        padding-top: 100px;
+        padding: 100px 0;
 
         h1 {
             @include Width($width: 90%);
             font-size: 40px;
         }
-
-        .bestsellerProduct {
-            padding: 20px 0 100px;
-            @include Width();
-            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
-
-            @include Mobile() {
-                @include Flex($flex: flex, $direction: column, $justfyContent: space-between, $alignItems: start, $gap: 60px);
+        .productBest{
+            @include Width($width: 90%);
+            margin-top: 20px;
+            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 20px);
+            @include Mobile(){
+                flex-direction: column;
             }
-
-            .bestsellerProduct_one {
-                @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 30px);
-
-                @include Mobile() {
-                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 30px);
+            .products_one{
+                @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 40px);
+                @include Tablet(){
+                    gap: 20px;
+                    
                 }
-
-                @include Tablet() {
-                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 30px);
-                }
-
-                flex-wrap: wrap;
-
-                .bestsellerProduc_oneTitle {
-                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
-                    width: 45%;
-
-                    img {
-                        width: 88%;
-
-                        @include Mobile() {
-                            width: 100%;
-                        }
-
-                        @include Tablet() {
-                            width: 100%;
-                        }
-                    }
-                }
-            }
-
-            .bestsellerProduc_two {
-
-                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
-
-                @include Mobile() {
+                @include Mobile(){
                     width: 100%;
                 }
-
-                // @include Tablet(){
-                //     width: 187%;
-                // }
-                img {
-                    @include Mobile() {
+                width: 49%;
+                flex-wrap: wrap;
+                
+                .products_one_item{
+                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
+                    width: 44%;
+                    img{
                         width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            .products_two{
+                @include Mobile(){
+                    width: 100%;
+                }
+                width: 49%;
+                .products_two_item{
+                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
+                    width: 98%;
+                    img{
+
+                        width: 100%;
+                        max-height: 670px;
+                        object-fit: cover;
+                    }
+                }
+            }
+            a {
+                        font-size: 25px;
+                        color: $colorBlack;
+                        line-height: 1.2em;
+        
+                        @include Mobile() {
+                            font-size: 15px;
+                        }
+        
+                        @include Tablet() {
+                            font-size: 18px;
+                        }
+                    }
+        
+                    p {
+                        font-size: 15px;
+                        font-family: 'Hind';
+                        color: $color-0;
+                    }
+        
+                    h4 {
+                        // height: 70px;
+        
+                        @include Mobile() {
+                            height: initial;
+                        }
                     }
 
-                    // @include Tablet(){
-                    //     width: 53%;
-                    // }
-                }
-
-            }
-
-            a {
-                font-size: 25px;
-                color: $colorBlack;
-                line-height: 1.35em;
-
-                @include Mobile() {
-                    font-size: 15px;
-                }
-
-                @include Tablet() {
-                    font-size: 18px;
-                }
-            }
-
-            p {
-                font-size: 15px;
-                font-family: 'Hind';
-                color: $color-0;
-            }
-
-            h4 {
-                height: 70px;
-
-                @include Mobile() {
-                    height: initial;
-                }
-            }
         }
 
     }
@@ -362,100 +347,19 @@ main {
     #blog {
         @include Width();
 
-        .blog__wrp {
-            color: $colorWhite;
-            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 20px);
-
-            @include Mobile() {
-                flex-direction: column-reverse;
-                gap: 0;
-            }
-
-
-            .yellow {
-                width: 580px;
-                height: 580px;
-
-                @include Mobile() {
-                    width: 100% !important;
-                    height: 100% !important;
-                }
-
-                @include Tablet() {
-                    width: 500px;
-                    height: 500px;
-                    padding: 40px 50px;
-                }
-
-                padding: 60px 70px;
+        .blog__wrp{
+            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
+            .blog__item_yellow{
                 background-color: $color-0;
-                position: relative;
-
-                h2 {
-                    @include Font($size: 40px, $weight: 600, $lineHeight: 1.3em);
-
-                    @include Tablet() {
-                        font-size: 30px;
-                    }
+                color: $colorWhite;
+                padding: 60px 70px;
+                h2{
+                    @include Font($size: 40px, $weight: 500, $lineHeight: 1.3em);
+                    font-family: 'Lexend', sans-serif;
                 }
-
-                h3 {
+                h3{
                     @include Font($size: 30px, $weight: 500, $lineHeight: 1.3em);
-                }
-
-                p {
-                    @include Font($size: 16px, $weight: 400, $lineHeight: 1.5em);
-                    padding: 40px 0 120px;
-
-                    width: 85%;
-
-                    @include Tablet() {
-                        width: 100%;
-                        padding: 40px 0 80px;
-                    }
-
-                    @include Mobile() {
-                        padding: 20px 0 30px;
-                    }
-                }
-
-                button {
-                    border: none;
-                    background-color: transparent;
-                    color: $colorWhite;
-                    font-size: 14px;
-                    font-family: 'Lexend Deca';
-                    cursor: pointer;
-                    transition: opacity 0.3;
-
-                    &:hover {
-                        opacity: 0.7;
-                    }
-                }
-
-                img {
-                    position: absolute;
-                    object-fit: cover;
-                    bottom: 30%;
-                    left: 50%;
-                    width: 100px;
-                    opacity: 0.3;
-                }
-            }
-
-            .blog__item__img {
-                width: 580px;
-                height: 580px;
-
-                @include Mobile() {
-                    width: 100% !important;
-                    height: 100% !important;
-                    text-align: center;
-                }
-
-                img {
-                    width: 80%;
-
+                    font-family: 'Lexend', sans-serif;
                 }
             }
         }

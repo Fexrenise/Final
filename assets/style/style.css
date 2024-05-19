@@ -150,6 +150,11 @@ main #homeOne {
 @media only screen and (max-width: 768px) {
   main #homeOne {
     height: 60vh !important;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
   }
 }
 @media only screen and (max-width: 990px) {
@@ -299,121 +304,105 @@ main #homeTwo .productInfo .productInfo_img .productInfo_imgItem a img {
   width: 100%;
 }
 main #bestseller {
-  padding-top: 100px;
+  padding: 100px 0;
 }
 main #bestseller h1 {
   width: 90%;
   margin: 0 auto;
   font-size: 40px;
 }
-main #bestseller .bestsellerProduct {
-  padding: 20px 0 100px;
+main #bestseller .productBest {
   width: 90%;
   margin: 0 auto;
+  margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: start;
   gap: 20px;
 }
 @media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct {
-    display: flex;
+  main #bestseller .productBest {
     flex-direction: column;
-    justify-content: space-between;
-    align-items: start;
-    gap: 60px;
   }
 }
-main #bestseller .bestsellerProduct .bestsellerProduct_one {
+main #bestseller .productBest .products_one {
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: start;
-  gap: 30px;
+  gap: 40px;
+  width: 49%;
   flex-wrap: wrap;
 }
-@media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct .bestsellerProduct_one {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    gap: 30px;
-  }
-}
 @media only screen and (max-width: 990px) {
-  main #bestseller .bestsellerProduct .bestsellerProduct_one {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: start;
-    gap: 30px;
+  main #bestseller .productBest .products_one {
+    gap: 20px;
   }
 }
-main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle {
+@media only screen and (max-width: 768px) {
+  main #bestseller .productBest .products_one {
+    width: 100%;
+  }
+}
+main #bestseller .productBest .products_one .products_one_item {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 10px;
-  width: 45%;
+  width: 44%;
 }
-main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle img {
-  width: 88%;
+main #bestseller .productBest .products_one .products_one_item img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main #bestseller .productBest .products_two {
+  width: 49%;
 }
 @media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle img {
+  main #bestseller .productBest .products_two {
     width: 100%;
   }
 }
-@media only screen and (max-width: 990px) {
-  main #bestseller .bestsellerProduct .bestsellerProduct_one .bestsellerProduc_oneTitle img {
-    width: 100%;
-  }
-}
-main #bestseller .bestsellerProduct .bestsellerProduc_two {
+main #bestseller .productBest .products_two .products_two_item {
   display: flex;
   flex-direction: column;
   justify-content: start;
   align-items: start;
   gap: 10px;
+  width: 98%;
 }
-@media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct .bestsellerProduc_two {
-    width: 100%;
-  }
+main #bestseller .productBest .products_two .products_two_item img {
+  width: 100%;
+  max-height: 670px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
-@media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct .bestsellerProduc_two img {
-    width: 100%;
-  }
-}
-main #bestseller .bestsellerProduct a {
+main #bestseller .productBest a {
   font-size: 25px;
   color: black;
-  line-height: 1.35em;
+  line-height: 1.2em;
 }
 @media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct a {
+  main #bestseller .productBest a {
     font-size: 15px;
   }
 }
 @media only screen and (max-width: 990px) {
-  main #bestseller .bestsellerProduct a {
+  main #bestseller .productBest a {
     font-size: 18px;
   }
 }
-main #bestseller .bestsellerProduct p {
+main #bestseller .productBest p {
   font-size: 15px;
   font-family: "Hind";
   color: #7e8427;
 }
-main #bestseller .bestsellerProduct h4 {
-  height: 70px;
-}
 @media only screen and (max-width: 768px) {
-  main #bestseller .bestsellerProduct h4 {
+  main #bestseller .productBest h4 {
     height: initial;
   }
 }
@@ -609,109 +598,22 @@ main #blog {
   margin: 0 auto;
 }
 main #blog .blog__wrp {
-  color: white;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: start;
   align-items: start;
   gap: 20px;
 }
-@media only screen and (max-width: 768px) {
-  main #blog .blog__wrp {
-    flex-direction: column-reverse;
-    gap: 0;
-  }
-}
-main #blog .blog__wrp .yellow {
-  width: 580px;
-  height: 580px;
-  padding: 60px 70px;
+main #blog .blog__wrp .blog__item_yellow {
   background-color: #7e8427;
-  position: relative;
+  color: white;
+  padding: 60px 70px;
 }
-@media only screen and (max-width: 768px) {
-  main #blog .blog__wrp .yellow {
-    width: 100% !important;
-    height: 100% !important;
-  }
-}
-@media only screen and (max-width: 990px) {
-  main #blog .blog__wrp .yellow {
-    width: 500px;
-    height: 500px;
-    padding: 40px 50px;
-  }
-}
-main #blog .blog__wrp .yellow h2 {
-  font-size: 40px;
+main #blog .blog__wrp .blog__item_yellow h2 {
+  font-size: 30px;
   font-weight: 600;
   font-family: "Hind";
   line-height: 1.3em;
-}
-@media only screen and (max-width: 990px) {
-  main #blog .blog__wrp .yellow h2 {
-    font-size: 30px;
-  }
-}
-main #blog .blog__wrp .yellow h3 {
-  font-size: 30px;
-  font-weight: 500;
-  font-family: "Hind";
-  line-height: 1.3em;
-}
-main #blog .blog__wrp .yellow p {
-  font-size: 16px;
-  font-weight: 400;
-  font-family: "Hind";
-  line-height: 1.5em;
-  padding: 40px 0 120px;
-  width: 85%;
-}
-@media only screen and (max-width: 990px) {
-  main #blog .blog__wrp .yellow p {
-    width: 100%;
-    padding: 40px 0 80px;
-  }
-}
-@media only screen and (max-width: 768px) {
-  main #blog .blog__wrp .yellow p {
-    padding: 20px 0 30px;
-  }
-}
-main #blog .blog__wrp .yellow button {
-  border: none;
-  background-color: transparent;
-  color: white;
-  font-size: 14px;
-  font-family: "Lexend Deca";
-  cursor: pointer;
-  transition: opacity 0.3;
-}
-main #blog .blog__wrp .yellow button:hover {
-  opacity: 0.7;
-}
-main #blog .blog__wrp .yellow img {
-  position: absolute;
-  -o-object-fit: cover;
-     object-fit: cover;
-  bottom: 30%;
-  left: 50%;
-  width: 100px;
-  opacity: 0.3;
-}
-main #blog .blog__wrp .blog__item__img {
-  width: 580px;
-  height: 580px;
-}
-@media only screen and (max-width: 768px) {
-  main #blog .blog__wrp .blog__item__img {
-    width: 100% !important;
-    height: 100% !important;
-    text-align: center;
-  }
-}
-main #blog .blog__wrp .blog__item__img img {
-  width: 80%;
 }
 main #favorite {
   padding-top: 100px;
@@ -1005,7 +907,7 @@ footer .quation_border .listBoxes {
   flex-direction: row;
   justify-content: start;
   align-items: start;
-  gap: 10%;
+  gap: 2%;
   padding: 50px 0;
 }
 footer .quation_border .listBoxes .listBox {
@@ -1014,6 +916,7 @@ footer .quation_border .listBoxes .listBox {
   justify-content: start;
   align-items: start;
   gap: 20px;
+  width: 20%;
 }
 footer .quation_border .listBoxes .listBox h5 {
   font-size: 20px;
@@ -1054,6 +957,34 @@ footer .quation_border .listBoxes .listBox ul li .footer_icon a i {
 footer .quation_border .listBoxes .listBox ul li .footer_icon a i:hover {
   color: #c89374;
 }
-footer .quation_border .listBoxes.listBoxWidht {
-  width: 50%;
+footer .quation_border .listBoxes .listBox ul li input {
+  width: 350px;
+  padding: 15px 12px;
+  border: 1px solid #dddddd;
+}
+footer .quation_border .listBoxes .listBox ul li button {
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+  font-size: 15px;
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  margin-top: 20px;
+}
+footer .quation_border .listBoxes .listBox ul li button:hover {
+  background-color: #c89374;
+}
+footer .copyright {
+  width: 90%;
+  margin: 0 auto;
+  padding: 40px 0;
+}
+footer .copyright p {
+  color: rgba(59, 59, 59, 0.6);
+  font-size: 15px;
+  font-family: "Hind";
 }/*# sourceMappingURL=style.css.map */

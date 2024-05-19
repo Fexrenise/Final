@@ -59,11 +59,12 @@ footer {
     .quation_border{
         .listBoxes{
             @include Width();
-            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 10%);
+            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 2%);
             padding: 50px 0;
             
             .listBox{
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+                width: 20%;
                 h5{
                     font-size: 20px;
                     font-family: 'Lexend';
@@ -97,15 +98,35 @@ footer {
                                 }
                             }
                         }
+                        input{
+                            width: 350px;
+                            padding: 15px 12px;
+                            border: 1px solid #dddddd;
+                        }
+                        button{
+                            @include Button2();
+                            font-size: 15px;
+                            font-family: 'Lexend Deca',sans-serif;
+                            font-weight: 400;
+                            margin-top: 20px;
+                        }
+                        
                         
                         
                     }
                 }
             }
-            &.listBoxWidht{
-                width: 50%;
-            }
             
+        }
+    }
+
+    .copyright{
+        @include Width();
+        padding: 40px 0;
+        p{
+            color: rgba(59, 59, 59, 0.6);
+            font-size: 15px;
+            font-family: 'Hind';
         }
     }
 }
