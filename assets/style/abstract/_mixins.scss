@@ -11,7 +11,7 @@
     margin: 0 auto;
 }
 
-@mixin Font($size: 15px, $weight: 500, $lineHeight: 30px) {
+@mixin Font($size: 15px,$weight: 500, $lineHeight: 30px) {
     font-size: $size;
     font-weight: $weight;
     line-height: $lineHeight;
@@ -32,7 +32,7 @@
     background-color: $colorWhite;
     text-align: center;
     cursor: pointer;
-    @include Font($size: 14px, $weight: 500, $family: "Lexend Deca", $lineHeight: 30px);
+    @include Font($size: 14px, $weight: 500, $lineHeight: 30px);
 
     &:hover {
         background-color: $color-0;

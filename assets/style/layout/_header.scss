@@ -20,9 +20,9 @@ header {
 
             li {
                 a {
-                    // @include Font($size: 18px, $weight: 400, $lineHeight: 30px);
+                    @include Font($size: 18px, $weight: 400, $lineHeight: 30px);
                     @include Tablet(){
-                        // @include Font($size: 14px, $weight: 400, $lineHeight: 30px);
+                        @include Font($size: 14px, $weight: 400, $lineHeight: 30px);
                     }
                     color: $color-1;
 
@@ -64,7 +64,7 @@ header {
 
                 bdi {
                     color: $color-0;
-                    // @include Font($size: 15px, $weight: 700, $lineHeight: 30px);
+                    @include Font($size: 15px, $weight: 700, $lineHeight: 30px);
                 }
 
                 .cart {

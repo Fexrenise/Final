@@ -48,7 +48,6 @@ header .navBar .navList {
 header .navBar .navList li a {
   font-size: 18px;
   font-weight: 400;
-  font-family: "Hind";
   line-height: 30px;
   color: rgba(0, 0, 0, 0.7);
 }
@@ -56,7 +55,6 @@ header .navBar .navList li a {
   header .navBar .navList li a {
     font-size: 14px;
     font-weight: 400;
-    font-family: "Hind";
     line-height: 30px;
   }
 }
@@ -108,7 +106,6 @@ header .navBar .cartBar .shop bdi {
   color: #7e8427;
   font-size: 15px;
   font-weight: 700;
-  font-family: "Hind";
   line-height: 30px;
 }
 header .navBar .cartBar .shop .cart i {
@@ -186,13 +183,11 @@ main #homeOne .productHead h6 {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
-  font-family: "Lexend";
   line-height: 30px;
 }
 main #homeOne .productHead h1 {
   font-size: 48px;
   font-weight: 600;
-  font-family: '"Lexend",sans-serif';
   line-height: 60px;
   width: 70%;
 }
@@ -207,7 +202,6 @@ main #homeOne .productHead h1 {
 main #homeOne .productHead p {
   font-size: 15px;
   font-weight: 400;
-  font-family: "Hind";
   line-height: 30px;
   width: 45%;
 }
@@ -226,7 +220,6 @@ main #homeOne .productHead button {
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Lexend Deca";
   line-height: 30px;
 }
 main #homeOne .productHead button:hover {
@@ -266,9 +259,15 @@ main #homeTwo .productInfo {
 main #homeTwo .productInfo .productInfo_text {
   font-size: 30px;
   font-weight: 600;
-  font-family: "Lexend, sans-serif";
   line-height: 30px;
   width: 40%;
+}
+@media only screen and (max-width: 990px) {
+  main #homeTwo .productInfo .productInfo_text {
+    font-size: 19px;
+    font-weight: 500;
+    line-height: 20px;
+  }
 }
 @media only screen and (max-width: 768px) {
   main #homeTwo .productInfo .productInfo_text {
@@ -297,7 +296,6 @@ main #homeTwo .productInfo .productInfo_img .productInfo_imgItem a {
   color: rgba(0, 0, 0, 0.4588235294);
   font-size: 16px;
   font-weight: 600;
-  font-family: "Lexend";
   line-height: 20px;
 }
 main #homeTwo .productInfo .productInfo_img .productInfo_imgItem a img {
@@ -457,7 +455,6 @@ main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info {
 main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
   font-size: 16px;
   font-weight: 600;
-  font-family: "Hind";
   line-height: 1.25em;
   color: white;
 }
@@ -474,7 +471,6 @@ main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
 main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
   font-size: 28px;
   font-weight: 600;
-  font-family: "Hind";
   line-height: 1.3em;
   color: white;
 }
@@ -497,7 +493,6 @@ main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info button
   cursor: pointer;
   font-size: 14px;
   font-weight: 500;
-  font-family: "Lexend Deca";
   line-height: 30px;
 }
 main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info button:hover {
@@ -546,7 +541,6 @@ main #homeGift .HomeGiftBox h2 {
   width: 35%;
   font-size: 40px;
   font-weight: 600;
-  font-family: "Hind";
   line-height: 1.3em;
 }
 @media only screen and (max-width: 990px) {
@@ -566,7 +560,6 @@ main #homeGift .HomeGiftBox p {
   color: rgba(0, 0, 0, 0.7);
   font-size: 15px;
   font-weight: 400;
-  font-family: "Hind";
   line-height: 1.3em;
 }
 @media only screen and (max-width: 990px) {
@@ -610,10 +603,16 @@ main #blog .blog__wrp .blog__item_yellow {
   padding: 60px 70px;
 }
 main #blog .blog__wrp .blog__item_yellow h2 {
-  font-size: 30px;
-  font-weight: 600;
-  font-family: "Hind";
+  font-size: 40px;
+  font-weight: 500;
   line-height: 1.3em;
+  font-family: "Lexend", sans-serif;
+}
+main #blog .blog__wrp .blog__item_yellow h3 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3em;
+  font-family: "Lexend", sans-serif;
 }
 main #favorite {
   padding-top: 100px;
@@ -745,14 +744,12 @@ main #testimonials .testimonial__wrp .testimonial__item img {
 main #testimonials .testimonial__wrp .testimonial__item p {
   font-size: 15px;
   font-weight: 500;
-  font-family: "Hind";
   line-height: 1.2em;
   color: rgba(0, 0, 0, 0.4588235294);
 }
 main #testimonials .testimonial__wrp .testimonial__item h5 {
   font-size: 20px;
   font-weight: 600;
-  font-family: "Hind";
   line-height: 1.2em;
 }
 main #testimonials .testimonial__wrp .testimonial__item .elementor-background {
