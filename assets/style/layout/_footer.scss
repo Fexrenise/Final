@@ -5,15 +5,23 @@ footer {
             @include Width();
             @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 20px);
             padding: 50px 0;
-
+            @include Mobile(){
+                @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+            }
             .questions_item_one {
                 width: 70%;
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
-
+                @include Mobile(){
+                    width: 100%;
+                    @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+                }
                 h2 {
                     font-size: 40px;
                     font-family: 'Lexend';
                     line-height: 1.3em;
+                    @include Mobile(){
+                        font-size: 30px;
+                    }
                 }
 
                 button {
@@ -24,10 +32,15 @@ footer {
 
             .questions_item_two {
                 @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
-
+                @include Mobile(){
+                    @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+                }
                 .questions_info {
                     @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
-
+                    @include Mobile(){
+                        text-align: center;
+                        @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+                    }
                     h5 {
                         font-size: 20px;
                         font-weight: 500;
@@ -38,6 +51,9 @@ footer {
                     p {
                         color: $color-4;
                         width: 100%;
+                        @include Mobile(){
+                            width: 80%;
+                        }
                     }
 
                     button {
@@ -61,21 +77,55 @@ footer {
             @include Width();
             @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 2%);
             padding: 50px 0;
-            
+           
+            @include Tablet(){
+                flex-wrap: wrap;
+                gap: 25%;
+            }
+            @include Mobile(){
+                flex-wrap: wrap;
+                gap: 4%;
+            }
+            &:nth-child(3){
+                @include Mobile(){
+                    width: 100%;
+                };
+            }
             .listBox{
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
                 width: 20%;
+                @include Mobile(){
+                    width: 48%;
+                }
+                &:nth-child(3){
+                    @include Mobile(){
+                        width: 100%;
+                    };
+                }
                 h5{
                     font-size: 20px;
+                    @include Mobile(){
+                        font-size: 18px;
+                    };
                     font-family: 'Lexend';
                     line-height: 1.2em;
                     font-weight: 500;
                 }
                 ul{
                     @include Flex($direction: column,$justfyContent: start, $alignItems: start, $gap: 8px);
+                    @include Mobile(){
+                        gap: 5px;
+                        margin-bottom: 30px;
+                    }
+                    @include Tablet(){
+                        margin-bottom: 40px;
+                    }
                     li{
                         a{
                             font-size: 15px;
+                            @include Mobile(){
+                                font-size: 13px;
+                            };
                             color: $color-1;
                             font-family: 'Hind';
                         }
@@ -84,6 +134,9 @@ footer {
                             font-size: 15px;
                             color: $color-1;
                             font-family: 'Hind';
+                            @include Mobile(){
+                                width: 100%;
+                            }
                         }
                         .footer_icon{
                             margin-top: 18%;
@@ -100,6 +153,9 @@ footer {
                         }
                         input{
                             width: 350px;
+                            @include Mobile(){
+                                width: 250px;
+                            }
                             padding: 15px 12px;
                             border: 1px solid #dddddd;
                         }
