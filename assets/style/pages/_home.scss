@@ -368,7 +368,6 @@ main {
         @include Width();
         padding-bottom: 100px;
 
-
         .blog__wrp {
             @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 0px);
 

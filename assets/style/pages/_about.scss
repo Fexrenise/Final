@@ -1,0 +1,118 @@
+main {
+    
+
+    #head {
+        background-image: url('../img/bg-005.jpg');
+        background-color: $colorWhite;
+        width: 100%;
+        height: 80vh;
+        @include BackGround();
+        position: relative;
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            h1 {
+                color: $colorWhite;
+                @include Font($size: 50px, $weight: 600, $lineHeight: 1.4em);
+                font-family: 'Lexend', sans-serif;
+            }
+        }
+    }
+
+    #productInfo {
+        background-color: $colorWhite;
+        background-image: url('../img/bg-004.png');
+        width: 100%;
+        @include BackGround($repeat: no-repeat, $position: top center, $size: contain);
+
+        .productinfo {
+            @include Width($width: 90% !important);
+            @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 100px);
+
+            .productTitle {
+                padding-top: 100px;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                h6 {
+                    @include Font($size: 18px, $weight: 500, $lineHeight: 1rem);
+                    font-family: 'Lexend', sans-serif;
+                }
+
+                h2 {
+                    width: 65%;
+                    color: $color-0;
+                    @include Font($size: 35px, $weight: 500, $lineHeight: 1.3em);
+                    font-family: 'Lexend', sans-serif;
+
+                }
+            }
+
+            .productDesc {
+                @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 20px);
+
+                .descTitle {
+                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                    h3 {
+                        width: 60%;
+                        @include Font($size: 32px, $weight: 500, $lineHeight: 1.3em);
+                        font-family: 'Lexend', sans-serif;
+                    }
+
+                    h6 {
+                        color: $color-0;
+                        @include Font($size: 18px, $weight: 500, $lineHeight: 1rem);
+                        font-family: 'Lexend', sans-serif;
+                    }
+                }
+
+                .descInfo {
+                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                    h5 {
+                        @include Font($size: 20px, $weight: 500, $lineHeight: 1.3em);
+                        font-family: 'Lexend', sans-serif;
+                    }
+
+                    p {
+                        color: $color-4;
+                        @include Font($size: 15px, $weight: 500, $lineHeight: 2em);
+                        font-family: 'Hind', sans-serif;
+                    }
+                }
+            }
+
+            .descFooter {
+                padding-bottom: 70px;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+                h3 {
+                    width: 70%;
+                    @include Font($size: 30px, $weight: 500, $lineHeight: 1.3em);
+                    font-family: 'Lexend', sans-serif;
+                }
+                .line{
+                    background-color: $colorBlack;
+                    width: 5%;
+                    height: 2px;
+                }
+            }
+        }
+    }
+
+    #BgImgTwo{
+        width: 100%;
+        height: 100vh;
+        background-image: url('../img/bg-06.jpg');
+        background-position: bottom center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+
+}
