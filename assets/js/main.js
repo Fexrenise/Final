@@ -1,3 +1,21 @@
+// let navActive = document.querySelectorAll('.navList li a');
+// navActive.forEach((item)=>{
+    
+//     item.addEventListener('click', ()=>{
+//         console.log(item);
+//         navActive.forEach((item)=>{
+//             item.classList.remove('active');
+//         })
+        
+//         item.classList.add('active');
+//     })
+// })
+
+
+
+
+
+
 // document.addEventListener("DOMContentLoaded", function() {
 //     const sliderWrapper = document.querySelector('.sponsorOne');
 //     const slides = document.querySelectorAll('.sponsorOne img');

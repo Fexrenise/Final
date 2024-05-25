@@ -13,6 +13,10 @@ ul {
   list-style: none;
 }
 
+body {
+  font-family: "Lexend", sans-serif;
+}
+
 header .navBar {
   padding: 0 35px;
   display: flex;
