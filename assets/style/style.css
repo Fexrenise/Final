@@ -1217,11 +1217,11 @@ footer .copyright p {
   font-family: "Hind";
 }
 
-#bodyPage .container {
-  width: 90%;
+#page .container {
+  width: 95%;
   margin: 0 auto;
 }
-#bodyPage .container .bodyProduct_info {
+#page .container .info {
   padding: 70px 0;
   display: flex;
   flex-direction: column;
@@ -1229,28 +1229,28 @@ footer .copyright p {
   align-items: start;
   gap: 50px;
 }
-#bodyPage .container .bodyProduct_info nav a {
+#page .container .info nav a {
   font-size: 0.92em;
   font-weight: 500;
   line-height: 30px;
   font-family: "Hind", sans-serif;
   color: #777;
 }
-#bodyPage .container .bodyProduct_info h1 {
+#page .container .info h1 {
   font-size: 3.3rem;
   font-weight: 400;
   line-height: 1.4em;
   font-family: "Lexend", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
-#bodyPage .container .bodyProduct_info p {
+#page .container .info p {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.4em;
   font-family: "Hind", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
-#bodyPage .container .bodyProduct_product {
+#page .container .products {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1259,7 +1259,7 @@ footer .copyright p {
   flex-wrap: wrap;
   padding-bottom: 100px;
 }
-#bodyPage .container .bodyProduct_product .bodyProduct_item {
+#page .container .products .product {
   width: 21%;
   display: flex;
   flex-direction: column;
@@ -1267,13 +1267,13 @@ footer .copyright p {
   align-items: start;
   gap: 10px;
 }
-#bodyPage .container .bodyProduct_product .bodyProduct_item img {
+#page .container .products .product img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-#bodyPage .container .bodyProduct_product .bodyProduct_item p {
+#page .container .products .product p {
   font-size: 0.85em;
   font-weight: 400;
   line-height: 1.4em;
@@ -1281,248 +1281,14 @@ footer .copyright p {
   color: rgba(0, 0, 0, 0.7);
   opacity: 0.6;
 }
-#bodyPage .container .bodyProduct_product .bodyProduct_item a h2 {
+#page .container .products .product a h2 {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.3em;
   font-family: "Lexend", sans-serif;
   color: black;
 }
-#bodyPage .container .bodyProduct_product .bodyProduct_item span {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-}
-
-#hairPage .container {
-  width: 90%;
-  margin: 0 auto;
-}
-#hairPage .container .hairProduct_info {
-  padding: 70px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 50px;
-}
-#hairPage .container .hairProduct_info nav a {
-  font-size: 0.92em;
-  font-weight: 500;
-  line-height: 30px;
-  font-family: "Hind", sans-serif;
-  color: #777;
-}
-#hairPage .container .hairProduct_info h1 {
-  font-size: 3.3rem;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Lexend", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-}
-#hairPage .container .hairProduct_info p {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-}
-#hairPage .container .hairProduct_product {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding-bottom: 100px;
-}
-#hairPage .container .hairProduct_product .hairProduct_item {
-  width: 21%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 10px;
-}
-#hairPage .container .hairProduct_product .hairProduct_item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#hairPage .container .hairProduct_product .hairProduct_item p {
-  font-size: 0.85em;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-  opacity: 0.6;
-}
-#hairPage .container .hairProduct_product .hairProduct_item a h2 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.3em;
-  font-family: "Lexend", sans-serif;
-  color: black;
-}
-#hairPage .container .hairProduct_product .hairProduct_item span {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-}
-
-#skinPage .container {
-  width: 90%;
-  margin: 0 auto;
-}
-#skinPage .container .skinProduct_info {
-  padding: 70px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 50px;
-}
-#skinPage .container .skinProduct_info nav a {
-  font-size: 0.92em;
-  font-weight: 500;
-  line-height: 30px;
-  font-family: "Hind", sans-serif;
-  color: #777;
-}
-#skinPage .container .skinProduct_info h1 {
-  font-size: 3.3rem;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Lexend", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-}
-#skinPage .container .skinProduct_info p {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-}
-#skinPage .container .skinProduct_product {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding-bottom: 100px;
-}
-#skinPage .container .skinProduct_product .skinProduct_item {
-  width: 21%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 10px;
-}
-#skinPage .container .skinProduct_product .skinProduct_item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#skinPage .container .skinProduct_product .skinProduct_item p {
-  font-size: 0.85em;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-  opacity: 0.6;
-}
-#skinPage .container .skinProduct_product .skinProduct_item a h2 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.3em;
-  font-family: "Lexend", sans-serif;
-  color: black;
-}
-#skinPage .container .skinProduct_product .skinProduct_item span {
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-}
-
-#giftPage .container {
-  width: 90%;
-  margin: 0 auto;
-}
-#giftPage .container .giftProduct_info {
-  padding: 70px 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 50px;
-}
-#giftPage .container .giftProduct_info nav a {
-  font-size: 0.92em;
-  font-weight: 500;
-  line-height: 30px;
-  font-family: "Hind", sans-serif;
-  color: #777;
-}
-#giftPage .container .giftProduct_info h1 {
-  font-size: 3.3rem;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Lexend", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-}
-#giftPage .container .giftProduct_info p {
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-}
-#giftPage .container .giftProduct_product {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: start;
-  gap: 50px;
-  flex-wrap: wrap;
-  padding-bottom: 100px;
-}
-#giftPage .container .giftProduct_product .giftProduct_item {
-  width: 21%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-  gap: 10px;
-}
-#giftPage .container .giftProduct_product .giftProduct_item img {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-#giftPage .container .giftProduct_product .giftProduct_item p {
-  font-size: 0.85em;
-  font-weight: 400;
-  line-height: 1.4em;
-  font-family: "Hind", sans-serif;
-  color: rgba(0, 0, 0, 0.7);
-  opacity: 0.6;
-}
-#giftPage .container .giftProduct_product .giftProduct_item a h2 {
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 1.3em;
-  font-family: "Lexend", sans-serif;
-  color: black;
-}
-#giftPage .container .giftProduct_product .giftProduct_item span {
+#page .container .products .product span {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4em;

@@ -1,35 +1,49 @@
-// let navActive = document.querySelectorAll('.navList li a');
-// navActive.forEach((item)=>{
-    
-//     item.addEventListener('click', ()=>{
-//         console.log(item);
-//         navActive.forEach((item)=>{
-//             item.classList.remove('active');
-//         })
-        
-//         item.classList.add('active');
-//     })
-// })
+const navLinks = document.querySelectorAll('.navList li a');
+const currentPath = window.location.pathname;
+
+navLinks.forEach(link => {
+    if (link.pathname === currentPath) {
+        link.classList.add('active');
+    }
+});
+
+const body = document.querySelector('.products');
+const pathToCategoryId = {
+    '/body.html': 1,
+    '/hair.html': 2,
+    '/skin.html': 3,
+    '/gifts.html': 4,
+};
+
+fetch('../../db/product.json')
+    .then((res) => res.json())
+    .then((data) => {
+        data.forEach((item) => {
+            if (item.categoryId === pathToCategoryId[currentPath]) {
+                const productItem = document.createElement('div');
+                body.appendChild(productItem);
+                productItem.classList.add('product');
+                const img = document.createElement('img');
+                img.src = `./assets/img/${item.url}`;
+                productItem.appendChild(img);
+                let catagory = document.createElement('p');
+                productItem.appendChild(catagory);
+                catagory.classList.add('catagory');
+                catagory.textContent = item.catagory;
+                let link = document.createElement('a');
+                productItem.appendChild(link);
+                link.style.cursor = 'pointer'
+                let productName = document.createElement('h2');
+                link.appendChild(productName);
+                productName.textContent = item.name;
+                let price = document.createElement('span');
+                productItem.appendChild(price);
+                price.classList.add('price');
+                price.textContent = `$${item.price}`
+            }
+        })
+    })
 
 
 
 
-
-
-// document.addEventListener("DOMContentLoaded", function() {
-//     const sliderWrapper = document.querySelector('.sponsorOne');
-//     const slides = document.querySelectorAll('.sponsorOne img');
-//     const totalSlides = slides.length;
-//     let currentIndex = 0;
-  
-//     function showNextSlide() {
-//       currentIndex++;
-//       console.log(currentIndex );
-//       if (currentIndex > totalSlides - 4) { // Loop back to the start
-//         currentIndex = 0;
-//       }
-//       slides.style.transform = `translateX(-${currentIndex * 25}%)`;
-//     }
-  
-//     setInterval(showNextSlide, 1000);
-//   });

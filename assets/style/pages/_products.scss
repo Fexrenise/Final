@@ -1,7 +1,7 @@
-#giftPage{
+#page{
     .container{
-        @include Width($width: 90%);
-        .giftProduct_info{
+        @include Width($width: 95%);
+        .info{
             padding: 70px 0;
             @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 50px);
             nav{
@@ -22,11 +22,11 @@
                 color: $color-1;
             }
         }
-        .giftProduct_product{
+        .products{
             @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap:50px);
             flex-wrap: wrap;
             padding-bottom: 100px;
-            .giftProduct_item{
+            .product{
                 width: 21%;
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
                 img{
