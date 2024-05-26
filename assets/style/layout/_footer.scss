@@ -22,6 +22,9 @@ footer {
                     @include Mobile(){
                         font-size: 30px;
                     }
+                    @include Tablet(){
+                        font-size: 30px;
+                    }
                 }
 
                 button {

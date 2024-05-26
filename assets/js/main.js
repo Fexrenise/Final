@@ -1,3 +1,4 @@
+// her seyfeye kecid etdikde navin active clasii deyisir
 const navLinks = document.querySelectorAll('.navList li a');
 const currentPath = window.location.pathname;
 
@@ -6,7 +7,7 @@ navLinks.forEach(link => {
         link.classList.add('active');
     }
 });
-
+// productlari bize cixarir
 const body = document.querySelector('.products');
 const pathToCategoryId = {
     '/body.html': 1,

@@ -838,13 +838,14 @@ main #testimonials .testimonial__wrp {
 }
 main #testimonials .testimonial__wrp .testimonial__item {
   width: 45%;
-  padding: 100px;
+  padding: 100px 50px;
+  text-align: center;
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: start;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   z-index: 99;
 }
@@ -852,13 +853,14 @@ main #testimonials .testimonial__wrp .testimonial__item {
   main #testimonials .testimonial__wrp .testimonial__item {
     width: 100%;
     border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+    padding: 100px 0px;
   }
 }
 main #testimonials .testimonial__wrp .testimonial__item img {
   border-radius: 50%;
 }
 main #testimonials .testimonial__wrp .testimonial__item p {
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.2em;
   color: rgba(0, 0, 0, 0.4588235294);
@@ -932,12 +934,18 @@ main #sponsor .sponsorOne {
   padding-top: 20px;
 }
 main #sponsor .sponsorOne img {
-  width: 18%;
+  width: 100%;
   transition: transform 1s ease;
 }
 main #sponsor .sliderTwo {
   width: 90%;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: start;
+  gap: 20px;
+  padding-top: 20px;
 }
 main #BgImg {
   width: 100%;
@@ -947,6 +955,12 @@ main #BgImg {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+@media only screen and (max-width: 768px) {
+  main #BgImg {
+    height: 30vh;
+    background-attachment: inherit;
+  }
 }
 
 footer .quation_border {
@@ -995,6 +1009,11 @@ footer .quation_border .questions .questions_item_one h2 {
   line-height: 1.3em;
 }
 @media only screen and (max-width: 768px) {
+  footer .quation_border .questions .questions_item_one h2 {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 990px) {
   footer .quation_border .questions .questions_item_one h2 {
     font-size: 30px;
   }
@@ -1373,6 +1392,16 @@ main #head {
   background-size: cover;
   position: relative;
 }
+@media only screen and (max-width: 768px) {
+  main #head {
+    height: 30vh;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #head {
+    height: 40vh;
+  }
+}
 main #head .title {
   position: absolute;
   top: 50%;
@@ -1385,6 +1414,11 @@ main #head .title h1 {
   font-weight: 600;
   line-height: 1.4em;
   font-family: "Lexend", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  main #head .title h1 {
+    font-size: 30px;
+  }
 }
 main #productInfo {
   background-color: white;
@@ -1411,6 +1445,15 @@ main #productInfo .productinfo .productTitle {
   align-items: start;
   gap: 20px;
 }
+@media only screen and (max-width: 990px) {
+  main #productInfo .productinfo .productTitle {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+  }
+}
 main #productInfo .productinfo .productTitle h6 {
   font-size: 18px;
   font-weight: 500;
@@ -1425,12 +1468,25 @@ main #productInfo .productinfo .productTitle h2 {
   line-height: 1.3em;
   font-family: "Lexend", sans-serif;
 }
+@media only screen and (max-width: 768px) {
+  main #productInfo .productinfo .productTitle h2 {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+  }
+}
 main #productInfo .productinfo .productDesc {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
   gap: 20px;
+}
+@media only screen and (max-width: 768px) {
+  main #productInfo .productinfo .productDesc {
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 main #productInfo .productinfo .productDesc .descTitle {
   display: flex;
@@ -1445,6 +1501,12 @@ main #productInfo .productinfo .productDesc .descTitle h3 {
   font-weight: 500;
   line-height: 1.3em;
   font-family: "Lexend", sans-serif;
+}
+@media only screen and (max-width: 990px) {
+  main #productInfo .productinfo .productDesc .descTitle h3 {
+    width: 100%;
+    font-size: 20px;
+  }
 }
 main #productInfo .productinfo .productDesc .descTitle h6 {
   color: #7e8427;
@@ -1488,10 +1550,25 @@ main #productInfo .productinfo .descFooter h3 {
   line-height: 1.3em;
   font-family: "Lexend", sans-serif;
 }
+@media only screen and (max-width: 990px) {
+  main #productInfo .productinfo .descFooter h3 {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #productInfo .productinfo .descFooter h3 {
+    width: 100%;
+  }
+}
 main #productInfo .productinfo .descFooter .line {
   background-color: black;
   width: 5%;
   height: 2px;
+}
+@media only screen and (max-width: 768px) {
+  main #productInfo .productinfo .descFooter .line {
+    width: 20%;
+  }
 }
 main #BgImgTwo {
   width: 100%;
@@ -1501,4 +1578,10 @@ main #BgImgTwo {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+}
+@media only screen and (max-width: 768px) {
+  main #BgImgTwo {
+    height: 30vh;
+    background-attachment: inherit;
+  }
 }/*# sourceMappingURL=style.css.map */
