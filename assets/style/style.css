@@ -1584,4 +1584,191 @@ main #BgImgTwo {
     height: 30vh;
     background-attachment: inherit;
   }
+}
+
+main #contactHead {
+  background-image: url("../img/bg-07.jpg");
+  background-color: white;
+  width: 100%;
+  height: 80vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+@media only screen and (max-width: 768px) {
+  main #contactHead {
+    height: 100%;
+  }
+}
+@media only screen and (max-width: 990px) {
+  main #contactHead {
+    height: 40vh;
+  }
+}
+main #contactHead .title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+main #contactHead .title h1 {
+  color: white;
+  font-size: 50px;
+  font-weight: 600;
+  line-height: 1.4em;
+  font-family: "Lexend", sans-serif;
+}
+@media only screen and (max-width: 768px) {
+  main #contactHead .title h1 {
+    font-size: 30px;
+  }
+}
+main #client {
+  width: 70%;
+  margin: 0 auto;
+  padding: 100px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 100px;
+}
+@media only screen and (max-width: 990px) {
+  main #client {
+    width: 90%;
+    margin: 0 auto;
+    gap: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #client {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 50px;
+  }
+}
+main #client .clientDesc {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+@media only screen and (max-width: 990px) {
+  main #client .clientDesc {
+    width: 45%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  main #client .clientDesc {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+}
+main #client .clientDesc h3 {
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3em;
+}
+@media only screen and (max-width: 990px) {
+  main #client .clientDesc h3 {
+    font-size: 20px;
+  }
+}
+main #client .clientDesc p {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.3em;
+  color: rgba(0, 0, 0, 0.4588235294);
+}
+main #client .clientForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+  width: 55%;
+}
+main #client .clientForm .clientInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+main #client .clientForm .clientInfo .lableTitle {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1em;
+  font-family: "Hind", sans-serif;
+}
+main #client .clientForm .clientInfo .lableTitle span {
+  color: red;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1em;
+}
+main #client .clientForm .clientInfo input, main #client .clientForm .clientInfo textarea {
+  padding: 0.75em;
+  border: 1px solid #ddd;
+  outline: none;
+}
+@media only screen and (max-width: 768px) {
+  main #client .clientForm .clientInfo input, main #client .clientForm .clientInfo textarea {
+    padding: 0.75em 0;
+  }
+}
+main #client .clientForm .clientInfo input[type=email],
+main #client .clientForm .clientInfo textarea {
+  width: 400px;
+}
+@media only screen and (max-width: 768px) {
+  main #client .clientForm .clientInfo input[type=email],
+  main #client .clientForm .clientInfo textarea {
+    max-width: 360px;
+  }
+}
+main #client .clientForm .clientInfo textarea {
+  height: 150px;
+}
+main #client .clientForm .clientInfo .clientName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+main #client .clientForm .clientInfo .clientName .name {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 5px;
+}
+main #client .clientForm .clientInfo .clientName .name .subTitle {
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.7);
+}
+main #client .clientForm button {
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+}
+main #client .clientForm button:hover {
+  background-color: #c89374;
 }/*# sourceMappingURL=style.css.map */

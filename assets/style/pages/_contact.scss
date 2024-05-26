@@ -1,0 +1,133 @@
+main {
+    #contactHead {
+        background-image: url('../img/bg-07.jpg');
+        background-color: $colorWhite;
+        width: 100%;
+        height: 80vh;
+        @include BackGround();
+        position: relative;
+
+        @include Mobile() {
+            height: 100%;
+        }
+
+        @include Tablet() {
+            height: 40vh;
+        }
+
+        .title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            h1 {
+                color: $colorWhite;
+                @include Font($size: 50px, $weight: 600, $lineHeight: 1.4em);
+                font-family: 'Lexend', sans-serif;
+
+                @include Mobile() {
+                    font-size: 30px;
+                }
+            }
+        }
+    }
+
+    #client {
+        @include Width($width: 70%);
+        @include Tablet(){
+        @include Width($width: 90%);
+        gap: 50px;
+        }
+        @include Mobile(){
+        @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 50px);
+        }
+        padding: 100px 0;
+        @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 100px);
+
+        .clientDesc {
+            width: 40%;
+            @include Tablet(){
+                width: 45%;
+            }
+            @include Mobile(){
+                width: 100%;
+                text-align: center;
+            @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
+
+            }
+            @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+
+            h3 {
+                @include Font($size: 30px, $weight: 500, $lineHeight: 1.3em);
+                @include Tablet(){
+                    font-size: 20px;
+                }
+                
+            }
+
+            p {
+                @include Font($size: 14px, $weight: 400, $lineHeight: 1.3em);
+                color: $color-4;
+               
+            }
+        }
+
+        .clientForm {
+            @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+            width: 55%;
+
+            .clientInfo {
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
+
+                .lableTitle {
+                    @include Font($size: 15px, $weight: 700, $lineHeight: 1em);
+                    font-family: 'Hind', sans-serif;
+
+                    span {
+                        color: red;
+                        @include Font($size: 15px, $weight: 500, $lineHeight: 1em)
+                    }
+                }
+
+                input, textarea {
+                    padding: 0.75em;
+                    border: 1px solid #ddd;
+                    outline: none;
+                    @include Mobile(){
+                        padding: 0.75em 0;
+                    }
+
+                }
+
+                input[type="email"],
+                textarea {
+                    width: 400px;
+                    @include Mobile(){
+                        max-width: 360px;
+                    }
+                }
+                textarea{
+                    height: 150px;
+                }
+
+                .clientName {
+                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 20px);
+
+                    .name {
+                        @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 5px);
+
+                        .subTitle {
+                            @include Font($size: 13px, $weight: 400, $lineHeight: 1em);
+                            color: $color-1;
+                        }
+
+                    }
+                }
+            }
+            button{
+                @include Button2();
+            }
+        }
+    }
+}
