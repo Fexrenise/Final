@@ -32,7 +32,6 @@ fetch('../../db/product.json')
                 catagory.textContent = item.catagory;
                 let link = document.createElement('a');
                 productItem.appendChild(link);
-                link.style.cursor = 'pointer'
                 let productName = document.createElement('h2');
                 link.appendChild(productName);
                 productName.textContent = item.name;
@@ -40,6 +39,26 @@ fetch('../../db/product.json')
                 productItem.appendChild(price);
                 price.classList.add('price');
                 price.textContent = `$${item.price}`
+                const cartShop = document.createElement('div');
+                cartShop.classList.add('cartShop');
+                productItem.appendChild(cartShop);
+                const addToCart = document.createElement('div');
+                addToCart.classList.add('addtocart');
+                cartShop.appendChild(addToCart);
+                const add = document.createElement('div');
+                add.classList.add('add');
+                add.textContent = 'Add to cart';
+                addToCart.appendChild(add);
+                const triangle = document.createElement('div');
+                triangle.classList.add('triangle');
+                addToCart.appendChild(triangle);
+                const shop = document.createElement('div');
+                shop.classList.add('shop');
+                cartShop.appendChild(shop);
+                const basket = document.createElement('i');
+                basket.classList.add('fa-solid', 'fa-cart-shopping');
+                shop.appendChild(basket);
+
             }
         })
     })

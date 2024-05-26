@@ -1,55 +1,131 @@
-#page{
-    .container{
+#page {
+    .container {
         @include Width($width: 95%);
-        .info{
+
+        .info {
             padding: 70px 0;
             @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 50px);
-            nav{
-                a{
-                    @include Font($size: 0.92em,$weight: 500, $lineHeight: 30px);
-                    font-family: 'Hind',sans-serif;
+
+            nav {
+                a {
+                    @include Font($size: 0.92em, $weight: 500, $lineHeight: 30px);
+                    font-family: 'Hind', sans-serif;
                     color: #777;
                 }
             }
-            h1{
+
+            h1 {
                 @include Font($size: 3.3rem, $weight: 400, $lineHeight: 1.4em);
                 font-family: 'Lexend', sans-serif;
                 color: $color-1;
+                @include Mobile(){
+                    font-size: 40px;
+                }
             }
-            p{
+
+            p {
                 @include Font($size: 15px, $weight: 400, $lineHeight: 1.4em);
                 font-family: 'Hind', sans-serif;
                 color: $color-1;
             }
         }
-        .products{
-            @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap:50px);
+
+        .products {
+            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
             flex-wrap: wrap;
             padding-bottom: 100px;
-            .product{
-                width: 21%;
+            
+            .product {
+                width: 23%;
+                @include Tablet(){
+                    width: 31%;
+                }
+                @include Mobile(){
+                    width: 47%;
+                }
+                
+                position: relative;
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
-                img{
+                &:hover .cartShop{
+                    opacity: 1;
+                }
+                img {
                     width: 100%;
                     height: 100%;
                     object-fit: cover;
+                    cursor: pointer;
                 }
-                p{
+
+                p {
                     @include Font($size: 0.85em, $weight: 400, $lineHeight: 1.4em);
                     font-family: 'Hind', sans-serif;
                     color: $color-1;
                     opacity: 0.6;
                 }
-                a{
-                    h2{
+
+                a {
+                    cursor: pointer;
+
+                    h2 {
                         @include Font($size: 16px, $weight: 500, $lineHeight: 1.3em);
                         font-family: 'Lexend', sans-serif;
                         color: $colorBlack;
                     }
                 }
-                span{
-                    @include Font($size: 14px, $weight:500, $lineHeight: 1.4em);
+
+                span {
+                    @include Font($size: 14px, $weight: 500, $lineHeight: 1.4em);
                     font-family: 'Hind', sans-serif;
+                }
+
+                .cartShop {
+                    position: absolute;
+                    display: flex;
+                    right: 5%;
+                    top: 5%;
+                    opacity: 0;
+
+                    .addtocart {
+                        display: flex;
+                        align-items: center;
+                        opacity: 0;
+                        transition: opacity 0.3s ease-in-out;
+
+                        .add {
+                            background-color: black;
+                            color: white;
+                            padding: 7px;
+                            border-radius: 5px;
+                            font-size: 12px;
+                        }
+
+                        .triangle {
+                            width: 0;
+                            height: 0;
+                            border-left: 4px solid transparent;
+                            border-right: 4px solid transparent;
+                            border-bottom: 8px solid black;
+                            transform: rotate(90deg);
+                        }
+                        
+                    }
+
+                    .shop {
+                        height: 30px;
+                        width: 30px;
+                        border-radius: 50%;
+                        background-color: white;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        font-size: 15px;
+                        color: black;
+                        cursor: pointer;
+                        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+                    }
+                    &:hover .addtocart {
+                        opacity: 1;
+                    }
                 }
             }
         }
