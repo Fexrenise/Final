@@ -12,7 +12,18 @@
 </head>
 
 <body>
-
+    <div class="burgerNav">
+        <ul>
+            <i class="fa-solid fa-xmark"></i>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="body.html">Bath & Body</a></li>
+            <li><a href="hair.html">Hair Care</a></li>
+            <li><a href="skin.html">Skin Care</a></li>
+            <li><a href="gifts.html">Gifts</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
     <header>
         <div class="navBar">
             <div class="logo">
@@ -66,28 +77,36 @@
                     </label>
                     <div class="clientName">
                         <div class="name">
-                            <input type="text" id="name">
+                            <div class="lenght">
+                                <input type="text" id="name">
+                            </div>
                             <label class="subTitle" for="name">First</label>
                         </div>
                         <div class="name">
-                            <input type="text" id="lastName">
+                            <div class="lenght">
+                                <input type="text" id="lastName">
+                            </div>
                             <label class="subTitle" for="lastName">Last</label>
                         </div>
                     </div>
                 </div>
                 <div class="clientInfo">
                     <label class="lableTitle" for="email">
-                        Email 
+                        Email
                         <span>*</span>
                     </label>
-                    <input type="email" id="email">
+                    <div class="lenght">
+                        <input type="email" id="email">
+                    </div>
                 </div>
                 <div class="clientInfo">
                     <label class="lableTitle" for="message">
-                        Message 
+                        Message
                         <span>*</span>
                     </label>
-                    <textarea type="text" id="message"></textarea>
+                    <div class="lenght">
+                        <textarea type="text" id="message"></textarea>
+                    </div>
                 </div>
                 <button>Submit</button>
             </form>
