@@ -1,20 +1,19 @@
 //Burger menu
 const burgerMenu = document.querySelector('.burgerMenu');
 const burgerNav = document.querySelector('.burgerNav');
-const close = document.querySelector('.fa-xmark');
-burgerMenu.addEventListener('click',()=>{
-    burgerNav.style.display ='initial';
-    close.addEventListener('click',()=>{
-        burgerNav.style.display ='none';
+burgerMenu.addEventListener('click', () => {
+    burgerNav.style.display = 'initial';
+    const close = document.querySelector('.fa-xmark');
+
+    close.addEventListener('click', () => {
+        burgerNav.style.display = 'none';
     })
-    window.addEventListener('click', function(e){
-        if (e.target === burgerNav){
+    window.addEventListener('click', function (e) {
+        if (e.target === burgerNav) {
             burgerNav.style.display = 'none';
         }
     })
 })
-
-
 
 
 // her seyfeye kecid etdikde navin active clasii deyisir
@@ -82,6 +81,26 @@ fetch('../../db/product.json')
             }
         })
     })
+
+
+//shopCart 
+const shopHead = document.querySelector('.shopHead');
+const shop = document.querySelector('.shop');
+
+shop.addEventListener('click', () => {
+    shopHead.style.display = 'initial';
+    const close = document.querySelector('.cartTitle i');
+
+    close.addEventListener('click', () => {
+        shopHead.style.display = 'none';
+    })
+    window.addEventListener('click', function (e) {
+        if (e.target === shopHead) {
+            shopHead.style.display = 'none';
+        }
+    })
+})
+
 
 
 

@@ -167,6 +167,56 @@ header .navBar .burgerMenu {
   font-family: "Hind", sans-serif;
 }
 
+.shopHead {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4588235294);
+  z-index: 99;
+  display: none;
+}
+.shopHead .cartBox {
+  width: 30%;
+  height: 100%;
+  background-color: white;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.shopHead .cartBox .cartTitle {
+  padding: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.shopHead .cartBox .cartTitle i {
+  cursor: pointer;
+}
+.shopHead .cartBox button {
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+  width: 80%;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+}
+.shopHead .cartBox button:hover {
+  background-color: #c89374;
+}
+
 main {
   background-color: #f4e9e3;
 }
