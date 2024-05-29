@@ -25,6 +25,7 @@ navLinks.forEach(link => {
         link.classList.add('active');
     }
 });
+
 // productlari bize cixarir
 const body = document.querySelector('.products');
 const pathToCategoryId = {
@@ -98,6 +99,37 @@ shop.addEventListener('click', () => {
         if (e.target === shopHead) {
             shopHead.style.display = 'none';
         }
+    })
+})
+
+
+//Product Detaildaki tab menu
+
+const productTab = document.querySelectorAll('.productTab ul li');
+const subInfo = document.querySelectorAll('.subInfo div');
+productTab.forEach((item,index)=>{
+    item.addEventListener('click',()=>{
+        productTab.forEach((e)=>{
+            e.classList.remove('active');
+        })
+        subInfo.forEach((e)=>{
+            e.classList.remove('active');
+        })
+        item.classList.add('active');
+        subInfo[index].classList.add('active')
+    })
+})
+
+
+
+// product detain starlari
+const rating = document.querySelectorAll('#rating i');
+rating.forEach((item)=>{
+    
+    item.addEventListener('click',()=>{
+        
+        item.classList.add('fa-solid','fa-star');
+        item.style.color = 'gold'
     })
 })
 
