@@ -60,7 +60,7 @@ header {
                 }
             }
 
-            .shop {
+            .mainShop {
                 @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 10px);
                 cursor: pointer;
                 bdi {

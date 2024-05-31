@@ -99,7 +99,7 @@ header .navBar .cartBar .login i {
     font-size: 14px;
   }
 }
-header .navBar .cartBar .shop {
+header .navBar .cartBar .mainShop {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -107,13 +107,13 @@ header .navBar .cartBar .shop {
   gap: 10px;
   cursor: pointer;
 }
-header .navBar .cartBar .shop bdi {
+header .navBar .cartBar .mainShop bdi {
   color: #7e8427;
   font-size: 15px;
   font-weight: 700;
   line-height: 30px;
 }
-header .navBar .cartBar .shop .cart i {
+header .navBar .cartBar .mainShop .cart i {
   color: #7e8427;
   font-size: 18px;
   cursor: pointer;
@@ -148,7 +148,7 @@ header .navBar .burgerMenu {
   padding: 100px 0;
   position: relative;
 }
-.burgerNav ul i {
+.burgerNav ul .fa-xmark {
   color: black;
   font-size: 20px;
   position: absolute;
@@ -1321,11 +1321,11 @@ footer .copyright p {
   font-family: "Hind";
 }
 
-#page .container {
+#page #container__wrp {
   width: 95%;
   margin: 0 auto;
 }
-#page .container .info {
+#page #container__wrp .info {
   padding: 70px 0;
   display: flex;
   flex-direction: column;
@@ -1333,14 +1333,14 @@ footer .copyright p {
   align-items: start;
   gap: 50px;
 }
-#page .container .info nav a {
+#page #container__wrp .info nav a {
   font-size: 0.92em;
   font-weight: 500;
   line-height: 30px;
   font-family: "Hind", sans-serif;
   color: #777;
 }
-#page .container .info h1 {
+#page #container__wrp .info h1 {
   font-size: 3.3rem;
   font-weight: 400;
   line-height: 1.4em;
@@ -1348,18 +1348,18 @@ footer .copyright p {
   color: rgba(0, 0, 0, 0.7);
 }
 @media only screen and (max-width: 768px) {
-  #page .container .info h1 {
+  #page #container__wrp .info h1 {
     font-size: 40px;
   }
 }
-#page .container .info p {
+#page #container__wrp .info p {
   font-size: 15px;
   font-weight: 400;
   line-height: 1.4em;
   font-family: "Hind", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
-#page .container .products {
+#page #container__wrp .products {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -1368,7 +1368,7 @@ footer .copyright p {
   flex-wrap: wrap;
   padding-bottom: 100px;
 }
-#page .container .products .product {
+#page #container__wrp .products .product {
   width: 23%;
   position: relative;
   display: flex;
@@ -1378,26 +1378,26 @@ footer .copyright p {
   gap: 10px;
 }
 @media only screen and (max-width: 990px) {
-  #page .container .products .product {
+  #page #container__wrp .products .product {
     width: 31%;
   }
 }
 @media only screen and (max-width: 768px) {
-  #page .container .products .product {
+  #page #container__wrp .products .product {
     width: 47%;
   }
 }
-#page .container .products .product:hover .cartShop {
+#page #container__wrp .products .product:hover .cartShop {
   opacity: 1;
 }
-#page .container .products .product img {
+#page #container__wrp .products .product img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   cursor: pointer;
 }
-#page .container .products .product p {
+#page #container__wrp .products .product p {
   font-size: 0.85em;
   font-weight: 400;
   line-height: 1.4em;
@@ -1405,43 +1405,44 @@ footer .copyright p {
   color: rgba(0, 0, 0, 0.7);
   opacity: 0.6;
 }
-#page .container .products .product a {
+#page #container__wrp .products .product a {
   cursor: pointer;
 }
-#page .container .products .product a h2 {
+#page #container__wrp .products .product a h2 {
   font-size: 16px;
   font-weight: 500;
   line-height: 1.3em;
   font-family: "Lexend", sans-serif;
   color: black;
+  height: 50px;
 }
-#page .container .products .product span {
+#page #container__wrp .products .product span {
   font-size: 14px;
   font-weight: 500;
   line-height: 1.4em;
   font-family: "Hind", sans-serif;
 }
-#page .container .products .product .cartShop {
+#page #container__wrp .products .product .cartShop {
   position: absolute;
   display: flex;
   right: 5%;
   top: 5%;
   opacity: 0;
 }
-#page .container .products .product .cartShop .addtocart {
+#page #container__wrp .products .product .cartShop .addtocart {
   display: flex;
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
-#page .container .products .product .cartShop .addtocart .add {
+#page #container__wrp .products .product .cartShop .addtocart .add {
   background-color: black;
   color: white;
   padding: 7px;
   border-radius: 5px;
   font-size: 12px;
 }
-#page .container .products .product .cartShop .addtocart .triangle {
+#page #container__wrp .products .product .cartShop .addtocart .triangle {
   width: 0;
   height: 0;
   border-left: 4px solid transparent;
@@ -1449,7 +1450,7 @@ footer .copyright p {
   border-bottom: 8px solid black;
   transform: rotate(90deg);
 }
-#page .container .products .product .cartShop .shop {
+#page #container__wrp .products .product .cartShop .shop {
   height: 30px;
   width: 30px;
   border-radius: 50%;
@@ -1462,7 +1463,7 @@ footer .copyright p {
   cursor: pointer;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
 }
-#page .container .products .product .cartShop:hover .addtocart {
+#page #container__wrp .products .product .cartShop:hover .addtocart {
   opacity: 1;
 }
 
@@ -1857,10 +1858,7 @@ main #client .clientForm button:hover {
   background-color: #c89374;
 }
 
-main {
-  padding: 50px 0;
-}
-main .container {
+main .container__wrp {
   width: 85%;
   margin: 0 auto;
   background-color: white;
@@ -1871,7 +1869,7 @@ main .container {
   align-items: start;
   gap: 30px;
 }
-main .container .viewCart {
+main .container__wrp .viewCart {
   background-color: rgba(0, 0, 0, 0.1411764706);
   width: 100%;
   padding: 20px;
@@ -1882,14 +1880,14 @@ main .container .viewCart {
   align-items: start;
   gap: 0;
 }
-main .container .viewCart .check {
+main .container__wrp .viewCart .check {
   display: flex;
   flex-direction: row;
   justify-content: start;
   align-items: center;
   gap: 10px;
 }
-main .container .viewCart .check i {
+main .container__wrp .viewCart .check i {
   width: 15px;
   height: 15px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -1902,14 +1900,14 @@ main .container .viewCart .check i {
   align-items: center;
   gap: 0;
 }
-main .container .viewCart .check p {
+main .container__wrp .viewCart .check p {
   font-size: 15px;
   font-weight: 400;
   line-height: 1em;
   color: rgba(0, 0, 0, 0.7);
   font-family: "Hind", sans-serif;
 }
-main .container .viewCart button {
+main .container__wrp .viewCart button {
   border: none;
   background-color: #7e8427;
   color: white;
@@ -1918,26 +1916,26 @@ main .container .viewCart button {
   transition: background-color 0.3s;
   text-transform: capitalize;
 }
-main .container .viewCart button:hover {
+main .container__wrp .viewCart button:hover {
   background-color: #c89374;
 }
-main .container .productView {
+main .container__wrp .productView {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: start;
   gap: 0;
 }
-main .container .productView .product {
+main .container__wrp .productView .product {
   width: 50%;
 }
-main .container .productView .product img {
+main .container__wrp .productView .product img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
 }
-main .container .productView .productInfo {
+main .container__wrp .productView .productInfo {
   width: 47%;
   display: flex;
   flex-direction: column;
@@ -1945,42 +1943,42 @@ main .container .productView .productInfo {
   align-items: start;
   gap: 20px;
 }
-main .container .productView .productInfo .categoryNav nav {
+main .container__wrp .productView .productInfo .categoryNav nav {
   font-size: 13px;
   font-weight: 400;
   line-height: 1em;
   color: rgba(0, 0, 0, 0.4588235294);
   font-family: "Hind", sans-serif;
 }
-main .container .productView .productInfo .categoryNav nav a {
+main .container__wrp .productView .productInfo .categoryNav nav a {
   font-size: 13px;
   font-weight: 400;
   line-height: 1em;
   color: rgba(0, 0, 0, 0.4588235294);
   font-family: "Hind", sans-serif;
 }
-main .container .productView .productInfo .productName {
+main .container__wrp .productView .productInfo .productName {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.2em;
 }
-main .container .productView .productInfo .productPrice p {
+main .container__wrp .productView .productInfo .productPrice p {
   font-family: "Hind", sans-serif;
   font-size: 23px;
   font-weight: 600;
   line-height: 1em;
   color: rgba(0, 0, 0, 0.4588235294);
 }
-main .container .productView .productInfo .productPrice p span {
+main .container__wrp .productView .productInfo .productPrice p span {
   font-size: 15px;
 }
-main .container .productView .productInfo .productDesc p {
+main .container__wrp .productView .productInfo .productDesc p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.5em;
   color: rgba(0, 0, 0, 0.7);
 }
-main .container .productView .productInfo .productCount {
+main .container__wrp .productView .productInfo .productCount {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
   padding-bottom: 20px;
   width: 100%;
@@ -1990,7 +1988,7 @@ main .container .productView .productInfo .productCount {
   align-items: center;
   gap: 50px;
 }
-main .container .productView .productInfo .productCount .count {
+main .container__wrp .productView .productInfo .productCount .count {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1999,13 +1997,13 @@ main .container .productView .productInfo .productCount .count {
   border: 1px solid black;
   padding: 10px;
 }
-main .container .productView .productInfo .productCount .count p {
+main .container__wrp .productView .productInfo .productCount .count p {
   font-size: 16px;
   font-weight: 400;
   line-height: 1em;
   color: rgba(0, 0, 0, 0.7);
 }
-main .container .productView .productInfo .productCount .count .countBtn {
+main .container__wrp .productView .productInfo .productCount .count .countBtn {
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -2013,17 +2011,17 @@ main .container .productView .productInfo .productCount .count .countBtn {
   gap: 0px;
   opacity: 0;
 }
-main .container .productView .productInfo .productCount .count .countBtn i {
+main .container__wrp .productView .productInfo .productCount .count .countBtn i {
   font-size: 10px;
   color: rgba(0, 0, 0, 0.7);
 }
-main .container .productView .productInfo .productCount .count .countBtn i:hover {
+main .container__wrp .productView .productInfo .productCount .count .countBtn i:hover {
   color: rgba(0, 0, 0, 0.4588235294);
 }
-main .container .productView .productInfo .productCount .count:hover .countBtn {
+main .container__wrp .productView .productInfo .productCount .count:hover .countBtn {
   opacity: 1;
 }
-main .container .productView .productInfo .productCount button {
+main .container__wrp .productView .productInfo .productCount button {
   border: none;
   background-color: #7e8427;
   padding: 15px 100px;
@@ -2033,29 +2031,29 @@ main .container .productView .productInfo .productCount button {
   line-height: 1em;
   cursor: pointer;
 }
-main .container .productView .productInfo .productCount button:hover {
+main .container__wrp .productView .productInfo .productCount button:hover {
   background-color: #c89374;
 }
-main .container .productView .productInfo .category {
+main .container__wrp .productView .productInfo .category {
   font-size: 13px;
   font-weight: 400;
   line-height: 1em;
   font-family: "Hind", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
-main .container .productView .productInfo .category a {
+main .container__wrp .productView .productInfo .category a {
   color: rgba(0, 0, 0, 0.4588235294);
 }
-main .container .productTab {
+main .container__wrp .productTab {
   padding-top: 20px;
   border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
   width: 100%;
   position: relative;
 }
-main .container .productTab nav {
+main .container__wrp .productTab nav {
   padding-bottom: 30px;
 }
-main .container .productTab nav ul {
+main .container__wrp .productTab nav ul {
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -2064,98 +2062,98 @@ main .container .productTab nav ul {
   position: absolute;
   top: 0;
 }
-main .container .productTab nav ul li {
+main .container__wrp .productTab nav ul li {
   padding-top: 10px;
 }
-main .container .productTab nav ul li a {
+main .container__wrp .productTab nav ul li a {
   font-size: 15px;
   font-weight: 700;
   line-height: 1em;
   font-family: "Hind", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
-main .container .productTab nav ul li.active {
+main .container__wrp .productTab nav ul li.active {
   border-top: 2px solid black;
 }
-main .container .productTab .subInfo .desc {
+main .container__wrp .productTab .subInfo .desc {
   display: none;
 }
-main .container .productTab .subInfo .desc p {
+main .container__wrp .productTab .subInfo .desc p {
   font-size: 15px;
   font-weight: 500;
   line-height: 1.4em;
   font-family: "Hind", sans-serif;
   color: rgba(0, 0, 0, 0.7);
 }
-main .container .productTab .subInfo .size {
+main .container__wrp .productTab .subInfo .size {
   display: none;
 }
-main .container .productTab .subInfo .size .product-table {
+main .container__wrp .productTab .subInfo .size .product-table {
   width: 100%;
   border-collapse: collapse;
 }
-main .container .productTab .subInfo .size .product-table th,
-main .container .productTab .subInfo .size .product-table td {
+main .container__wrp .productTab .subInfo .size .product-table th,
+main .container__wrp .productTab .subInfo .size .product-table td {
   border: 1px solid #ddd;
   padding: 8px;
 }
-main .container .productTab .subInfo .size .product-table th {
+main .container__wrp .productTab .subInfo .size .product-table th {
   background-color: #f2f2f2;
   text-align: left;
 }
-main .container .productTab .subInfo .size .product-table td {
+main .container__wrp .productTab .subInfo .size .product-table td {
   text-align: center;
 }
-main .container .productTab .subInfo .reviews {
+main .container__wrp .productTab .subInfo .reviews {
   display: none;
 }
-main .container .productTab .subInfo .reviews .review-form {
+main .container__wrp .productTab .subInfo .reviews .review-form {
   background-color: #fff;
   padding: 20px;
   border: 1px solid #ddd;
   width: 100%;
   margin: auto;
 }
-main .container .productTab .subInfo .reviews .review-form h3 {
+main .container__wrp .productTab .subInfo .reviews .review-form h3 {
   font-size: 1.2em;
   margin-bottom: 10px;
 }
-main .container .productTab .subInfo .reviews .review-form p {
+main .container__wrp .productTab .subInfo .reviews .review-form p {
   font-size: 0.9em;
   color: #666;
   margin-bottom: 20px;
 }
-main .container .productTab .subInfo .reviews .review-form label {
+main .container__wrp .productTab .subInfo .reviews .review-form label {
   display: block;
   margin: 10px 0 5px;
   font-weight: bold;
 }
-main .container .productTab .subInfo .reviews .review-form .star-rating {
+main .container__wrp .productTab .subInfo .reviews .review-form .star-rating {
   font-size: 1.5em;
   color: #ddd;
   cursor: pointer;
 }
-main .container .productTab .subInfo .reviews .review-form .star-rating i:hover {
+main .container__wrp .productTab .subInfo .reviews .review-form .star-rating i:hover {
   color: gold;
 }
-main .container .productTab .subInfo .reviews .review-form textarea,
-main .container .productTab .subInfo .reviews .review-form input[type=text],
-main .container .productTab .subInfo .reviews .review-form input[type=email] {
+main .container__wrp .productTab .subInfo .reviews .review-form textarea,
+main .container__wrp .productTab .subInfo .reviews .review-form input[type=text],
+main .container__wrp .productTab .subInfo .reviews .review-form input[type=email] {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
   border: 1px solid #ddd;
   border-radius: 3px;
 }
-main .container .productTab .subInfo .reviews .review-form .save-info {
+main .container__wrp .productTab .subInfo .reviews .review-form .save-info {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
 }
-main .container .productTab .subInfo .reviews .review-form .save-info input {
+main .container__wrp .productTab .subInfo .reviews .review-form .save-info input {
   margin-right: 10px;
 }
-main .container .productTab .subInfo .reviews .review-form button {
+main .container__wrp .productTab .subInfo .reviews .review-form button {
   background-color: #8a9233;
   color: white;
   padding: 10px 20px;
@@ -2163,9 +2161,165 @@ main .container .productTab .subInfo .reviews .review-form button {
   border-radius: 3px;
   cursor: pointer;
 }
-main .container .productTab .subInfo .reviews .review-form button:hover {
+main .container__wrp .productTab .subInfo .reviews .review-form button:hover {
   background-color: #c89374;
 }
-main .container .productTab .subInfo .active {
+main .container__wrp .productTab .subInfo .active {
   display: initial;
+}
+
+.container {
+  background: #fff;
+  width: 450px;
+  padding: 1.5rem;
+  margin: 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
+}
+.container form {
+  margin: 0 2rem;
+}
+.container form .messageDiv {
+  background-color: hsl(327, 90%, 28%);
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  animation: fadeOut 7s forwards;
+}
+.container form .input-group {
+  padding: 1% 0;
+  position: relative;
+}
+.container form .input-group i {
+  position: absolute;
+  color: black;
+}
+.container form .input-group input {
+  color: inherit;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #757575;
+  padding-left: 1.5rem;
+  font-size: 15px;
+}
+.container form .input-group input:focus {
+  background-color: transparent;
+  outline: transparent;
+  border-bottom: 2px solid hsl(327, 90%, 28%);
+}
+.container form .input-group input::-moz-placeholder {
+  color: transparent;
+}
+.container form .input-group input::placeholder {
+  color: transparent;
+}
+.container form .input-group label {
+  color: #757575;
+  position: relative;
+  left: 1.2em;
+  top: -1.3em;
+  cursor: auto;
+  transition: 0.3s ease all;
+}
+.container form .input-group input:not(:-moz-placeholder-shown) ~ label {
+  top: -3em;
+  color: hsl(327, 90%, 28%);
+  font-size: 15px;
+}
+.container form .input-group input:focus ~ label,
+.container form .input-group input:not(:placeholder-shown) ~ label {
+  top: -3em;
+  color: hsl(327, 90%, 28%);
+  font-size: 15px;
+}
+.container form .recover {
+  text-align: right;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.container form .recover a {
+  text-decoration: none;
+  color: rgb(125, 125, 235);
+}
+.container form .recover a:hover {
+  color: blue;
+  text-decoration: underline;
+}
+.container .form-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1.3rem;
+  margin-bottom: 0.4rem;
+}
+.container button {
+  font-size: 1.1rem;
+  padding: 8px 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  width: 100%;
+  background: rgb(125, 125, 235);
+  color: white;
+  cursor: pointer;
+  transition: 0.9s;
+}
+.container button:hover {
+  background: #07001f;
+}
+.container .or {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+.container .icons {
+  text-align: center;
+}
+.container .icons i {
+  color: rgb(125, 125, 235);
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  border: 2px solid #dfe9f5;
+  margin: 0 15px;
+  transition: 1s;
+}
+.container .icons i:hover {
+  background: #07001f;
+  font-size: 1.6rem;
+  border: 2px solid rgb(125, 125, 235);
+}
+.container .links {
+  display: flex;
+  justify-content: space-around;
+  padding: 0 4rem;
+  margin-top: 0.9rem;
+  font-weight: bold;
+}
+.container .links #signInButton {
+  color: rgb(125, 125, 235);
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.container .links #signInButton:hover {
+  text-decoration: underline;
+  color: blue;
+}
+.container .links #signUpButton {
+  color: rgb(125, 125, 235);
+  border: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.container .links #signUpButton:hover {
+  text-decoration: underline;
+  color: blue;
 }/*# sourceMappingURL=style.css.map */

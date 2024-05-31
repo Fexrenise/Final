@@ -13,7 +13,7 @@
             height: 100%;
             padding: 100px 0;
             position: relative;
-            i{
+            .fa-xmark{
                 color: black;
                 font-size: 20px;
                 position: absolute;
@@ -28,6 +28,7 @@
                     @include Font($size: 16px,$weight: 500, $lineHeight: 2em);
                     font-family: 'Hind',sans-serif;
                 }
+                
             }
         }
     }

@@ -51,6 +51,8 @@ fetch('../../db/product.json')
                 catagory.classList.add('catagory');
                 catagory.textContent = item.catagory;
                 let link = document.createElement('a');
+                // link.setAttribute('href');
+                link.href ='product-detail.html'
                 productItem.appendChild(link);
                 let productName = document.createElement('h2');
                 link.appendChild(productName);
@@ -78,7 +80,6 @@ fetch('../../db/product.json')
                 const basket = document.createElement('i');
                 basket.classList.add('fa-solid', 'fa-cart-shopping');
                 shop.appendChild(basket);
-
             }
         })
     })
@@ -86,7 +87,7 @@ fetch('../../db/product.json')
 
 //shopCart 
 const shopHead = document.querySelector('.shopHead');
-const shop = document.querySelector('.shop');
+const shop = document.querySelector('.mainShop');
 
 shop.addEventListener('click', () => {
     shopHead.style.display = 'initial';
@@ -133,7 +134,18 @@ rating.forEach((item)=>{
     })
 })
 
+// Function to check if a user is logged in
+function isLoggedIn() {
+    return localStorage.getItem('loggedInUser') !== null;
+}
 
-
-
+document.addEventListener('click', function(event) {
+    if (event.target.closest('.shop')) {
+        event.preventDefault();
+        if (!isLoggedIn()) {    
+            alert('You must be logged in to add items to the basket!');
+            window.location.href = 'login.html'; // Redirect to login section
+        } 
+    }
+});
 

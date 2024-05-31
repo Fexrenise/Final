@@ -1,5 +1,5 @@
 #page {
-    .container {
+    #container__wrp {
         @include Width($width: 95%);
 
         .info {
@@ -70,6 +70,7 @@
                         @include Font($size: 16px, $weight: 500, $lineHeight: 1.3em);
                         font-family: 'Lexend', sans-serif;
                         color: $colorBlack;
+                        height: 50px;
                     }
                 }
 
