@@ -89,6 +89,13 @@ header .navBar .cartBar {
     gap: 10px;
   }
 }
+header .navBar .cartBar .login {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
 header .navBar .cartBar .login i {
   color: #c89374;
   font-size: 18px;
@@ -113,10 +120,28 @@ header .navBar .cartBar .mainShop bdi {
   font-weight: 700;
   line-height: 30px;
 }
+header .navBar .cartBar .mainShop .cart {
+  position: relative;
+}
 header .navBar .cartBar .mainShop .cart i {
   color: #7e8427;
   font-size: 18px;
   cursor: pointer;
+}
+header .navBar .cartBar .mainShop .cart span {
+  position: absolute;
+  top: -70%;
+  right: -40%;
+  background-color: #7e8427;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
 }
 header .navBar .burgerMenu {
   display: none;
@@ -186,20 +211,83 @@ header .navBar .burgerMenu {
   position: absolute;
   right: 0;
   top: 0;
+  padding: 20px;
 }
 .shopHead .cartBox .cartTitle {
-  padding: 20px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 0;
+  padding-bottom: 20px;
 }
 .shopHead .cartBox .cartTitle i {
   cursor: pointer;
 }
-.shopHead .cartBox button {
+.shopHead .cartBox .cartList {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+.shopHead .cartBox .cartList li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: start;
+  gap: 20px;
+}
+.shopHead .cartBox .cartList li .img {
+  width: 15%;
+}
+.shopHead .cartBox .cartList li .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.shopHead .cartBox .cartList li .product {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 10px;
+}
+.shopHead .cartBox .chek {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  left: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+.shopHead .cartBox .chek .total {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
+  border-top: 1px solid rgba(0, 0, 0, 0.1411764706);
+  padding: 10px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+.shopHead .cartBox .chek .btnGroup {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+.shopHead .cartBox .chek .btnGroup button {
   border: none;
   background-color: #7e8427;
   color: white;
@@ -207,13 +295,9 @@ header .navBar .burgerMenu {
   cursor: pointer;
   transition: background-color 0.3s;
   text-transform: capitalize;
-  width: 80%;
-  text-align: center;
-  position: absolute;
-  bottom: 5%;
-  left: 10%;
+  padding: 20px 50px;
 }
-.shopHead .cartBox button:hover {
+.shopHead .cartBox .chek .btnGroup button:hover {
   background-color: #c89374;
 }
 

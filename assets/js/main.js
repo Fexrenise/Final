@@ -151,3 +151,10 @@ document.addEventListener('click', function(event) {
     }
 });
 
+document.getElementById('logout').addEventListener('click', () => {
+    console.log('salam');
+    localStorage.removeItem('loggedInUser');
+    alert("Logged out successfully!");
+    window.location.href = 'home.html';
+});
+

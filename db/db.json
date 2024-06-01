@@ -1,0 +1,32 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Nurlan",
+      "surname": "Khankishiyev",
+      "email": "test@gmail.com",
+      "password": "00000000"
+    },
+    {
+      "id": 3,
+      "name": "Nise",
+      "surname": "Bayramova",
+      "email": "bayramovafexrenise@gmail.com",
+      "password": "12345678"
+    },
+    {
+      "id": 3,
+      "name": "asdfasdf",
+      "surname": "adsfasf",
+      "email": "teyyar123@gmail.com",
+      "password": "asfasfasf"
+    },
+    {
+      "id": "eca70d35-0306-434d-b226-a45066258281",
+      "name": "teyyar",
+      "surname": "Bayramov",
+      "email": "teyyar123@gmail.com",
+      "password": "11111111111111"
+    }
+  ]
+}
