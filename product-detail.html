@@ -22,7 +22,7 @@
             <li><a href="gifts.html">Gifts</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact</a></li>
-            
+
         </ul>
     </div>
     <div class="shopHead">
@@ -76,8 +76,9 @@
                 <button>View cart</button>
             </div>
             <div class="productView">
-                <div class="product">
-                    <img src="./assets/img/product-13.jpg" alt="">
+                <div class="product img-magnifier-container">
+                    <img src="./assets/img/product-13.jpg" id="myimage" alt="">
+                    <div class="img-magnifier-glass"></div>
                 </div>
                 <div class="productInfo">
                     <div class="categoryNav">
@@ -93,7 +94,8 @@
                         <p>$13.90 <span>+ Free Shipping</span></p>
                     </div>
                     <div class="productDesc">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut
+                            labore et dolore magna aliqua. Ut enim ad minim.</p>
                     </div>
                     <div class="productCount">
                         <div class="count">
@@ -253,7 +255,10 @@
         </div>
 
     </footer>
-
+    <script src="./assets/js/imageZoom.js"></script>
+    <script>
+        magnify("myimage", 3);
+    </script>
     <script src="./assets/js/main.js"></script>
 </body>
 

@@ -6,6 +6,16 @@ main {
         @include Width($width: 85%);
         background-color: white;
         padding: 70px;
+
+        @include Tablet() {
+            padding: 30px;
+        }
+
+        @include Mobile() {
+            @include Width($width: 95%);
+            padding: 10px;
+        }
+
         @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 30px);
 
         .viewCart {
@@ -14,6 +24,10 @@ main {
             padding: 20px;
             border-top: 3px solid black;
             @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 0);
+
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
+            }
 
             .check {
                 @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 10px);
@@ -44,8 +58,19 @@ main {
         .productView {
             @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 0);
 
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: column, $justfyContent: space-between, $alignItems: start, $gap: 0);
+            }
+
             .product {
                 width: 50%;
+                position: relative;
+                overflow: hidden !important;
+
+                @include Mobile() {
+                    width: 100%;
+                }
+
 
                 img {
                     width: 100%;
@@ -53,10 +78,30 @@ main {
                     object-fit: cover;
                 }
 
+                .img-magnifier-glass {
+                    position: absolute;
+                    border: 1px solid #000;
+                    border-radius: 50%;
+                    cursor: none;
+                    width: 100px;
+                    height: 100px;
+                    @include Mobile(){
+                        width: 70px;
+                        height: 70px;
+                    }
+                }
+
+
+
             }
 
             .productInfo {
                 width: 47%;
+
+                @include Mobile() {
+                    width: 100%;
+                }
+
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
 
                 .categoryNav {
@@ -76,6 +121,14 @@ main {
 
                 .productName {
                     @include Font($size: 16px, $weight: 400, $lineHeight: 1.2em);
+
+                    @include Tablet() {
+                        @include Font($size: 14px, $weight: 400, $lineHeight: 2.2em);
+                    }
+
+                    @include Mobile() {
+                        @include Font($size: 12px, $weight: 400, $lineHeight: 1.2em);
+                    }
                 }
 
                 .productPrice {
@@ -95,6 +148,14 @@ main {
                     p {
                         @include Font($size: 16px, $weight: 400, $lineHeight: 1.5em);
                         color: $color-1;
+
+                        @include Tablet() {
+                            font-size: 14px;
+                        }
+
+                        @include Mobile() {
+                            font-size: 12px;
+                        }
                     }
                 }
 
@@ -103,6 +164,10 @@ main {
                     padding-bottom: 20px;
                     width: 100%;
                     @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 50px);
+
+                    @include Mobile() {
+                        justify-content: space-between;
+                    }
 
                     .count {
                         @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 10px);
@@ -138,10 +203,19 @@ main {
                     button {
                         border: none;
                         background-color: $color-0;
-                        padding: 15px 100px;
+                        padding: 15px 70px;
                         color: white;
                         @include Font($size: 18px, $weight: 500, $lineHeight: 1em);
                         cursor: pointer;
+
+                        @include Tablet() {
+                            padding: 15px 40px;
+                        }
+
+                        @include Mobile() {
+                            padding: 15px 50px;
+                            font-size: 16px;
+                        }
 
                         &:hover {
                             background-color: $color-2;
@@ -168,60 +242,74 @@ main {
             border-top: 1px solid $color-5;
             width: 100%;
             position: relative;
+
             nav {
                 padding-bottom: 30px;
+
                 ul {
                     @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 30px);
                     position: absolute;
                     top: 0;
-                    li{
-                        
-                        padding-top: 10px ;
-                        a{
-                            @include Font($size: 15px,$weight: 700, $lineHeight: 1em);
-                            font-family: 'Hind',sans-serif;
+
+                    @include Mobile() {
+                        gap: 15px;
+                    }
+
+                    li {
+
+                        padding-top: 10px;
+
+                        a {
+                            @include Font($size: 15px, $weight: 700, $lineHeight: 1em);
+                            font-family: 'Hind', sans-serif;
                             color: $color-1;
                         }
-                        &.active{
+
+                        &.active {
                             border-top: 2px solid black;
                         }
                     }
                 }
             }
-            .subInfo{
-                .desc{
+
+            .subInfo {
+                .desc {
                     display: none;
-                    p{
-                        @include Font($size: 15px,$weight: 500, $lineHeight: 1.4em);
-                        font-family: 'Hind',sans-serif;
+
+                    p {
+                        @include Font($size: 15px, $weight: 500, $lineHeight: 1.4em);
+                        font-family: 'Hind', sans-serif;
                         color: $color-1;
                     }
                 }
-                .size{
+
+                .size {
                     display: none;
+
                     .product-table {
                         width: 100%;
                         border-collapse: collapse;
                     }
-                    
+
                     .product-table th,
                     .product-table td {
                         border: 1px solid #ddd;
                         padding: 8px;
                     }
-                    
+
                     .product-table th {
                         background-color: #f2f2f2;
                         text-align: left;
                     }
-                    
+
                     .product-table td {
                         text-align: center;
                     }
                 }
-                
-                .reviews{
+
+                .reviews {
                     display: none;
+
                     .review-form {
                         background-color: #fff;
                         padding: 20px;
@@ -229,35 +317,35 @@ main {
                         width: 100%;
                         margin: auto;
                     }
-                    
+
                     .review-form h3 {
                         font-size: 1.2em;
                         margin-bottom: 10px;
                     }
-                    
+
                     .review-form p {
                         font-size: 0.9em;
                         color: #666;
                         margin-bottom: 20px;
                     }
-                    
+
                     .review-form label {
                         display: block;
                         margin: 10px 0 5px;
                         font-weight: bold;
                     }
-                    
+
                     .review-form .star-rating {
                         font-size: 1.5em;
                         color: #ddd;
                         cursor: pointer;
                     }
-                    
-                    
-                    .review-form .star-rating i:hover  {
+
+
+                    .review-form .star-rating i:hover {
                         color: gold;
                     }
-                    
+
                     .review-form textarea,
                     .review-form input[type="text"],
                     .review-form input[type="email"] {
@@ -267,17 +355,17 @@ main {
                         border: 1px solid #ddd;
                         border-radius: 3px;
                     }
-                    
+
                     .review-form .save-info {
                         display: flex;
                         align-items: center;
                         margin-bottom: 20px;
                     }
-                    
+
                     .review-form .save-info input {
                         margin-right: 10px;
                     }
-                    
+
                     .review-form button {
                         background-color: #8a9233;
                         color: white;
@@ -286,12 +374,13 @@ main {
                         border-radius: 3px;
                         cursor: pointer;
                     }
-                    
+
                     .review-form button:hover {
                         background-color: $color-2;
                     }
                 }
-                .active{
+
+                .active {
                     display: initial;
                 }
             }

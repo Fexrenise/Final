@@ -6,8 +6,30 @@
     border-radius: 10px;
     box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
 
+
+    @include Tablet() {
+        width: 80%;
+        margin: 30px auto;
+        padding: 1.2rem;
+    }
+
+    @include Mobile() {
+        width: 95%;
+        margin: 20px auto;
+    }
+
+
     form {
         margin: 0 2rem;
+
+        @include Tablet() {
+            margin: 0 1.5rem;
+        }
+
+        @include Mobile() {
+            margin: 0 1rem;
+        }
+
         .messageDiv {
             background-color: hsl(327, 90%, 28%);
             color: white;
@@ -18,6 +40,7 @@
             opacity: 0;
             animation: fadeOut 7s forwards;
         }
+
         .input-group {
             padding: 1% 0;
             position: relative;
@@ -140,6 +163,14 @@
         margin-top: 0.9rem;
         font-weight: bold;
 
+        @include Tablet() {
+            padding: 0 2rem;
+        }
+
+        @include Mobile() {
+            padding: 0 1rem;
+        }
+
         #signInButton {
             color: rgb(125, 125, 235);
             border: none;
@@ -167,20 +198,3 @@
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

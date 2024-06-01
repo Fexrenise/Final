@@ -109,7 +109,8 @@ shop.addEventListener('click', () => {
 const productTab = document.querySelectorAll('.productTab ul li');
 const subInfo = document.querySelectorAll('.subInfo div');
 productTab.forEach((item,index)=>{
-    item.addEventListener('click',()=>{
+    item.addEventListener('click',(event)=>{
+        event.preventDefault();
         productTab.forEach((e)=>{
             e.classList.remove('active');
         })
@@ -117,7 +118,8 @@ productTab.forEach((item,index)=>{
             e.classList.remove('active');
         })
         item.classList.add('active');
-        subInfo[index].classList.add('active')
+        subInfo[index].classList.add('active');
+        
     })
 })
 
