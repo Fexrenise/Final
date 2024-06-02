@@ -89,6 +89,8 @@ main {
                         width: 70px;
                         height: 70px;
                     }
+                    pointer-events: none;
+                    z-index: 3;
                 }
 
 
@@ -120,14 +122,14 @@ main {
                 }
 
                 .productName {
-                    @include Font($size: 16px, $weight: 400, $lineHeight: 1.2em);
+                    @include Font($size: 16px, $weight: 400, $lineHeight: 2.5em);
 
                     @include Tablet() {
                         @include Font($size: 14px, $weight: 400, $lineHeight: 2.2em);
                     }
 
                     @include Mobile() {
-                        @include Font($size: 12px, $weight: 400, $lineHeight: 1.2em);
+                        @include Font($size: 12px, $weight: 400, $lineHeight: 2em);
                     }
                 }
 

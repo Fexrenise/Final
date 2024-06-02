@@ -22,7 +22,7 @@ const insertUser = async (newUser) => {
         const userExists = users.some(user => user.email === newUser.email);
 
         if (userExists) {
-            alert("Username already exists!");
+            alert("İstifadəçi adı artıq mövcuddur!");
             return;
         }
         await fetch('http://localhost:3000/users', {
@@ -30,7 +30,7 @@ const insertUser = async (newUser) => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newUser)
         });
-        alert("Registration successful!");
+        alert("Qeydiyyat uğurlu oldu!");
     } catch (error) {
         console.error('Error inserting user:', error);
     }
@@ -81,13 +81,14 @@ document.getElementById('submitSignIn').addEventListener('click', async (e) => {
     const user = users.find(user => user.email === email && user.password === password);
 
     if (user) {
-        alert("Login successful!");
+        alert("Giriş uğurlu!");
         localStorage.setItem('loggedInUser', email);
         setTimeout(() => {
             window.location.href = 'home.html';
         }, 1000);
-    } else {
-        alert("Invalid username or password!");
+    } 
+    else {
+        alert("Yanlış istifadəçi adı və ya şifrə!");
     }
 });
 
@@ -95,7 +96,7 @@ document.getElementById('submitSignIn').addEventListener('click', async (e) => {
 
 // Example usage for removing a user
 document.getElementById('removeUser').addEventListener('click', async () => {
-    const email = prompt("Enter the email of the user to remove:");
+    const email = prompt("Silmək üçün istifadəçinin e-poçtunu daxil edin:");
     if (email) {
         await removeUser(email);
     }

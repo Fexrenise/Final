@@ -5,7 +5,8 @@
         "categoryId": 1,
         "name": "Avocado extract shower gel",
         "price": "12.90",
-        "url": "product-15.jpg"
+        "url": "product-15.jpg",
+        "categoryUrl": "body.html"
     },
     {
         "id": 2,
@@ -13,7 +14,8 @@
         "categoryId": 1,
         "name": "Body oil anti-cellulite",
         "price": "13.25",
-        "url": "product-0009.png"
+        "url": "product-0009.png",
+        "categoryUrl": "body.html"
     },
     {
         "id": 3,
@@ -21,7 +23,8 @@
         "categoryId": 1,
         "name": "Hair repair shampoo",
         "price": "13.90",
-        "url": "product-13.jpg"
+        "url": "product-13.jpg",
+        "categoryUrl": "body.html"
     },
     {
         "id": 4,
@@ -29,7 +32,8 @@
         "categoryId": 1,
         "name": "Moisturizing conditioner",
         "price": "15.50",
-        "url": "product-10.jpg"
+        "url": "product-10.jpg",
+        "categoryUrl": "body.html"
     },
     {
         "id": 5,
@@ -37,7 +41,8 @@
         "categoryId": 1,
         "name": "Phytoactive hydra-firm mask",
         "price": "19.50",
-        "url": "product-0010.png"
+        "url": "product-0010.png",
+        "categoryUrl": "body.html"
     },
     {
         "id": 6,
@@ -45,7 +50,8 @@
         "categoryId": 1,
         "name": "Rapid response detox mask",
         "price": "10.50",
-        "url": "product-07.jpg"
+        "url": "product-07.jpg",
+        "categoryUrl": "body.html"
     },
     {
         "id": 7,
@@ -53,7 +59,8 @@
         "categoryId": 1,
         "name": "Replumping hair conditioner",
         "price": "13.90",
-        "url": "product-0006.png"
+        "url": "product-0006.png",
+        "categoryUrl": "body.html"
     },
     {
         "id": 8,
@@ -61,7 +68,8 @@
         "categoryId": 1,
         "name": "Tropical rehab shampoo",
         "price": "14.50",
-        "url": "product-0008.png"
+        "url": "product-0008.png",
+        "categoryUrl": "body.html"
     },
     {
         "id": 9,
@@ -69,7 +77,8 @@
         "categoryId": 2,
         "name": "Advanced night repair",
         "price": "11.00",
-        "url": "product-0007.png"
+        "url": "product-0007.png",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 10,
@@ -77,7 +86,8 @@
         "categoryId": 2,
         "name": "Avocado extract shower gel",
         "price": "12.90",
-        "url": "product-15.jpg"
+        "url": "product-15.jpg",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 11,
@@ -85,7 +95,8 @@
         "categoryId": 2,
         "name": "Hair repair shampoo",
         "price": "13.90",
-        "url": "product-13.jpg"
+        "url": "product-13.jpg",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 12,
@@ -93,7 +104,8 @@
         "categoryId": 2,
         "name": "Moisturizing conditioner",
         "price": "15.50",
-        "url": "product-10.jpg"
+        "url": "product-10.jpg",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 13,
@@ -101,7 +113,8 @@
         "categoryId": 2,
         "name": "Replumping conditioner",
         "price": "19.50",
-        "url": "product-16.jpg"
+        "url": "product-16.jpg",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 14,
@@ -109,7 +122,8 @@
         "categoryId": 2,
         "name": "Replumping hair conditioner",
         "price": "13.90",
-        "url": "product-0006.png"
+        "url": "product-0006.png",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 15,
@@ -117,7 +131,8 @@
         "categoryId": 2,
         "name": "Restorative hair mask",
         "price": "10.50",
-        "url": "product-08.jpg"
+        "url": "product-08.jpg",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 16,
@@ -125,7 +140,8 @@
         "categoryId": 2,
         "name": "Tropical rehab shampoo",
         "price": "14.50",
-        "url": "product-0008.png"
+        "url": "product-0008.png",
+        "categoryUrl": "hair.html"
     },
     {
         "id": 17,
@@ -133,7 +149,8 @@
         "categoryId": 3,
         "name": "Australian healing clay",
         "price": "13.25",
-        "url": "product-04-big.jpg"
+        "url": "product-04-big.jpg",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 18,
@@ -141,7 +158,8 @@
         "categoryId": 3,
         "name": "ABody oil anti-cellulite",
         "price": "13.25",
-        "url": "product-0009.png"
+        "url": "product-0009.png",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 19,
@@ -149,7 +167,8 @@
         "categoryId": 3,
         "name": "Lipsum Purifying Cleanser",
         "price": "13.90",
-        "url": "product-05-big.jpg"
+        "url": "product-05-big.jpg",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 20,
@@ -157,7 +176,8 @@
         "categoryId": 3,
         "name": "Midnight recovery concentrate face oil",
         "price": "13.90",
-        "url": "product-03-big.jpg"
+        "url": "product-03-big.jpg",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 21,
@@ -165,7 +185,8 @@
         "categoryId": 3,
         "name": "Phytoactive hydra-firm mask",
         "price": "19.50",
-        "url": "product-0010.png"
+        "url": "product-0010.png",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 22,
@@ -173,7 +194,8 @@
         "categoryId": 3,
         "name": "Rapid response detox mask",
         "price": "10.50",
-        "url": "product-07.jpg"
+        "url": "product-07.jpg",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 23,
@@ -181,7 +203,8 @@
         "categoryId": 3,
         "name": "Smooth skin super booster",
         "price": "13.25",
-        "url": "product-06-big.jpg"
+        "url": "product-06-big.jpg",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 24,
@@ -189,7 +212,8 @@
         "categoryId": 3,
         "name": "Sweet Cherry Brightening Peel",
         "price": "13.90",
-        "url": "product-01-big.jpg"
+        "url": "product-01-big.jpg",
+        "categoryUrl": "skin.html"
     },
     {
         "id": 25,
@@ -197,7 +221,8 @@
         "categoryId": 4,
         "name": "Been a long week collection",
         "price": "29.90",
-        "url": "product-18-big.jpg"
+        "url": "product-18-big.jpg",
+        "categoryUrl": "gifts.html"
     },
     {
         "id": 26,
@@ -205,7 +230,8 @@
         "categoryId": 4,
         "name": "Day dream pack for hair",
         "price": "43.90",
-        "url": "product-19-big.jpg"
+        "url": "product-19-big.jpg",
+        "categoryUrl": "gifts.html"
     },
     {
         "id": 27,
@@ -213,7 +239,8 @@
         "categoryId": 4,
         "name": "Skin glow-boosters & cleansing",
         "price": "29.50",
-        "url": "product-20-big.jpg"
+        "url": "product-20-big.jpg",
+        "categoryUrl": "gifts.html"
     },
     {
         "id": 28,
@@ -221,6 +248,7 @@
         "categoryId": 4,
         "name": "Treat your skin pack",
         "price": "28.50",
-        "url": "product-17-big.jpg"
+        "url": "product-17-big.jpg",
+        "categoryUrl": "gifts.html"
     }
 ]

@@ -35,6 +35,7 @@ const pathToCategoryId = {
     '/gifts.html': 4,
 };
 
+
 fetch('../../db/product.json')
     .then((res) => res.json())
     .then((data) => {
@@ -54,7 +55,7 @@ fetch('../../db/product.json')
                 category.textContent = item.category;
 
                 let link = document.createElement('a');
-                link.href = 'product-detail.html';
+                link.href = `product-detail.html?id=${item.id}`;
                 productItem.appendChild(link);
 
                 let productName = document.createElement('h2');
@@ -85,17 +86,17 @@ fetch('../../db/product.json')
 
                 const shop = document.createElement('div');
                 shop.classList.add('shop');
-                shop.setAttribute('data-item-id', item.id); // Set data-item-id attribute
-                shop.setAttribute('data-item-price', item.price); // Set data-item-price attribute
+                shop.setAttribute('data-item-id', item.id);
+                shop.setAttribute('data-item-price', item.price);
                 cartShop.appendChild(shop);
 
                 const basket = document.createElement('i');
                 basket.classList.add('fa-solid', 'fa-cart-shopping');
                 shop.appendChild(basket);
             }
-        })
-    })
-
+        });
+    });
+    
 
 //shopCart 
 const shopHead = document.querySelector('.shopHead');
@@ -120,18 +121,18 @@ shop.addEventListener('click', () => {
 
 const productTab = document.querySelectorAll('.productTab ul li');
 const subInfo = document.querySelectorAll('.subInfo div');
-productTab.forEach((item,index)=>{
-    item.addEventListener('click',(event)=>{
+productTab.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
         event.preventDefault();
-        productTab.forEach((e)=>{
+        productTab.forEach((e) => {
             e.classList.remove('active');
         })
-        subInfo.forEach((e)=>{
+        subInfo.forEach((e) => {
             e.classList.remove('active');
         })
         item.classList.add('active');
         subInfo[index].classList.add('active');
-        
+
     })
 })
 
@@ -139,28 +140,29 @@ productTab.forEach((item,index)=>{
 
 // product detain starlari
 const rating = document.querySelectorAll('#rating i');
-rating.forEach((item)=>{
-    
-    item.addEventListener('click',()=>{
-        
-        item.classList.add('fa-solid','fa-star');
+rating.forEach((item) => {
+
+    item.addEventListener('click', () => {
+
+        item.classList.add('fa-solid', 'fa-star');
         item.style.color = 'gold'
     })
 })
 
-// Function to check if a user is logged in
+// İstifadəçinin daxil olub-olmadığını yoxlamaq 
 function isLoggedIn() {
     return localStorage.getItem('loggedInUser') !== null;
 }
 
 function generateGUID() {
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
         var r = Math.random() * 16 | 0,
             v = c === 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     });
 }
 
+//baskete elave etme
 async function fetchBaskets() {
     try {
         const response = await fetch('http://localhost:3000/baskets');
@@ -198,8 +200,8 @@ async function updateBasket(basketId, updatedBasket) {
 async function addItemToBasket(item) {
 
     if (!isLoggedIn()) {
-        alert('You must be logged in to add items to the basket!');
-        window.location.href = 'login.html'; // Redirect to login section
+        alert('Səbətə əşyalar əlavə etmək üçün daxil olmalısınız!');
+        window.location.href = 'login.html';
         return;
     }
 
@@ -208,7 +210,7 @@ async function addItemToBasket(item) {
     const loggedInUser = users.find(user => user.email === loggedInUserEmail);
 
     if (!loggedInUser) {
-        alert('Logged in user not found!');
+        alert('Daxil olmuş istifadəçi tapılmadı!');
         return;
     }
 
@@ -241,17 +243,17 @@ async function addItemToBasket(item) {
     userBasket.total += item.price;
 
     await updateBasket(userBasket.id, userBasket);
-    alert('Item added to basket successfully!');
+    alert('Element səbətə uğurla əlavə edildi!');
 
 }
 
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     if (event.target.closest('.shop')) {
         event.preventDefault();
         const shopElement = event.target.closest('.shop');
         const itemId = parseInt(shopElement.getAttribute('data-item-id'));
         const itemPrice = parseFloat(shopElement.getAttribute('data-item-price'));
-        
+
         const item = {
             id: itemId,
             price: itemPrice
@@ -290,7 +292,7 @@ function createRemoveIcon(productId, price, listItem) {
                 return;
             }
 
-            // Fetch user's basket
+
             const baskets = await fetchBaskets();
             const userBasketIndex = baskets.findIndex(basket => basket.userId === loggedInUser.id);
 
@@ -301,26 +303,26 @@ function createRemoveIcon(productId, price, listItem) {
 
             const basket = baskets[userBasketIndex];
 
-            // Remove the product from the basket
+
             const productIndex = basket.products.findIndex(p => p.id == productId);
             const product = basket.products.find(p => p.id == productId);
 
             if (productIndex !== -1) {
                 basket.products.splice(productIndex, 1);
-                basket.count -= product.count; // Decrease the count by 1
+                basket.count -= product.count;
                 basket.total -= product.count * price >= basket.total ? 0 : product.count * price;
 
-                // Update the basket in the server
+
                 await fetch(`http://localhost:3000/baskets/${basket.id}`, {
                     method: 'PUT',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(basket)
                 });
 
-                // Remove the item from the UI
+
                 listItem.remove();
 
-                // Update cart summary
+
                 updateCartSummary();
             }
         } catch (error) {
@@ -344,9 +346,9 @@ async function handleMainShopClick() {
     const loggedInUser = users.find(user => user.email === loggedInUserEmail);
     const userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
 
-      const cartList = document.getElementById('cartProducts');
+    const cartList = document.getElementById('cartProducts');
 
-      for (const product of userBasket.products) {
+    for (const product of userBasket.products) {
         const productDetails = await fetchProductById(product.id);
 
         if (!productDetails) {
@@ -373,7 +375,7 @@ async function handleMainShopClick() {
         productDiv.appendChild(quantityDiv);
         listItem.appendChild(productDiv);
 
-        
+
         const closeDiv = document.createElement('div');
         closeDiv.classList.add('close');
         const closeIcon = createRemoveIcon(productDetails.id, productDetails.price, listItem);
