@@ -43,40 +43,52 @@ fetch('../../db/product.json')
                 const productItem = document.createElement('div');
                 body.appendChild(productItem);
                 productItem.classList.add('product');
+
                 const img = document.createElement('img');
                 img.src = `./assets/img/${item.url}`;
                 productItem.appendChild(img);
-                let catagory = document.createElement('p');
-                productItem.appendChild(catagory);
-                catagory.classList.add('catagory');
-                catagory.textContent = item.catagory;
+
+                let category = document.createElement('p');
+                productItem.appendChild(category);
+                category.classList.add('category');
+                category.textContent = item.category;
+
                 let link = document.createElement('a');
-                // link.setAttribute('href');
-                link.href ='product-detail.html'
+                link.href = 'product-detail.html';
                 productItem.appendChild(link);
+
                 let productName = document.createElement('h2');
                 link.appendChild(productName);
                 productName.textContent = item.name;
+
                 let price = document.createElement('span');
                 productItem.appendChild(price);
                 price.classList.add('price');
-                price.textContent = `$${item.price}`
+                price.textContent = `$${item.price}`;
+
                 const cartShop = document.createElement('div');
                 cartShop.classList.add('cartShop');
                 productItem.appendChild(cartShop);
+
                 const addToCart = document.createElement('div');
                 addToCart.classList.add('addtocart');
                 cartShop.appendChild(addToCart);
+
                 const add = document.createElement('div');
                 add.classList.add('add');
                 add.textContent = 'Add to cart';
                 addToCart.appendChild(add);
+
                 const triangle = document.createElement('div');
                 triangle.classList.add('triangle');
                 addToCart.appendChild(triangle);
+
                 const shop = document.createElement('div');
                 shop.classList.add('shop');
+                shop.setAttribute('data-item-id', item.id); // Set data-item-id attribute
+                shop.setAttribute('data-item-price', item.price); // Set data-item-price attribute
                 cartShop.appendChild(shop);
+
                 const basket = document.createElement('i');
                 basket.classList.add('fa-solid', 'fa-cart-shopping');
                 shop.appendChild(basket);
@@ -141,20 +153,272 @@ function isLoggedIn() {
     return localStorage.getItem('loggedInUser') !== null;
 }
 
+function generateGUID() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+        var r = Math.random() * 16 | 0,
+            v = c === 'x' ? r : (r & 0x3 | 0x8);
+        return v.toString(16);
+    });
+}
+
+async function fetchBaskets() {
+    try {
+        const response = await fetch('http://localhost:3000/baskets');
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching baskets:', error);
+        return [];
+    }
+}
+
+async function insertBasket(newBasket) {
+    try {
+        await fetch('http://localhost:3000/baskets', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(newBasket)
+        });
+    } catch (error) {
+        console.error('Error inserting basket:', error);
+    }
+}
+
+async function updateBasket(basketId, updatedBasket) {
+    try {
+        await fetch(`http://localhost:3000/baskets/${basketId}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(updatedBasket)
+        });
+    } catch (error) {
+        console.error('Error updating basket:', error);
+    }
+}
+
+async function addItemToBasket(item) {
+
+    if (!isLoggedIn()) {
+        alert('You must be logged in to add items to the basket!');
+        window.location.href = 'login.html'; // Redirect to login section
+        return;
+    }
+
+    const loggedInUserEmail = localStorage.getItem('loggedInUser');
+    const users = await fetch('http://localhost:3000/users').then(res => res.json());
+    const loggedInUser = users.find(user => user.email === loggedInUserEmail);
+
+    if (!loggedInUser) {
+        alert('Logged in user not found!');
+        return;
+    }
+
+    const baskets = await fetchBaskets();
+    let userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
+
+    if (!userBasket) {
+        userBasket = {
+            id: generateGUID(),
+            userId: loggedInUser.id,
+            products: [],
+            count: 0,
+            total: 0
+        };
+        await insertBasket(userBasket);
+    }
+
+    const existingProduct = userBasket.products.find(product => product.id === item.id);
+
+    if (existingProduct) {
+        existingProduct.count += 1;
+    } else {
+        userBasket.products.push({
+            id: item.id,
+            count: 1
+        });
+    }
+
+    userBasket.count += 1;
+    userBasket.total += item.price;
+
+    await updateBasket(userBasket.id, userBasket);
+    alert('Item added to basket successfully!');
+
+}
+
 document.addEventListener('click', function(event) {
     if (event.target.closest('.shop')) {
         event.preventDefault();
-        if (!isLoggedIn()) {    
-            alert('You must be logged in to add items to the basket!');
-            window.location.href = 'login.html'; // Redirect to login section
-        } 
+        const shopElement = event.target.closest('.shop');
+        const itemId = parseInt(shopElement.getAttribute('data-item-id'));
+        const itemPrice = parseFloat(shopElement.getAttribute('data-item-price'));
+        
+        const item = {
+            id: itemId,
+            price: itemPrice
+        };
+        addItemToBasket(item);
     }
 });
 
 document.getElementById('logout').addEventListener('click', () => {
-    console.log('salam');
     localStorage.removeItem('loggedInUser');
     alert("Logged out successfully!");
     window.location.href = 'home.html';
+});
+
+async function fetchProductById(productId) {
+    try {
+        const response = await fetch(`http://localhost:3000/products/${productId}`);
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching product:', error);
+        return null;
+    }
+}
+
+function createRemoveIcon(productId, price, listItem) {
+    const closeIcon = document.createElement('i');
+    closeIcon.classList.add('fa-solid', 'fa-xmark');
+    closeIcon.addEventListener('click', async () => {
+        try {
+            const loggedInUserEmail = localStorage.getItem('loggedInUser');
+            const users = await fetch('http://localhost:3000/users').then(res => res.json());
+            const loggedInUser = users.find(user => user.email === loggedInUserEmail);
+
+            if (!loggedInUser) {
+                console.error('User not found');
+                return;
+            }
+
+            // Fetch user's basket
+            const baskets = await fetchBaskets();
+            const userBasketIndex = baskets.findIndex(basket => basket.userId === loggedInUser.id);
+
+            if (userBasketIndex === -1) {
+                console.error('Basket not found');
+                return;
+            }
+
+            const basket = baskets[userBasketIndex];
+
+            // Remove the product from the basket
+            const productIndex = basket.products.findIndex(p => p.id == productId);
+            const product = basket.products.find(p => p.id == productId);
+
+            if (productIndex !== -1) {
+                basket.products.splice(productIndex, 1);
+                basket.count -= product.count; // Decrease the count by 1
+                basket.total -= product.count * price >= basket.total ? 0 : product.count * price;
+
+                // Update the basket in the server
+                await fetch(`http://localhost:3000/baskets/${basket.id}`, {
+                    method: 'PUT',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(basket)
+                });
+
+                // Remove the item from the UI
+                listItem.remove();
+
+                // Update cart summary
+                updateCartSummary();
+            }
+        } catch (error) {
+            console.error('Error removing product from basket:', error);
+        }
+    });
+
+    return closeIcon;
+}
+
+async function handleMainShopClick() {
+    const mainShop = document.querySelector('.mainShop');
+
+    if (!mainShop) {
+        return;
+    }
+
+    const baskets = await fetchBaskets();
+    const loggedInUserEmail = localStorage.getItem('loggedInUser');
+    const users = await fetch('http://localhost:3000/users').then(res => res.json());
+    const loggedInUser = users.find(user => user.email === loggedInUserEmail);
+    const userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
+
+      const cartList = document.getElementById('cartProducts');
+
+      for (const product of userBasket.products) {
+        const productDetails = await fetchProductById(product.id);
+
+        if (!productDetails) {
+            continue;
+        }
+
+        const listItem = document.createElement('li');
+        const imgDiv = document.createElement('div');
+        imgDiv.classList.add('img');
+        const img = document.createElement('img');
+        img.src = `./assets/img/${productDetails.url}`;
+        img.alt = productDetails.name;
+        imgDiv.appendChild(img);
+        listItem.appendChild(imgDiv);
+
+        const productDiv = document.createElement('div');
+        productDiv.classList.add('product');
+        const productName = document.createElement('h5');
+        productName.textContent = productDetails.name;
+        const quantityDiv = document.createElement('div');
+        quantityDiv.classList.add('quantity');
+        quantityDiv.innerHTML = `<span>${product.count}</span> x <span>$${productDetails.price}</span>`;
+        productDiv.appendChild(productName);
+        productDiv.appendChild(quantityDiv);
+        listItem.appendChild(productDiv);
+
+        
+        const closeDiv = document.createElement('div');
+        closeDiv.classList.add('close');
+        const closeIcon = createRemoveIcon(productDetails.id, productDetails.price, listItem);
+        closeDiv.appendChild(closeIcon);
+        listItem.appendChild(closeDiv);
+        cartList.appendChild(listItem);
+    }
+
+    const subTotal = document.getElementById('subTotal');
+    subTotal.textContent = `$${userBasket.total.toFixed(2)}`
+}
+
+const mainShop = document.querySelector('.mainShop');
+if (mainShop) {
+    mainShop.addEventListener('click', handleMainShopClick);
+}
+
+async function updateCartSummary() {
+    if (!isLoggedIn()) {
+        return;
+    }
+
+    const loggedInUserEmail = localStorage.getItem('loggedInUser');
+    const users = await fetch('http://localhost:3000/users').then(res => res.json());
+    const loggedInUser = users.find(user => user.email === loggedInUserEmail);
+
+    if (!loggedInUser) {
+        return;
+    }
+
+    const baskets = await fetchBaskets();
+    const userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
+
+    if (!userBasket) {
+        return;
+    }
+
+    const totalPriceElement = document.getElementById('totalPrice');
+    const totalCountElement = document.getElementById('totalCount');
+
+    totalPriceElement.textContent = `$${userBasket.total.toFixed(2)}`;
+    totalCountElement.textContent = userBasket.count;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    updateCartSummary();
 });
 

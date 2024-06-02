@@ -31,7 +31,19 @@
                 <div>Shopping Cart </div>
                 <i class="fa-solid fa-xmark"></i>
             </div>
-            <button>Continue Shopping</button>
+            <ul id="cartProducts" class="cartList"></ul>
+            
+            <div class="chek">
+                <div class="total">
+                    <h5>Suptotal:</h5>
+                    <span id="subTotal">$0.00</span>
+                </div>
+                <div class="btnGroup">
+                    <button>View Cart</button>
+                    <button>Checkout</button>
+                </div>
+            </div>
+        </div>
         </div>
     </div>
     <header>
@@ -56,9 +68,10 @@
                     <i class="fa-solid fa-right-from-bracket" id="logout" style="cursor: pointer;"></i>
                 </div>
                 <div class="mainShop">
-                    <bdi><span>$</span>0.00</bdi>
+                    <bdi id="totalPrice"><span>$</span>0.00</bdi>
                     <div class="cart">
                         <i class="fa-solid fa-shopping-cart"></i>
+                        <span id="totalCount">0</span>
                     </div>
                 </div>
             </div>

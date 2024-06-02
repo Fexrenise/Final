@@ -9,7 +9,7 @@ function generateGUID() {
 const fetchUsers = async () => {
     try {
         const response = await fetch('http://localhost:3000/users');
-        return await response.json();
+        return response.json();
     } catch (error) {
         console.error('Error fetching users:', error);
         return [];
@@ -25,7 +25,6 @@ const insertUser = async (newUser) => {
             alert("Username already exists!");
             return;
         }
-
         await fetch('http://localhost:3000/users', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -55,7 +54,8 @@ const removeUser = async (email) => {
     }
 };
 
-document.getElementById('submitSignUp').addEventListener('click', async () => {
+document.getElementById('submitSignUp').addEventListener('click', async (e) => {
+    e.preventDefault();
     const name = document.getElementById('fName').value;
     const surname = document.getElementById('lName').value;
     const email = document.getElementById('rEmail').value;
