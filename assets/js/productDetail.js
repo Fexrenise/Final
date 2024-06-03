@@ -23,3 +23,38 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
 });
+
+document.querySelector('.productCount button').addEventListener('click', function() {
+    // Kullanıcı giriş yapmış mı kontrol ediyoruz
+    if (!isLoggedIn()) {
+        // Kullanıcı giriş yapmamışsa, giriş yapma sayfasına yönlendiriyoruz
+        window.location.href = 'login.html';
+    } else {
+        // Kullanıcı giriş yapmışsa, sepete ürünü eklemek için gerekli işlemleri gerçekleştiriyoruz
+        // Burada sepete ürün ekleme işlemlerini gerçekleştirebilirsiniz
+        
+    }
+});
+
+// Sepete ürün eklemek için gerekli işlemleri gerçekleştiren fonksiyon
+
+// Count artırma ve azaltma işlemleri için caret-up ve caret-down elementlerine tıklama olayını dinleyen fonksiyon
+document.querySelectorAll('.countBtn i').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+        // Count değerini alın
+        var countElement = document.querySelector('.count p');
+        var count = parseInt(countElement.textContent);
+
+        // Eğer caret-up ikonuna tıklandıysa count artırın, caret-down ikonuna tıklandıysa count azaltın
+        if (icon.classList.contains('fa-caret-up')) {
+            count++;
+        } else if (icon.classList.contains('fa-caret-down')) {
+            if (count > 1) {
+                count--;
+            }
+        }
+
+        // Yeni count değerini güncelleyin
+        countElement.textContent = count;
+    });
+});

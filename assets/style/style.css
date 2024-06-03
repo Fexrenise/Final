@@ -2546,4 +2546,186 @@ main .container__wrp .productTab .subInfo .active {
 .container .links #signUpButton:hover {
   text-decoration: underline;
   color: blue;
+}
+
+.cart-container {
+  width: 90%;
+  margin: 0 auto;
+  margin: auto;
+  padding: 70px;
+  background-color: #fff;
+}
+.cart-container h1 {
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.2em;
+  margin-bottom: 50px;
+}
+.cart-container .cart-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+.cart-container .cart-table thead {
+  background-color: rgba(0, 0, 0, 0.1411764706);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1em;
+  font-family: "Hind", sans-serif;
+}
+.cart-container .cart-table thead th {
+  padding: 30px;
+}
+.cart-container .cart-table th,
+.cart-container .cart-table td {
+  text-align: left;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1em;
+  font-family: "Hind", sans-serif;
+}
+.cart-container .cart-table td .count {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid black;
+  padding: 10px;
+  width: 40px;
+  height: 40px;
+}
+.cart-container .cart-table td .count p {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1em;
+  color: rgba(0, 0, 0, 0.7);
+}
+.cart-container .cart-table td .count .countBtn {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 0px;
+  opacity: 0;
+}
+.cart-container .cart-table td .count .countBtn i {
+  font-size: 10px;
+  color: rgba(0, 0, 0, 0.7);
+}
+.cart-container .cart-table td .count .countBtn i:hover {
+  color: rgba(0, 0, 0, 0.4588235294);
+}
+.cart-container .cart-table td .count:hover .countBtn {
+  opacity: 1;
+}
+.cart-container .cart-table .product-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 50px;
+}
+.cart-container .cart-table .product-info .remove-btn {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1411764706);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  color: rgba(0, 0, 0, 0.1411764706);
+}
+.cart-container .cart-table .product-info .product-image {
+  width: 70px;
+  height: 70px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.cart-container .cart-table .product-info span {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1em;
+  font-family: "Hind", sans-serif;
+}
+.cart-container .coupon-section {
+  border: 1px solid rgba(0, 0, 0, 0.1411764706);
+  padding: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0;
+}
+.cart-container .coupon-section input[type=text] {
+  padding: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.1411764706);
+  border-radius: 5px;
+  outline: none;
+}
+.cart-container .coupon-section button {
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+}
+.cart-container .coupon-section button:hover {
+  background-color: #c89374;
+}
+.cart-container .coupon-section .apply-coupon {
+  margin-left: 10px;
+}
+.cart-container .coupon-section .update-cart {
+  margin-left: auto;
+}
+.cart-container .cart-totals {
+  border: 1px solid rgba(0, 0, 0, 0.1411764706);
+  background-color: #fff;
+  width: 40%;
+  margin-top: 50px;
+}
+.cart-container .cart-totals table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.cart-container .cart-totals table th {
+  text-align: left;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1em;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1411764706);
+}
+.cart-container .cart-totals table td {
+  padding: 20px;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1em;
+  font-family: "Hind", sans-serif;
+}
+.cart-container .cart-totals table tr {
+  border: 1px solid rgba(0, 0, 0, 0.1411764706);
+}
+.cart-container .cart-totals .checkout-btn {
+  margin: 10px;
+  width: 95%;
+  text-align: center;
+  border: none;
+  background-color: #7e8427;
+  color: white;
+  padding: 17px 27px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-transform: capitalize;
+}
+.cart-container .cart-totals .checkout-btn:hover {
+  background-color: #c89374;
 }/*# sourceMappingURL=style.css.map */
