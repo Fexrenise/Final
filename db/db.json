@@ -271,24 +271,11 @@
   ],
   "baskets": [
     {
-      "id": "622911f2-29ba-4a6e-8a3c-7eb7a571ad6b",
+      "id": "53defef5-2dea-4c84-ba97-8411e0c32245",
       "userId": "a3b60cf4-e5f9-4e49-bdb4-19b7d18f6468",
-      "products": [
-        {
-          "id": 3,
-          "count": 5
-        },
-        {
-          "id": 6,
-          "count": 1
-        },
-        {
-          "id": 2,
-          "count": 5
-        }
-      ],
-      "count": 11,
-      "total": 201.85000000000002
+      "products": [],
+      "count": 0,
+      "total": 0
     }
   ]
 }

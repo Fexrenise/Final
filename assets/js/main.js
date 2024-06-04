@@ -312,8 +312,12 @@ function createRemoveIcon(productId, price, listItem) {
             if (productIndex !== -1) {
                 basket.products.splice(productIndex, 1);
                 basket.count -= product.count;
-                basket.total -= product.count * price >= basket.total ? 0 : product.count * price;
 
+                let amountToIncrease = basket.total;
+                if (product.count * price <= basket.total) {
+                    amountToIncrease = product.count * price;
+                } 
+                basket.total -= amountToIncrease;
 
                 await fetch(`http://localhost:3000/baskets/${basket.id}`, {
                     method: 'PUT',
@@ -321,10 +325,7 @@ function createRemoveIcon(productId, price, listItem) {
                     body: JSON.stringify(basket)
                 });
 
-
                 listItem.remove();
-          
-
 
                 updateCartSummary();
             }
@@ -357,7 +358,7 @@ async function handleMainShopClick() {
         if (!productDetails) {
             continue;
         }
-        
+
 
 
         const listItem = document.createElement('li');
@@ -395,15 +396,6 @@ async function handleMainShopClick() {
 }
 
 
-// duplicate problem here
-const mainShop = document.querySelector('.mainShop');
-
-
-
-if (mainShop) {
-    mainShop.addEventListener('click', handleMainShopClick);
-}
-
 async function updateCartSummary() {
     if (!isLoggedIn()) {
         return;
@@ -434,5 +426,5 @@ async function updateCartSummary() {
 
 document.addEventListener('DOMContentLoaded', () => {
     updateCartSummary();
+    handleMainShopClick();
 });
-
