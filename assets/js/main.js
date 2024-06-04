@@ -36,9 +36,9 @@ const pathToCategoryId = {
 };
 
 
-fetch('../../db/product.json')
-    .then((res) => res.json())
-    .then((data) => {
+fetch('http://localhost:3000/products')
+    .then(async (res) => {
+        const data = await res.json();
         data.forEach((item) => {
             if (item.categoryId === pathToCategoryId[currentPath]) {
                 const productItem = document.createElement('div');
@@ -96,13 +96,15 @@ fetch('../../db/product.json')
             }
         });
     });
-    
+
 
 //shopCart 
 const shopHead = document.querySelector('.shopHead');
+// duplicate event listener
 const shop = document.querySelector('.mainShop');
 
 shop.addEventListener('click', () => {
+
     shopHead.style.display = 'initial';
     const close = document.querySelector('.cartTitle i');
 
@@ -197,7 +199,7 @@ async function updateBasket(basketId, updatedBasket) {
     }
 }
 
-async function addItemToBasket(item) {
+async function addItemToBasket(item, count = 1) {
 
     if (!isLoggedIn()) {
         alert('Səbətə əşyalar əlavə etmək üçün daxil olmalısınız!');
@@ -214,9 +216,9 @@ async function addItemToBasket(item) {
         return;
     }
 
-    const baskets = await fetchBaskets();
-    let userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
+    const baskets = await fetchBaskets([]);
 
+    let userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
     if (!userBasket) {
         userBasket = {
             id: generateGUID(),
@@ -231,16 +233,16 @@ async function addItemToBasket(item) {
     const existingProduct = userBasket.products.find(product => product.id === item.id);
 
     if (existingProduct) {
-        existingProduct.count += 1;
+        existingProduct.count += count;
     } else {
         userBasket.products.push({
             id: item.id,
-            count: 1
+            count: count
         });
     }
 
-    userBasket.count += 1;
-    userBasket.total += item.price;
+    userBasket.count += count;
+    userBasket.total += (item.price * count);
 
     await updateBasket(userBasket.id, userBasket);
     alert('Element səbətə uğurla əlavə edildi!');
@@ -321,6 +323,7 @@ function createRemoveIcon(productId, price, listItem) {
 
 
                 listItem.remove();
+          
 
 
                 updateCartSummary();
@@ -354,6 +357,8 @@ async function handleMainShopClick() {
         if (!productDetails) {
             continue;
         }
+        
+
 
         const listItem = document.createElement('li');
         const imgDiv = document.createElement('div');
@@ -382,13 +387,19 @@ async function handleMainShopClick() {
         closeDiv.appendChild(closeIcon);
         listItem.appendChild(closeDiv);
         cartList.appendChild(listItem);
-    }
 
+    }
     const subTotal = document.getElementById('subTotal');
     subTotal.textContent = `$${userBasket.total.toFixed(2)}`
+
 }
 
+
+// duplicate problem here
 const mainShop = document.querySelector('.mainShop');
+
+
+
 if (mainShop) {
     mainShop.addEventListener('click', handleMainShopClick);
 }
@@ -419,6 +430,7 @@ async function updateCartSummary() {
     totalPriceElement.textContent = `$${userBasket.total.toFixed(2)}`;
     totalCountElement.textContent = userBasket.count;
 }
+
 
 document.addEventListener('DOMContentLoaded', () => {
     updateCartSummary();

@@ -1,12 +1,12 @@
+const urlParams = new URLSearchParams(window.location.search);
+const productId = urlParams.get('id');
+
 document.addEventListener('DOMContentLoaded', () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const productId = urlParams.get('id');
 
-    fetch('../../db/product.json')
-        .then((res) => res.json())
-        .then((data) => {
-            const product = data.find(item => item.id === Number(productId));
-
+    fetch('http://localhost:3000/products')
+        .then(async (res) => {
+            const data = await res.json();
+            const product = data.find(item => item.id == Number(productId));
             if (product) {
                 document.querySelector('.check p').innerHTML = `“${product.name}” has been added to your cart.`
                 const categoryNav = document.querySelector('.categoryNav nav');
@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <a href="${product.categoryUrl}">${product.category}</a>&nbsp;/&nbsp;${product.name}`;
                 document.querySelector('.product img').src = `./assets/img/${product.url}`;
                 document.querySelector('.productName h1').textContent = product.name;
-                document.querySelector('.productPrice p').innerHTML = `$${product.price} <span>+ Free Shipping</span>`;
+                document.querySelector('.productPrice p').innerHTML = `$<span id="price">${product.price}</span> <span>+ Free Shipping</span>`;
                 document.querySelector('.productInfo .category').innerHTML = `<span>Categories: <a href="${product.categoryUrl}">${product.category}</a></span>`
                 const imgUrl = `./assets/img/${product.url}`;
                 document.getElementById('myimage').onload = function () {
@@ -25,14 +25,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.querySelector('.productCount button').addEventListener('click', function() {
-    // Kullanıcı giriş yapmış mı kontrol ediyoruz
     if (!isLoggedIn()) {
-        // Kullanıcı giriş yapmamışsa, giriş yapma sayfasına yönlendiriyoruz
+        alert('Səbətə əşyalar əlavə etmək üçün daxil olmalısınız!');
         window.location.href = 'login.html';
+        return;
     } else {
-        // Kullanıcı giriş yapmışsa, sepete ürünü eklemek için gerekli işlemleri gerçekleştiriyoruz
-        // Burada sepete ürün ekleme işlemlerini gerçekleştirebilirsiniz
-        
+        const count = document.getElementById('count').textContent
+        const price = document.getElementById('price').textContent
+        const item = {
+            id: Number(productId),
+            price: Number(price)
+        };
+       addItemToBasket(item, Number(count))
     }
 });
 

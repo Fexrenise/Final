@@ -2576,6 +2576,11 @@ main .container__wrp .productTab .subInfo .active {
 .cart-container .cart-table thead th {
   padding: 30px;
 }
+@media only screen and (max-width: 990px) {
+  .cart-container .cart-table thead {
+    display: none;
+  }
+}
 .cart-container .cart-table th,
 .cart-container .cart-table td {
   text-align: left;
@@ -2654,6 +2659,7 @@ main .container__wrp .productTab .subInfo .active {
   font-family: "Hind", sans-serif;
 }
 .cart-container .coupon-section {
+  width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1411764706);
   padding: 30px;
   display: flex;

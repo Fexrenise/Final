@@ -22,6 +22,9 @@
             th{
                 padding: 30px;
             }
+            @include Tablet(){
+                display: none;
+            }
         }
 
         th,
@@ -31,7 +34,6 @@
             // border-bottom: 1px solid #ddd;
             @include Font($size: 15px, $weight: 400, $lineHeight: 1em);
             font-family: 'Hind', sans-serif;
-            
         }
         td{
             .count {
@@ -94,6 +96,7 @@
         }
     }
     .coupon-section {
+        width: 100%;
         border: 1px solid $color-5;
         padding: 30px;
         @include  Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 0);
