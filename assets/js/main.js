@@ -100,7 +100,6 @@ fetch('http://localhost:3000/products')
 
 //shopCart 
 const shopHead = document.querySelector('.shopHead');
-// duplicate event listener
 const shop = document.querySelector('.mainShop');
 
 shop.addEventListener('click', () => {
@@ -200,7 +199,6 @@ async function updateBasket(basketId, updatedBasket) {
 }
 
 async function addItemToBasket(item, count = 1) {
-
     if (!isLoggedIn()) {
         alert('Səbətə əşyalar əlavə etmək üçün daxil olmalısınız!');
         window.location.href = 'login.html';
@@ -216,8 +214,7 @@ async function addItemToBasket(item, count = 1) {
         return;
     }
 
-    const baskets = await fetchBaskets([]);
-
+    const baskets = await fetchBaskets();
     let userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
     if (!userBasket) {
         userBasket = {
@@ -246,8 +243,48 @@ async function addItemToBasket(item, count = 1) {
 
     await updateBasket(userBasket.id, userBasket);
     alert('Element səbətə uğurla əlavə edildi!');
-
 }
+
+ 
+
+
+async function updateProductCount(productId, countChange) {
+    const loggedInUserEmail = localStorage.getItem('loggedInUser');
+    const users = await fetch('http://localhost:3000/users').then(res => res.json());
+    const loggedInUser = users.find(user => user.email === loggedInUserEmail);
+
+    if (!loggedInUser) {
+        alert('Daxil olmuş istifadəçi tapılmadı!');
+        return;
+    }
+
+    const baskets = await fetchBaskets([]);
+    let userBasket = baskets.find(basket => basket.userId === loggedInUser.id);
+
+    if (!userBasket) return;
+
+    const product = userBasket.products.find(p => p.id === productId);
+
+    if (!product) return;
+
+    product.count += countChange;
+    if (product.count <= 0) {
+        userBasket.products = userBasket.products.filter(p => p.id !== productId);
+    } else {
+        userBasket.total += (product.price * countChange);
+    }
+
+    userBasket.count += countChange;
+
+    await updateBasket(userBasket.id, userBasket);
+    renderCartItems(userBasket.products);
+}
+
+// Dummy function definitions for fetchBaskets, generateGUID, insertBasket, updateBasket, and isLoggedIn
+async function fetchBaskets() {
+    return fetch('http://localhost:3000/baskets').then(res => res.json());
+}
+
 
 document.addEventListener('click', function (event) {
     if (event.target.closest('.shop')) {
@@ -313,11 +350,7 @@ function createRemoveIcon(productId, price, listItem) {
                 basket.products.splice(productIndex, 1);
                 basket.count -= product.count;
 
-                let amountToIncrease = basket.total;
-                if (product.count * price <= basket.total) {
-                    amountToIncrease = product.count * price;
-                } 
-                basket.total -= amountToIncrease;
+                basket.total -= product.count * price >= basket.total ? basket.total : product.count * price;
 
                 await fetch(`http://localhost:3000/baskets/${basket.id}`, {
                     method: 'PUT',
@@ -359,8 +392,6 @@ async function handleMainShopClick() {
             continue;
         }
 
-
-
         const listItem = document.createElement('li');
         const imgDiv = document.createElement('div');
         imgDiv.classList.add('img');
@@ -381,18 +412,15 @@ async function handleMainShopClick() {
         productDiv.appendChild(quantityDiv);
         listItem.appendChild(productDiv);
 
-
         const closeDiv = document.createElement('div');
         closeDiv.classList.add('close');
         const closeIcon = createRemoveIcon(productDetails.id, productDetails.price, listItem);
         closeDiv.appendChild(closeIcon);
         listItem.appendChild(closeDiv);
         cartList.appendChild(listItem);
-
     }
     const subTotal = document.getElementById('subTotal');
-    subTotal.textContent = `$${userBasket.total.toFixed(2)}`
-
+    subTotal.textContent = `$${userBasket.total.toFixed(2)}`;
 }
 
 
@@ -424,7 +452,9 @@ async function updateCartSummary() {
 }
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
     updateCartSummary();
     handleMainShopClick();
+    handleMainShopView();
 });

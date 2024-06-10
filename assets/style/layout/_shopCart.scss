@@ -18,6 +18,7 @@
         right: 0;
         top: 0;
         padding: 20px;
+        max-width: 500px;
 
 
         .cartTitle {
@@ -33,7 +34,7 @@
         .cartList {
             padding-top: 30px;
             @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
-
+            
             li {
                 @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 20px);
 

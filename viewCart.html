@@ -45,6 +45,14 @@
             </div>
         </div>
     </div>
+    <div id="deleteModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Bu ürünü silmek istediğinizden emin misiniz?</p>
+            <button id="confirmDelete" class="btn">Sil</button>
+            <button id="cancelDelete" class="btn">Silme</button>
+        </div>
+    </div>
     <header>
         <div class="navBar">
             <div class="logo">
@@ -80,83 +88,31 @@
         </div>
     </header>
     <main style="padding: 50px 0;">
-        <div class="cart-container">
+        <div class="cart">
             <h1>Cart</h1>
-            <table class="cart-table">
-                <thead>
-                    <tr>
-                        <th>Product</th>
-                        <th>Price</th>
-                        <th>Quantity</th>
-                        <th>Subtotal</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="product-info">
-                            <button class="remove-btn"><i class="fa-solid fa-xmark"></i></button>
-                            <img src="./assets/img/product-0009.png" alt="Body oil anti-cellulite"
-                                class="product-image">
-                            <span>Body oil anti-cellulite</span>
-                        </td>
-                        <td>$13.25</td>
-                        <td>
-                            <div class="count">
-                                <p>1</p>
-                                <div class="countBtn">
-                                    <i class="fa-solid fa-caret-up"></i>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </div>
-                            </div>
-                        </td>
-                        <td>$26.50</td>
-                    </tr>
-                    <tr>
-                        <td class="product-info">
-                            <button class="remove-btn"><i class="fa-solid fa-xmark"></i></button>
-                            <img src="./assets/img/product-0009.png" alt="Avocado extract shower gel"
-                                class="product-image">
-                            <span>Avocado extract shower gel</span>
-                        </td>
-                        <td class="price">$12.90</td>
-                        <td>
-                            <div class="count">
-                                <p>1</p>
-                                <div class="countBtn">
-                                    <i class="fa-solid fa-caret-up"></i>
-                                    <i class="fa-solid fa-caret-down"></i>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="subtotal">$12.90</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="coupon-section">
-                <input type="text" placeholder="Coupon code">
-                <button class="apply-coupon">Apply Coupon</button>
-                <button class="update-cart">Update Cart</button>
+            <ul class="cart-items">
+                
+            </ul>
+            <div class="coupon">
+                <div>
+                    <input type="text" placeholder="Coupon code">
+                </div>
+                <div class="update-cart">
+                    <button id="applyCoupon">Apply Coupon</button>
+                    <button id="updateCart" disabled>Update Cart</button>
+                </div>
             </div>
             <div class="cart-totals">
-                <table>
-                    <tr>
-                        <th colspan="2">Cart totals</th>
-                    </tr>
-                    <tr>
-                        <td>Subtotal</td>
-                        <td>$39.40</td>
-                    </tr>
-                    <tr>
-                        <td>Total</td>
-                        <td>$39.40</td>
-                    </tr>
-                </table>
-                <button class="checkout-btn">Proceed To Checkout</button>
+                <span class="subtotal">Subtotal: $0.00</span>
+                <span class="total">Total: $0.00</span>
+                <button>Proceed To Checkout</button>
             </div>
-        
         </div>
-
     </main>
+
+
+
+
 
     <footer>
         <div class="quation_border">
@@ -242,6 +198,7 @@
     </footer>
 
     <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/view.js"></script>
 </body>
 
 </html>

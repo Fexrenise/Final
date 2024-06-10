@@ -1,158 +1,206 @@
-.cart-container {
+.cart {
+    background-color: white;
+    padding: 20px;
     @include Width();
-    margin: auto;
-    padding: 70px;
-    background-color: #fff;
 
     h1 {
-        @include Font($size: 26px, $weight: 500, $lineHeight: 1.2em);
-        margin-bottom: 50px;
+        text-align: center;
     }
 
-    .cart-table {
-        width: 100%;
-        border-collapse: collapse;
-        border: 1px solid $color-5;
+    .cart-items {
+        padding: 50px;
 
-        thead {
-            background-color: $color-5;
-            
-            @include Font($size: 15px, $weight: 400, $lineHeight: 1em);
-            font-family: 'Hind', sans-serif;
-            th{
-                padding: 30px;
-            }
-            @include Tablet(){
-                display: none;
-            }
-        }
-
-        th,
-        td {
-            text-align: left;
+        @include Mobile() {
             padding: 10px;
-            // border-bottom: 1px solid #ddd;
-            @include Font($size: 15px, $weight: 400, $lineHeight: 1em);
-            font-family: 'Hind', sans-serif;
-        }
-        td{
-            .count {
-                @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 10px);
-                border: 1px solid black;
-                padding: 10px;
-                width: 40px;
-                height: 40px;
-
-                p {
-                    @include Font($size: 16px, $weight: 400, $lineHeight: 1em);
-                    color: $color-1;
-
-                }
-
-                .countBtn {
-                    @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 0px);
-
-                    i {
-                        font-size: 10px;
-                        color: $color-1;
-
-                        &:hover {
-                            color: $color-4;
-                        }
-                    }
-
-                    opacity: 0;
-                }
-                &:hover .countBtn {
-                    opacity: 1;
-                }
-            }
         }
 
-        .product-info {
-            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 50px);
+        .cart-item {
+            @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 0);
+            border-bottom: 1px solid #ddd;
+            padding: 30px 0;
 
-            .remove-btn {
-                width: 25px;
-                height: 25px;
-                border-radius: 50%;
-                cursor: pointer;
-                background-color: transparent;
-                border: 1px solid $color-5;
-                @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 0);
-                color: $color-5;
+            @include Mobile() {
+                flex-direction: column;
+                // align-items: flex-start;
+                gap: 20px;
             }
 
-            .product-image {
+            img {
                 width: 70px;
                 height: 70px;
                 object-fit: cover;
+                margin-right: 10px;
             }
 
-            span {
-                @include Font($size: 15px, $weight: 400, $lineHeight: 1em);
-                font-family: 'Hind', sans-serif;
+            .item-details {
+                @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 0);
+                width: 100%;
+                flex-wrap: wrap;
+
+                @include Mobile() {
+                    flex-direction: column;
+                    align-items: flex-start;
+                }
+                .count {
+                    @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 10px);
+                    border: 1px solid black;
+                    padding: 10px;
+
+                    p {
+                        @include Font($size: 16px, $weight: 400, $lineHeight: 1em);
+                        color: $color-1;
+
+                    }
+
+                    .countBtn {
+                        @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 0px);
+
+                        i {
+                            font-size: 10px;
+                            color: $color-1;
+
+                            &:hover {
+                                color: $color-4;
+                            }
+                        }
+
+                        opacity: 0;
+                    }
+
+                    &:hover .countBtn {
+                        opacity: 1;
+                    }
+                }
+                span {
+                    margin: 5px;
+
+                    @include Mobile() {
+                        margin: 5px 0;
+                    }
+                }
+
+                .product-quantity {
+                    width: 50px;
+                }
             }
         }
     }
-    .coupon-section {
-        width: 100%;
-        border: 1px solid $color-5;
-        padding: 30px;
-        @include  Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 0);
-        input[type="text"] {
-            padding: 10px;
-            border: 1px solid $color-5;
-            border-radius: 5px;
-            outline: none;
+
+    .coupon {
+        @include Width();
+        padding-left: 50px;
+        @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 0);
+
+        @include Mobile() {
+            padding-left: 0;
+            @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: center, $gap: 20px);
         }
+
+        input {
+            padding: 10px;
+            margin-right: 10px;
+        }
+
         button {
             @include Button2();
+
+            @include Mobile() {
+                font-size: 10px;
+                padding: 10px 20px !important;
+            }
         }
-        .apply-coupon {
-            margin-left: 10px;
+        #updateCart:disabled {
+            background-color: #d3d3d3; /* Light grey */
+            color: #999999; /* Grey text */
+            cursor: not-allowed;
         }
+
         .update-cart {
-            margin-left: auto;
+            text-align: right;
+            margin-bottom: 20px;
+
+            @include Mobile() {
+                @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 20px);
+            }
+
+            button {
+                @include Button2();
+            }
         }
     }
+
     .cart-totals {
-        border: 1px solid $color-5;
-        background-color: #fff;
-        width: 40%;
-        margin-top: 50px;
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            th {
-                text-align: left;
-                @include Font($size: 18px, $weight: 500, $lineHeight: 1em);
-                padding: 20px;
-                background-color: $color-5;
-            }
-            td {
-                padding: 20px;
-                @include Font($size: 15px, $weight: 400, $lineHeight: 1em);
-                font-family: 'Hind',sans-serif;
-            }
-            tr{
-                border: 1px solid $color-5;
-            }
+        text-align: center;
+        margin-top: 20px;
+
+        span {
+            display: block;
+            margin: 10px 0;
         }
-        .checkout-btn {
-            margin: 10px;
-            width: 95%;
-            text-align: center;
+
+        button {
             @include Button2();
         }
     }
 }
+/* Modal CSS */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
 
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 400px; 
+    border-radius: 10px;
+    text-align: center;
+}
 
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
 
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
+.btn {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px;
+}
 
+.btn:hover {
+    background-color: #45a049;
+}
 
-
-
-
+.btn:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
