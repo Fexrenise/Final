@@ -273,9 +273,38 @@
     {
       "id": "19e4fc30-92e4-4590-b0b6-cda8a663cb57",
       "userId": "a3b60cf4-e5f9-4e49-bdb4-19b7d18f6468",
-      "products": [],
-      "count": 0,
-      "total": 3.552713678800501e-15
+      "products": [
+        {
+          "id": 2,
+          "count": 1
+        },
+        {
+          "id": 3,
+          "count": 1
+        },
+        {
+          "id": 4,
+          "count": 1
+        },
+        {
+          "id": 5,
+          "count": 1
+        },
+        {
+          "id": 6,
+          "count": 1
+        },
+        {
+          "id": 7,
+          "count": 1
+        },
+        {
+          "id": 8,
+          "count": 14
+        }
+      ],
+      "count": 20,
+      "total": 289.55
     }
   ]
 }

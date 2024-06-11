@@ -1,0 +1,303 @@
+#title {
+    padding-top: 30px;
+
+    .chekout_title {
+        @include Width();
+        @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 30px);
+
+        .logo {
+            width: 8%;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        h2 {
+            @include Font($size: 40px, $weight: 600, $lineHeight: 1em);
+        }
+
+        p {
+            @include Font($size: 16px, $weight: 400, $lineHeight: 1.6em);
+            color: #566376;
+        }
+
+        .icon_list {
+            @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 30px);
+
+            li {
+                @include Font($size: 14px, $weight: 500, $lineHeight: 30px);
+                color: #869498;
+            }
+        }
+    }
+}
+
+#check {
+    background-color: white;
+    width: 80%;
+    margin: auto;
+    border-radius: 12px;
+    border: 1px solid #DEE0E3;
+    box-shadow: 0px 64px 80px -40px rgba(0, 0, 0, 0.12);
+    padding: 32px 40px 48px 40px;
+    margin-top: 50px;
+
+    .progress-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 90%;
+        // max-width: 600px;
+        margin: 0 auto;
+        border-bottom: 1px solid #DEE0E3;
+        padding-bottom: 50px;
+
+
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+
+            .circle {
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                border: 2px solid #ccc;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #fff;
+                z-index: 1;
+            }
+
+            .label {
+                margin-top: 5px;
+                font-size: 14px;
+                color: #666;
+            }
+
+            &.active .circle {
+                border-color: #6b8e23;
+                background-color: #6b8e23;
+                color: #fff;
+            }
+        }
+
+        .line {
+            flex: 1;
+            height: 2px;
+            background-color: #ccc;
+            position: relative;
+            top: 10px;
+            z-index: 0;
+        }
+    }
+
+    .checkout-container {
+        margin-top: 30px;
+        @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 0);
+
+        .checkout-form {
+            width: 48%;
+
+            .customer-information {
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 15px);
+
+                h3 {
+                    @include Font($size: 16px, $weight: 600, $lineHeight: 1em);
+                }
+
+                input {
+                    padding: 13px 12px;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 2px solid #dee0e3;
+                    outline: none;
+                }
+            }
+
+            .billing-details {
+                margin-top: 30px;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 15px);
+
+                .name {
+                    width: 100%;
+                    @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 15px);
+
+                    input {
+                        padding: 13px 12px;
+                        width: 55%;
+                        border-radius: 5px;
+                        border: 2px solid #dee0e3;
+                        outline: none;
+                    }
+                }
+
+                input {
+                    padding: 13px 12px;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 2px solid #dee0e3;
+                    outline: none;
+                }
+
+                select {
+                    padding: 13px 12px;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 2px solid #dee0e3;
+                    outline: none;
+                }
+            }
+
+            .additional-information {
+                margin-top: 30px;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 15px);
+
+                h3 {
+                    @include Font($size: 20px, $weight: 600, $lineHeight: 1em);
+                }
+
+                textarea {
+                    padding: 13px 12px;
+                    width: 100%;
+                    border-radius: 5px;
+                    border: 2px solid #dee0e3;
+                    outline: none;
+                }
+            }
+
+            .payment {
+                margin-top: 30px;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 15px);
+
+                h3 {
+                    @include Font($size: 16px, $weight: 600, $lineHeight: 1em);
+                }
+
+                .note {
+                    background: #F8f6F8;
+                    border: 1px solid #d6d7db;
+                    border-radius: 4px;
+                    padding: 10px;
+                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 15px);
+
+                    i {
+                        color: $color-0;
+                        font-size: 20px;
+                    }
+
+                    p {
+                        @include Font($size: 14px, $weight: 400, $lineHeight: 1em);
+                    }
+                }
+
+            }
+
+            button {
+                margin-top: 30px;
+                width: 100%;
+                border-radius: 5px;
+                font-size: 18px;
+                @include Button2();
+            }
+        }
+
+        .order-summary {
+            width: 48%;
+
+            h3 {
+                @include Font($size: 18px, $weight: 600, $lineHeight: 1em);
+            }
+
+            .order-list {
+                margin: 30px 0;
+                border: 1px solid #d6d7db;
+                border-radius: 10px;
+                @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 15px);
+
+                .order-item {
+                    width: 100%;
+                    border-bottom: 1px solid #d6d7db;
+                    padding: 15px;
+
+                    img {
+                        width: 10%;
+                    }
+
+                    @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 15px);
+
+                }
+            }
+            .coupon{
+                width: 100%;
+                @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 15px);
+                input{
+                    border-radius: 5px;
+                    border: 2px solid #dee0e3;
+                    outline: none;
+                    padding: 13px 12px;
+                }
+                button{
+                    @include Button2();
+                    border-radius: 5px;
+                    width: 30%;
+                }
+            }
+        }
+    }
+}
+#faq{
+    background-color: white;
+    padding: 50px 0;
+    margin-top: 50px;
+    h2{
+        text-align: center;
+        @include Font($size: 32px, $weight: 600, $lineHeight: 1em);
+    }
+    .accordion{
+        @include Width($width:85%);
+        margin-top: 50px;
+        flex-wrap: wrap;
+        @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 30px);
+        .accordion_item{
+            width: 45%;
+            border-bottom: 1px solid #d6d7db;
+            padding-bottom: 20px;
+            h6{
+                margin-bottom: 10px;
+                @include Font($size: 24px, $weight: 600, $lineHeight: 1.2em);
+            }
+            p{
+                @include Font($size: 16px, $weight: 400, $lineHeight: 1.2em);
+                color: #566376;
+                display: none;
+                &.active{
+                    display: initial;
+                }
+            }
+        }
+    }
+}
+
+footer{
+    margin-top: 30px;
+    padding-bottom: 30px;
+    .elementor-inline-items{
+        @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 30px);
+        li{
+            @include Font($size: 14px, $weight: 400, $lineHeight: 1.2em);
+            color: #566376;
+        }
+    }
+    p{
+        margin-top: 30px;
+        text-align: center;
+        @include Font($size: 14px, $weight: 400, $lineHeight: 1.2em);
+        color: #869498;
+    }
+}
