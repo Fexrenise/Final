@@ -61,7 +61,7 @@ header .navBar .navList {
   }
 }
 header .navBar .navList li a {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: 400;
   line-height: 30px;
   color: rgba(0, 0, 0, 0.7);
@@ -104,7 +104,7 @@ header .navBar .cartBar .login {
   display: flex;
   flex-direction: row;
   justify-content: start;
-  align-items: start;
+  align-items: center;
   gap: 20px;
 }
 header .navBar .cartBar .login i {
@@ -207,6 +207,81 @@ header .navBar .burgerMenu {
   line-height: 2em;
   font-family: "Hind", sans-serif;
 }
+.burgerNav ul li .burgerCartBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+@media only screen and (max-width: 990px) {
+  .burgerNav ul li .burgerCartBar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+}
+.burgerNav ul li .burgerCartBar .login {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+}
+.burgerNav ul li .burgerCartBar .login i {
+  color: #c89374;
+  font-size: 18px;
+  cursor: pointer;
+}
+@media only screen and (max-width: 990px) {
+  .burgerNav ul li .burgerCartBar .login i {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 990px) {
+  .burgerNav ul li .burgerCartBar .login {
+    gap: 10px;
+  }
+}
+.burgerNav ul li .burgerCartBar .mainShop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0px;
+  cursor: pointer;
+}
+.burgerNav ul li .burgerCartBar .mainShop bdi {
+  color: #7e8427;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 30px;
+}
+.burgerNav ul li .burgerCartBar .mainShop .cart {
+  position: relative;
+}
+.burgerNav ul li .burgerCartBar .mainShop .cart i {
+  color: #7e8427;
+  font-size: 18px;
+  cursor: pointer;
+}
+.burgerNav ul li .burgerCartBar .mainShop .cart span {
+  position: absolute;
+  top: 6%;
+  right: 11%;
+  background-color: #7e8427;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  color: white;
+}
 
 .shopHead {
   width: 100%;
@@ -230,6 +305,11 @@ header .navBar .burgerMenu {
   padding: 20px;
   max-width: 500px;
 }
+@media only screen and (max-width: 990px) {
+  .shopHead .cartBox {
+    width: 50%;
+  }
+}
 .shopHead .cartBox .cartTitle {
   border-bottom: 1px solid rgba(0, 0, 0, 0.1411764706);
   display: flex;
@@ -244,6 +324,8 @@ header .navBar .burgerMenu {
 }
 .shopHead .cartBox .cartList {
   padding-top: 30px;
+  overflow-y: auto;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -272,6 +354,10 @@ header .navBar .burgerMenu {
   justify-content: start;
   align-items: start;
   gap: 10px;
+  width: 220px;
+}
+.shopHead .cartBox .cartList li i {
+  font-size: 20px;
 }
 .shopHead .cartBox .chek {
   width: 100%;
@@ -358,6 +444,15 @@ main #homeOne .productHead {
   justify-content: start;
   align-items: end;
   gap: 20px;
+}
+@media only screen and (max-width: 990px) {
+  main #homeOne .productHead {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: end;
+    gap: 0px;
+  }
 }
 @media only screen and (max-width: 768px) {
   main #homeOne .productHead {
@@ -665,7 +760,7 @@ main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
 }
 @media only screen and (max-width: 768px) {
   main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h6 {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
@@ -681,7 +776,7 @@ main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
 }
 @media only screen and (max-width: 768px) {
   main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info h2 {
-    font-size: 40px;
+    font-size: 29px;
   }
 }
 main #homeCatagory .homeCatagoryBox .homeCatagory_item .homeCatagory_info button {
@@ -1080,7 +1175,7 @@ main #testimonials .testimonial__wrp .testimonial__item:hover .elementor-backgro
   opacity: 0.4;
 }
 main #testimonials .testimonial__wrp .testimonial__item:hover .elementor-background-quota {
-  left: 50%;
+  left: 25%;
   overflow: hidden;
 }
 main #testimonials .testimonial__wrp .top-left {
@@ -1131,6 +1226,10 @@ main #sponsor .sliderTwo {
   align-items: start;
   gap: 20px;
   padding-top: 20px;
+}
+main #sponsor .sliderTwo img {
+  width: 100%;
+  transition: transform 1s ease;
 }
 main #BgImg {
   width: 100%;
@@ -2619,6 +2718,9 @@ main .container__wrp .productTab .subInfo .active {
     align-items: flex-start;
   }
 }
+.cart .cart-items .cart-item .item-details .product-name {
+  width: 220px;
+}
 .cart .cart-items .cart-item .item-details .count {
   display: flex;
   flex-direction: row;
@@ -3066,6 +3168,8 @@ main .container__wrp .productTab .subInfo .active {
   margin: 30px 0;
   border: 1px solid #d6d7db;
   border-radius: 10px;
+  overflow: auto;
+  max-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -3125,6 +3229,14 @@ main .container__wrp .productTab .subInfo .active {
   font-weight: 600;
   line-height: 1em;
 }
+@media only screen and (max-width: 768px) {
+  #faq h2 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5em;
+    padding: 0 10px;
+  }
+}
 #faq .accordion {
   width: 85%;
   margin: 0 auto;
@@ -3146,6 +3258,13 @@ main .container__wrp .productTab .subInfo .active {
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2em;
+}
+@media only screen and (max-width: 768px) {
+  #faq .accordion .accordion_item h6 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.5em;
+  }
 }
 #faq .accordion .accordion_item p {
   font-size: 16px;
@@ -3182,4 +3301,56 @@ footer p {
   font-weight: 400;
   line-height: 1.2em;
   color: #869498;
+}
+
+@media screen and (max-width: 990px) {
+  #check .checkout-container {
+    flex-direction: column-reverse;
+    gap: 30px;
+    align-items: center;
+  }
+  #check .checkout-container .checkout-form,
+  #check .checkout-container .order-summary {
+    width: 100%;
+  }
+  #faq .accordion .accordion_item {
+    width: 100%;
+  }
+  footer .footer_content {
+    flex-direction: column;
+    align-items: center;
+  }
+  footer .footer_content .social_media,
+  footer .footer_content .contact,
+  footer .footer_content .account,
+  footer .footer_content .information {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  #title .chekout_title .logo {
+    width: 20%;
+  }
+  #title .chekout_title h2 {
+    font-size: 30px;
+  }
+  #title .chekout_title p {
+    font-size: 14px;
+  }
+  #title .chekout_title .icon_list li {
+    font-size: 12px;
+  }
+  #check {
+    width: 95%;
+    padding: 20px;
+  }
+  #faq {
+    padding: 30px 0;
+  }
+  #faq h2 {
+    font-size: 28px;
+  }
+  footer .footer_content {
+    padding-top: 30px;
+  }
 }/*# sourceMappingURL=style.css.map */

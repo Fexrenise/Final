@@ -57,17 +57,17 @@
                 <form class="checkout-form">
                     <div class="customer-information">
                         <h3>Customer information</h3>
-                        <input type="email" id="email" name="email" placeholder="Email Address *">
+                        <input type="email" id="email" name="email" placeholder="Email Address *" required>
                     </div>
 
                     <div class="billing-details">
                         <h2>Billing details</h2>
                         <div class="name">
-                            <input type="text" id="first-name" name="first-name" placeholder="First Name *">
+                            <input type="text" id="first-name" name="first-name" placeholder="First Name *" required>
                             <input type="text" id="last-name" name="last-name" placeholder="Last Name *" required>
                         </div>
 
-                        <input type="text" id="company" name="company" placeholder="Company name *">
+                        <input type="text" id="company" name="company" placeholder="Company name *" required>
 
                         <select id="country" name="country" required>
                             <option value="AF">Afghanistan (AF)</option>
@@ -318,42 +318,35 @@
                             <option value="ZM">Zambia (ZM)</option>
                             <option value="ZW">Zimbabwe (ZW)</option>
                         </select>
-                        
 
                         <div class="name">
-                            <input type="text" id="street-address" name="street-address"
-                                placeholder="House number and street name *" required>
-                            <input type="text" id="apartment" name="apartment"
-                                placeholder="Apartment, suite, unit, etc. (optional)">
+                            <input type="text" id="street-address" name="street-address" placeholder="House number and street name *" required>
+                            <input type="text" id="apartment" name="apartment" placeholder="Apartment, suite, unit, etc. (optional)">
                         </div>
 
                         <div class="name">
                             <input type="text" id="city" name="city" placeholder="Town / City *" required>
                             <input type="text" id="state" name="state" placeholder="State">
-                            <input type="text" id="zip-code" name="zip-code" required placeholder="Postcode / ZIP *">
+                            <input type="text" id="zip-code" name="zip-code" placeholder="Postcode / ZIP *" pattern="[0-9A-Za-z]{3,10}" required>
                         </div>
 
-                        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+                        <input type="tel" id="phone" name="phone" placeholder="Phone" pattern="[0-9]{10,15}" required>
                     </div>
 
                     <div class="additional-information">
                         <h3>Additional information</h3>
-                        <textarea id="order-notes" name="order-notes"
-                            placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
+                        <textarea id="order-notes" name="order-notes" placeholder="Notes about your order, e.g. special notes for delivery."></textarea>
                     </div>
 
                     <div class="payment">
                         <h3>Payment</h3>
                         <div class="note">
                             <i class="fa-regular fa-clipboard"></i>
-                            <p>Sorry, it seems that there are no available payment methods for your state. Please
-                                contact us
-                                if you require assistance or wish to make alternate arrangements.</p>
+                            <p>Sorry, it seems that there are no available payment methods for your state. Please contact us if you require assistance or wish to make alternate arrangements.</p>
                         </div>
                     </div>
 
-                    <button type="submit" class="place-order-button"> <i class="fa-solid fa-lock"></i> Place
-                        Order</button>
+                    <button type="submit" class="place-order-button"> <i class="fa-solid fa-lock"></i> Place Order</button>
                 </form>
 
                 <div class="order-summary">
@@ -367,7 +360,6 @@
                     </div>
                 </div>
             </div>
-
 
         </section>
         <section id="faq">
@@ -414,6 +406,69 @@
         </ul>
         <p>© 2022 Yoursite. All rights reserved.</p>
     </footer>
+    <script>
+        document.getElementById('checkout-form').addEventListener('submit', function(event) {
+            let valid = true;
+        
+            // Email validation
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value)) {
+                emailError.style.display = 'block';
+                valid = false;
+            } else {
+                emailError.style.display = 'none';
+            }
+        
+            // First name validation
+            const firstName = document.getElementById('first-name');
+            const firstNameError = document.getElementById('first-name-error');
+            const namePattern = /^[a-zA-Z]{3,}$/;
+            if (!namePattern.test(firstName.value)) {
+                firstNameError.style.display = 'block';
+                valid = false;
+            } else {
+                firstNameError.style.display = 'none';
+            }
+        
+            // Last name validation
+            const lastName = document.getElementById('last-name');
+            const lastNameError = document.getElementById('last-name-error');
+            if (!namePattern.test(lastName.value)) {
+                lastNameError.style.display = 'block';
+                valid = false;
+            } else {
+                lastNameError.style.display = 'none';
+            }
+        
+            // Phone validation
+            const phone = document.getElementById('phone');
+            const phoneError = document.getElementById('phone-error');
+            const phonePattern = /^[0-9]{10,15}$/;
+            if (!phonePattern.test(phone.value)) {
+                phoneError.style.display = 'block';
+                valid = false;
+            } else {
+                phoneError.style.display = 'none';
+            }
+        
+            // City validation for selected country
+            const city = document.getElementById('city');
+            const cityError = document.getElementById('city-error');
+            const country = document.getElementById('country').value;
+            if (city.value.trim() === '') {
+                cityError.style.display = 'block';
+                valid = false;
+            } else {
+                cityError.style.display = 'none';
+            }
+        
+            if (!valid) {
+                event.preventDefault();
+            }
+        });
+        </script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/checkout.js"></script>
 </body>

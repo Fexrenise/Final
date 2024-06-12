@@ -19,6 +19,9 @@
         top: 0;
         padding: 20px;
         max-width: 500px;
+        @include Tablet(){
+            width: 50%;
+        }
 
 
         .cartTitle {
@@ -33,6 +36,8 @@
 
         .cartList {
             padding-top: 30px;
+            overflow-y: auto;
+            max-height: 400px;
             @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 20px);
             
             li {
@@ -50,6 +55,10 @@
 
                 .product {
                     @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 10px);
+                    width: 220px;
+                }
+                i{
+                    font-size: 20px;
                 }
             }
         }

@@ -41,6 +41,9 @@
                     flex-direction: column;
                     align-items: flex-start;
                 }
+                .product-name{
+                    width: 220px;
+                }
                 .count {
                     @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 10px);
                     border: 1px solid black;

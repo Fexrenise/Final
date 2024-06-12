@@ -29,7 +29,7 @@ header {
 
             li {
                 a {
-                    @include Font($size: 18px, $weight: 400, $lineHeight: 30px);
+                    @include Font($size: 15px, $weight: 400, $lineHeight: 30px);
                     @include Tablet(){
                         @include Font($size: 12px, $weight: 400, $lineHeight: 10px);
                     }
@@ -58,7 +58,7 @@ header {
             }
 
             .login {
-                @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: start, $gap: 20px);
+                @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 20px);
                 
                 i {
                     color: $color-2;

@@ -15,7 +15,6 @@ burgerMenu.addEventListener('click', () => {
     })
 })
 
-
 // her seyfeye kecid etdikde navin active clasii deyisir
 const navLinks = document.querySelectorAll('.navList li a');
 const currentPath = window.location.pathname;
@@ -245,7 +244,7 @@ async function addItemToBasket(item, count = 1) {
     alert('Element səbətə uğurla əlavə edildi!');
 }
 
- 
+
 
 
 async function updateProductCount(productId, countChange) {

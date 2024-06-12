@@ -218,6 +218,8 @@
                 margin: 30px 0;
                 border: 1px solid #d6d7db;
                 border-radius: 10px;
+                overflow: auto;
+                max-height: 400px;
                 @include Flex($flex: flex, $direction: column, $justfyContent: start, $alignItems: start, $gap: 15px);
 
                 .order-item {
@@ -233,16 +235,19 @@
 
                 }
             }
-            .coupon{
+
+            .coupon {
                 width: 100%;
                 @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 15px);
-                input{
+
+                input {
                     border-radius: 5px;
                     border: 2px solid #dee0e3;
                     outline: none;
                     padding: 13px 12px;
                 }
-                button{
+
+                button {
                     @include Button2();
                     border-radius: 5px;
                     width: 30%;
@@ -251,32 +256,48 @@
         }
     }
 }
-#faq{
+
+#faq {
     background-color: white;
     padding: 50px 0;
     margin-top: 50px;
-    h2{
+
+    h2 {
         text-align: center;
         @include Font($size: 32px, $weight: 600, $lineHeight: 1em);
+
+        @include Mobile() {
+            @include Font($size: 20px, $weight: 600, $lineHeight: 1.5em);
+            padding: 0 10px;
+        }
     }
-    .accordion{
-        @include Width($width:85%);
+
+    .accordion {
+        @include Width($width: 85%);
         margin-top: 50px;
         flex-wrap: wrap;
         @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: start, $gap: 30px);
-        .accordion_item{
+
+        .accordion_item {
             width: 45%;
             border-bottom: 1px solid #d6d7db;
             padding-bottom: 20px;
-            h6{
+
+            h6 {
                 margin-bottom: 10px;
                 @include Font($size: 24px, $weight: 600, $lineHeight: 1.2em);
+
+                @include Mobile() {
+                    @include Font($size: 20px, $weight: 600, $lineHeight: 1.5em);
+                }
             }
-            p{
+
+            p {
                 @include Font($size: 16px, $weight: 400, $lineHeight: 1.2em);
                 color: #566376;
                 display: none;
-                &.active{
+
+                &.active {
                     display: initial;
                 }
             }
@@ -284,20 +305,87 @@
     }
 }
 
-footer{
+footer {
     margin-top: 30px;
     padding-bottom: 30px;
-    .elementor-inline-items{
+
+    .elementor-inline-items {
         @include Flex($flex: flex, $direction: row, $justfyContent: center, $alignItems: center, $gap: 30px);
-        li{
+
+        li {
             @include Font($size: 14px, $weight: 400, $lineHeight: 1.2em);
             color: #566376;
         }
     }
-    p{
+
+    p {
         margin-top: 30px;
         text-align: center;
         @include Font($size: 14px, $weight: 400, $lineHeight: 1.2em);
         color: #869498;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    #check .checkout-container {
+        flex-direction: column-reverse;
+        gap: 30px;
+        align-items: center;
+
+        .checkout-form,
+        .order-summary {
+            width: 100%;
+        }
+    }
+
+    #faq .accordion .accordion_item {
+        width: 100%;
+    }
+
+    footer .footer_content {
+        flex-direction: column;
+        align-items: center;
+
+        .social_media,
+        .contact,
+        .account,
+        .information {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #title .chekout_title .logo {
+        width: 20%;
+    }
+
+    #title .chekout_title h2 {
+        font-size: 30px;
+    }
+
+    #title .chekout_title p {
+        font-size: 14px;
+    }
+
+    #title .chekout_title .icon_list li {
+        font-size: 12px;
+    }
+
+    #check {
+        width: 95%;
+        padding: 20px;
+    }
+
+    #faq {
+        padding: 30px 0;
+
+        h2 {
+            font-size: 28px;
+        }
+    }
+
+    footer .footer_content {
+        padding-top: 30px;
     }
 }
