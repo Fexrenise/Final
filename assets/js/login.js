@@ -84,7 +84,7 @@ document.getElementById('submitSignIn').addEventListener('click', async (e) => {
         alert("Giriş uğurlu!");
         localStorage.setItem('loggedInUser', email);
         setTimeout(() => {
-            window.location.href = 'home.html';
+            window.location.href = 'index.html';
         }, 1000);
     } 
     else {

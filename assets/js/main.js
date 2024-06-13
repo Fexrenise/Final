@@ -272,7 +272,7 @@ document.addEventListener('click', function (event) {
 document.getElementById('logout').addEventListener('click', () => {
     localStorage.removeItem('loggedInUser');
     alert("Logged out successfully!");
-    window.location.href = 'home.html';
+    window.location.href = 'index.html';
 });
 
 async function fetchProductById(productId) {
