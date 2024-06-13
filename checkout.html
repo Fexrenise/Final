@@ -406,69 +406,6 @@
         </ul>
         <p>© 2022 Yoursite. All rights reserved.</p>
     </footer>
-    <script>
-        document.getElementById('checkout-form').addEventListener('submit', function(event) {
-            let valid = true;
-        
-            // Email validation
-            const email = document.getElementById('email');
-            const emailError = document.getElementById('email-error');
-            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailPattern.test(email.value)) {
-                emailError.style.display = 'block';
-                valid = false;
-            } else {
-                emailError.style.display = 'none';
-            }
-        
-            // First name validation
-            const firstName = document.getElementById('first-name');
-            const firstNameError = document.getElementById('first-name-error');
-            const namePattern = /^[a-zA-Z]{3,}$/;
-            if (!namePattern.test(firstName.value)) {
-                firstNameError.style.display = 'block';
-                valid = false;
-            } else {
-                firstNameError.style.display = 'none';
-            }
-        
-            // Last name validation
-            const lastName = document.getElementById('last-name');
-            const lastNameError = document.getElementById('last-name-error');
-            if (!namePattern.test(lastName.value)) {
-                lastNameError.style.display = 'block';
-                valid = false;
-            } else {
-                lastNameError.style.display = 'none';
-            }
-        
-            // Phone validation
-            const phone = document.getElementById('phone');
-            const phoneError = document.getElementById('phone-error');
-            const phonePattern = /^[0-9]{10,15}$/;
-            if (!phonePattern.test(phone.value)) {
-                phoneError.style.display = 'block';
-                valid = false;
-            } else {
-                phoneError.style.display = 'none';
-            }
-        
-            // City validation for selected country
-            const city = document.getElementById('city');
-            const cityError = document.getElementById('city-error');
-            const country = document.getElementById('country').value;
-            if (city.value.trim() === '') {
-                cityError.style.display = 'block';
-                valid = false;
-            } else {
-                cityError.style.display = 'none';
-            }
-        
-            if (!valid) {
-                event.preventDefault();
-            }
-        });
-        </script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/checkout.js"></script>
 </body>

@@ -273,9 +273,14 @@
     {
       "id": "19e4fc30-92e4-4590-b0b6-cda8a663cb57",
       "userId": "a3b60cf4-e5f9-4e49-bdb4-19b7d18f6468",
-      "products": [],
-      "count": 0,
-      "total": 2.1316282072803006e-14
+      "products": [
+        {
+          "id": 17,
+          "count": 3
+        }
+      ],
+      "count": 3,
+      "total": 39.75000000000002
     }
   ]
 }

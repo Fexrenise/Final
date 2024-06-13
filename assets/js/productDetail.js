@@ -1,3 +1,43 @@
+//Product Detaildaki tab menu
+
+const productTab = document.querySelectorAll('.productTab ul li');
+const subInfo = document.querySelectorAll('.subInfo div');
+productTab.forEach((item, index) => {
+    item.addEventListener('click', (event) => {
+        event.preventDefault();
+        productTab.forEach((e) => {
+            e.classList.remove('active');
+        })
+        subInfo.forEach((e) => {
+            e.classList.remove('active');
+        })
+        item.classList.add('active');
+        subInfo[index].classList.toggle('active');
+
+    })
+})
+
+
+// product detain starlari
+const rating = document.querySelectorAll('#rating i');
+
+rating.forEach((item) => {
+    item.addEventListener('click', () => {
+        if (item.classList.contains('fa-solid')) {
+            item.classList.remove('fa-solid');
+            item.classList.add('fa-regular');
+            item.style.color = 'grey';
+        } else {
+            item.classList.remove('fa-regular');
+            item.classList.add('fa-solid');
+            item.style.color = 'gold';
+        }
+    });
+});
+
+
+//detail product
+
 const urlParams = new URLSearchParams(window.location.search);
 const productId = urlParams.get('id');
 

@@ -15,19 +15,13 @@ faqBtn.forEach((item, index) => {
 
 async function renderOrderSummary(products) {
     const orderList = document.querySelector('.order-list');
-
-    // Clear existing products (if any)
     orderList.innerHTML = `
       <li class="order-item">
         <span class="item-label">Product</span>
         <span class="item-value">Subtotal</span>
       </li>
     `;
-
-    // Variable to hold the subtotal
     let subtotal = 0;
-
-    // Create an array of promises for fetching product details
     const productPromises = products.map(async productFromBasket => {
         const productFromDb = await fetchProductById(productFromBasket.id);
 
@@ -42,11 +36,7 @@ async function renderOrderSummary(products) {
         orderList.innerHTML += productHtml;
         subtotal += productFromDb.price * productFromBasket.count;
     });
-
-    // Wait for all product details to be fetched and processed
     await Promise.all(productPromises);
-
-    // Append the subtotal and total
     const summaryHtml = `
       <li class="order-item">
         <span class="item-label">Subtotal</span>

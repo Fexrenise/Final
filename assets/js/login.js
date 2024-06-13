@@ -45,9 +45,9 @@ const removeUser = async (email) => {
             await fetch(`http://localhost:3000/users/${user.id}`, {
                 method: 'DELETE'
             });
-            alert("User removed successfully!");
+            alert("Istifadeci uqurla silindi!");
         } else {
-            alert("User not found!");
+            alert("Istifadeci tapilmadi!");
         }
     } catch (error) {
         console.error('Error removing user:', error);
@@ -91,10 +91,6 @@ document.getElementById('submitSignIn').addEventListener('click', async (e) => {
         alert("Yanlış istifadəçi adı və ya şifrə!");
     }
 });
-
-
-
-// Example usage for removing a user
 document.getElementById('removeUser').addEventListener('click', async () => {
     const email = prompt("Silmək üçün istifadəçinin e-poçtunu daxil edin:");
     if (email) {

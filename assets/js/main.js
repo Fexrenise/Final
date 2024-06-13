@@ -18,6 +18,7 @@ burgerMenu.addEventListener('click', () => {
 // her seyfeye kecid etdikde navin active clasii deyisir
 const navLinks = document.querySelectorAll('.navList li a');
 const currentPath = window.location.pathname;
+console.log(currentPath);
 
 navLinks.forEach(link => {
     if (link.pathname === currentPath) {
@@ -25,7 +26,7 @@ navLinks.forEach(link => {
     }
 });
 
-// productlari bize cixarir
+// productlari cixarir
 const body = document.querySelector('.products');
 const pathToCategoryId = {
     '/body.html': 1,
@@ -117,37 +118,6 @@ shop.addEventListener('click', () => {
 })
 
 
-//Product Detaildaki tab menu
-
-const productTab = document.querySelectorAll('.productTab ul li');
-const subInfo = document.querySelectorAll('.subInfo div');
-productTab.forEach((item, index) => {
-    item.addEventListener('click', (event) => {
-        event.preventDefault();
-        productTab.forEach((e) => {
-            e.classList.remove('active');
-        })
-        subInfo.forEach((e) => {
-            e.classList.remove('active');
-        })
-        item.classList.add('active');
-        subInfo[index].classList.add('active');
-
-    })
-})
-
-
-
-// product detain starlari
-const rating = document.querySelectorAll('#rating i');
-rating.forEach((item) => {
-
-    item.addEventListener('click', () => {
-
-        item.classList.add('fa-solid', 'fa-star');
-        item.style.color = 'gold'
-    })
-})
 
 // İstifadəçinin daxil olub-olmadığını yoxlamaq 
 function isLoggedIn() {
@@ -279,7 +249,6 @@ async function updateProductCount(productId, countChange) {
     renderCartItems(userBasket.products);
 }
 
-// Dummy function definitions for fetchBaskets, generateGUID, insertBasket, updateBasket, and isLoggedIn
 async function fetchBaskets() {
     return fetch('http://localhost:3000/baskets').then(res => res.json());
 }

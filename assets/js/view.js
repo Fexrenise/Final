@@ -87,7 +87,6 @@ async function handleMainShopView() {
                 productSubtotal.textContent = `$${(productDetails.price * product.count).toFixed(2)}`;
                 updateCartButton.disabled = false;
             } else if (product.count === 1) {
-                // Ürünü silmeden önce onay penceresini göster
                 productToDelete = product;
                 cartItemToDelete = cartItem;
                 productDetailsToDelete = productDetails;
@@ -121,12 +120,9 @@ async function handleMainShopView() {
     });
 
     confirmDeleteBtn.addEventListener('click', async () => {
-        // Ürünü sepetten kaldır
         userBasket.products = userBasket.products.filter(p => p.id !== productToDelete.id);
         userBasket.count -= productToDelete.count;
         userBasket.total -= (productDetailsToDelete.price * productToDelete.count);
-
-        // Negatif toplam hatasını önlemek için kontrol
         userBasket.total = Math.max(0, userBasket.total);
 
         viewShop.removeChild(cartItemToDelete);
@@ -145,10 +141,10 @@ async function handleMainShopView() {
         updateCartButton.disabled = true;
         originalTotal = userBasket.total;
         originalCount = userBasket.count;
-        updateCartSummaryInView(userBasket.total, userBasket.count); // Görünümdeki özeti güncelle
+        updateCartSummaryInView(userBasket.total, userBasket.count);
     });
 
-    updateCartSummaryInView(userBasket.total, userBasket.count); // Görünümdeki özeti başlangıçta güncelle
+    updateCartSummaryInView(userBasket.total, userBasket.count);
 }
 
 function updateCartSummaryInView(total, count) {

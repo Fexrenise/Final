@@ -34,7 +34,7 @@
                         @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 10px);
                     }
         
-                    .login {
+                    .burgerLogin {
                         @include Flex($flex: flex, $direction: row, $justfyContent: start, $alignItems: center, $gap: 20px);
                         
                         i {
@@ -47,35 +47,6 @@
                         }
                         @include Tablet(){
                             gap: 10px;
-                        }
-                    }
-        
-                    .mainShop {
-                        @include Flex($flex: flex, $direction: row, $justfyContent: space-between, $alignItems: center, $gap: 0px);
-                        cursor: pointer;
-                        bdi {
-                            color: $color-0;
-                            @include Font($size: 15px, $weight: 700, $lineHeight: 30px);
-                        }
-        
-                        .cart {
-                            position: relative;
-                            i {
-                                color: $color-0;
-                                font-size: 18px;
-                                cursor: pointer;
-                            }
-                            span{
-                                position: absolute;
-                                top: 6%;
-                                right: 11%;
-                                background-color: $color-0;
-                                width: 20px;
-                                height: 20px;
-                                border-radius: 50%;
-                                @include Flex($flex: flex, $direction: column, $justfyContent: center, $alignItems: center, $gap: 20px);
-                                color: white;
-                            }
                         }
                     }
                 }
